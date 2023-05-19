@@ -3,7 +3,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="utf-8" />
-        <title>ESP8266Arduino通过网页上传固件升级 | 一个树洞</title>
+        <title>emwin切换界面时闪烁 | 一个树洞</title>
         <meta name="author" content="Suki" />
         <meta name="description" content="一个 C++程序员 & 嵌入式软件工程师 の 主页" />
         <meta name="keywords" content="" />
@@ -16,13 +16,6 @@
 
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
-
-<script src="https://cdn.staticfile.org/highlight.js/11.7.0/highlight.min.js"></script>
-<link
-    rel="stylesheet"
-    href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/github.min.css"
-/>
-<script src="/js/lib/highlight.js"></script>
 
 
 
@@ -147,7 +140,7 @@
                 <div id="main" v-show="!loading">
                     <div class="article">
     <div>
-        <h1>ESP8266Arduino通过网页上传固件升级</h1>
+        <h1>emwin切换界面时闪烁</h1>
     </div>
     <div class="info">
         <span class="date">
@@ -174,12 +167,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/Arduino/" style="color: #03a9f4">Arduino</a>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/ESP8266/" style="color: #00a596">ESP8266</a>
+                <a href="/tags/emwin/" style="color: #ffa2c4">emwin</a>
             </span>
             
         </span>
@@ -187,7 +175,18 @@
     </div>
     
     <div class="content" v-pre>
-        
+        <ul>
+<li>emwin界面切换时出现白色闪烁，切换至目标界面后闪烁消失</li>
+</ul>
+<span id="more"></span>
+
+<h3 id="一、问题现象"><a href="#一、问题现象" class="headerlink" title="一、问题现象"></a>一、问题现象</h3><p>emwin界面切换时出现白色闪烁，切换至目标界面后闪烁消失，只出现一瞬间</p>
+<h3 id="二、解决办法"><a href="#二、解决办法" class="headerlink" title="二、解决办法"></a>二、解决办法</h3><p>尝试在GUI_Init()初始化完成后调用以下代码</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WM_SetCreateFlags(WM_CF_MEMDEV);</span><br></pre></td></tr></table></figure>
+
+<h3 id="三、原因"><a href="#三、原因" class="headerlink" title="三、原因"></a>三、原因</h3><p>可能是在切换界面过程中，屏幕的驱动显示速度较快，但DMA还未完全准备好数据，尤其是当emwin开启了软件旋转效果后，速度大打折扣，就会出现切换界面是屏幕撕裂，使用上述代码后，可以提高绘图速度，并在图像准备好时再显示，以下是emwin官方的注释原文</p>
+<p>Automatically use a Memory Device for drawing. This will avoid flickering and also improve the output speed in most cases, as clipping is simplified. The Window Manager creates a Memory Device for the current window according to the configured color depth and window size. The Memory Device is deleted immediately after the drawing process was finished.  In order to draw images into a remaining Memory Device the IMAGE widget can be used with the creation flag IMAGE_CF_MEMDEV. Details can be found in the section \ref{IMAGE: Image widget}. Note that the Memory Device package is required (and needs to be enabled in the configuration) in order to be able to use this flag. If Memory Devices are not enabled, this flag is ignored.</p>
+
     </div>
     
     
@@ -236,3 +235,7 @@
         
     <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
 </html>
+
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/fireworks.js"></script>
