@@ -3,7 +3,7 @@
     <head>
   <!-- 元数据 -->
   <meta charset="utf-8">
-  
+  <link rel="icon" href="/images/avatar.webp">
   
   <title>这个页面走丢了呢… | 一个树洞</title>
   
@@ -24,8 +24,10 @@
 <meta property="og:site_name" content="一个树洞">
 <meta property="og:description" content="C&#x2F;C++程序员 嵌入式软件工程师">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://wfsuki.github.io/images/avatar.webp">
 <meta property="article:author" content="Suki">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wfsuki.github.io/images/avatar.webp">
   
   <!-- 站点验证相关 -->
   
@@ -35,9 +37,6 @@
   
   <!-- 样式表文件 -->
   <link rel="stylesheet" id="kratos-css" href="/css/kratosr.min.css" media="all"></script>
-  
-    <link rel="stylesheet" id="darkmode-css" href="/css/kr-color-dark.min.css" media="(prefers-color-scheme: dark)"></script>
-    <script src="/js/kr-dark.min.js"></script>
   
   
     <link rel="stylesheet" id="highlight-css" href="/css/highlight/night-eighties.min.css" media="all"></script>
@@ -228,10 +227,10 @@
                     </div>
                 
                 
-                    <div class="box theme-box" id="darkmode-switch">
-                        <span class="fa fa-adjust"></span>
-                    </div>
                 
+                    <div class="box theme-box" id="snow-switch">
+                        <span class="fa fa-snowflake-o"></span>
+                    </div>
                 
                 
             </div>
@@ -253,6 +252,11 @@
     window.kr.notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));
     window.kr.siteRoot = "/";
 </script>
+
+    <div>
+        <canvas id="snow"></canvas>
+        <script async src="/js/snow.min.js"></script>
+    </div>
 
 
     <script async src="/js/candy.min.js"></script>
