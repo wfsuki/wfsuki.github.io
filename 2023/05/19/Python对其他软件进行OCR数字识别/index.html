@@ -167,7 +167,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/Python/" style="color: #03a9f4">Python</a>
+                <a href="/tags/Python/" style="color: #ff7d73">Python</a>
             </span>
             
             <span class="tag">
@@ -175,12 +175,28 @@
                 <a href="/tags/OCR/" style="color: #ff7d73">OCR</a>
             </span>
             
+            <span class="tag">
+                
+                <a href="/tags/pytesseract/" style="color: #00bcd4">pytesseract</a>
+            </span>
+            
         </span>
         
     </div>
     
     <div class="content" v-pre>
-        <span id="more"></span>
+        <p>公司里用到了一台设备，能够测量高精度的传感器数据，但是功能有限，有些事情需要人力去反复操作，所以想到了通过Python的pytesseract库对图片进行识别，转换成数字，然后再进行一些设备控制等操作，本次记录Python识别数字的过程</p>
+<span id="more"></span>
+
+<h2 id="一、安装Tesseract-OCR"><a href="#一、安装Tesseract-OCR" class="headerlink" title="一、安装Tesseract-OCR"></a>一、安装Tesseract-OCR</h2><p><a target="_blank" rel="noopener" href="https://github.com/tesseract-ocr/tesseract.git">https://github.com/tesseract-ocr/tesseract.git</a></p>
+<h2 id="二、编写测试代码"><a href="#二、编写测试代码" class="headerlink" title="二、编写测试代码"></a>二、编写测试代码</h2><p>简单写一个测试识别数字</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pytesseract</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="built_in">print</span>(pytesseract.image_to_string(Image.<span class="built_in">open</span>(<span class="string">&#x27;test.png&#x27;</span>), lang=<span class="string">&#x27;chi_sim+eng&#x27;</span>))</span><br><span class="line">        time.sleep(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<p>截一张图，命名为test.png，丢到项目路径下，截图如下</p>
+<p><img src="/2023/05/19/Python%E5%AF%B9%E5%85%B6%E4%BB%96%E8%BD%AF%E4%BB%B6%E8%BF%9B%E8%A1%8COCR%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB/1.png"></p>
+<p>运行代码，查看output</p>
+<p><img src="/2023/05/19/Python%E5%AF%B9%E5%85%B6%E4%BB%96%E8%BD%AF%E4%BB%B6%E8%BF%9B%E8%A1%8COCR%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB/2.png"></p>
+<p>看起来不错，下一步就是通过不断截图+图片识别的形式来获取数据，这样我们就可以通过Python来识别其他软件上的一些数据，做更加复杂的项目测试了</p>
 
     </div>
     
