@@ -1,0 +1,1069 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8" />
+        <title>Archives | 一个树洞</title>
+        <meta name="author" content="Suki" />
+        <meta name="description" content="一个 C++程序员 & 嵌入式软件工程师 の 主页" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/favicon.jpg" />
+        <script src="https://cdn.staticfile.org/vue/3.2.47/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.3.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+<script src="/js/lib/search.js"></script>
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>正在加载</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <nav id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <div id="desktop-menu">
+        <a class="title" href="/">
+            <span>一个树洞</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;主页</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;归档</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;分类</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;标签</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;关于作者</span>
+        </a>
+        
+    </div>
+    <div id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;一个树洞</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">主页</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">归档</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">分类</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">标签</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">关于作者</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </div>
+</nav>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <transition name="into">
+                <div id="main" v-show="!loading">
+                    
+<div id="archives">
+    
+    <input id="search-bar" class="input" placeholder="搜索" v-model="rawSearch" />
+    
+    <div id="timeline-wrap" ref="timeline">
+        
+        <div class="timeline" data-title="使用pycharm和qtcreator搭建pyqt开发环境">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/5/18</div>
+                <a href="/2023/05/18/%E4%BD%BF%E7%94%A8PyCharm%E5%92%8CQtCreator%E6%90%AD%E5%BB%BAPyqt%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">
+                    <h3>使用PyCharm和QtCreator搭建Pyqt开发环境</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/PyQt%E4%B8%8A%E4%BD%8D%E6%9C%BA%E5%BC%80%E5%8F%91/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            PyQt上位机开发
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/PyQt/" style="color: #ff7d73">PyQt</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" style="color: #00bcd4">环境搭建</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/PyCharm/" style="color: #ffa2c4">PyCharm</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/QtCreator/" style="color: #03a9f4">QtCreator</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="搭建泰拉瑞亚个人服务器">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/5/19</div>
+                <a href="/2023/05/19/%E6%90%AD%E5%BB%BA%E6%B3%B0%E6%8B%89%E7%91%9E%E4%BA%9A%E4%B8%AA%E4%BA%BA%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                    <h3>搭建泰拉瑞亚个人服务器</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/%E6%B8%B8%E6%88%8F/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            游戏
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E6%B3%B0%E6%8B%89%E7%91%9E%E4%BA%9A/" style="color: #03a9f4">泰拉瑞亚</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E6%B8%B8%E6%88%8F/" style="color: #03a9f4">游戏</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="hexo添加鼠标点击特效">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/5/19</div>
+                <a href="/2023/05/19/hexo%E6%B7%BB%E5%8A%A0%E9%BC%A0%E6%A0%87%E7%82%B9%E5%87%BB%E7%89%B9%E6%95%88/">
+                    <h3>hexo添加鼠标点击特效</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            网站搭建
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/Hexo/" style="color: #03a9f4">Hexo</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E5%BB%BA%E7%AB%99/" style="color: #ffa2c4">建站</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E9%BC%A0%E6%A0%87%E7%89%B9%E6%95%88/" style="color: #00a596">鼠标特效</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="emwin切换界面时闪烁">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/5/19</div>
+                <a href="/2023/05/19/emWin%E5%88%87%E6%8D%A2%E7%95%8C%E9%9D%A2%E6%97%B6%E9%97%AA%E7%83%81/">
+                    <h3>emWin切换界面时闪烁</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            嵌入式开发
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/emWin/" style="color: #00a596">emWin</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E7%95%8C%E9%9D%A2%E9%97%AA%E7%83%81/" style="color: #ff7d73">界面闪烁</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="gd32高速flash与低速flash">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/5/19</div>
+                <a href="/2023/05/19/GD32%E9%AB%98%E9%80%9FFlash%E4%B8%8E%E4%BD%8E%E9%80%9FFlash/">
+                    <h3>GD32高速Flash与低速Flash</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            嵌入式开发
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/GD32/" style="color: #ffa2c4">GD32</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #03a9f4">嵌入式开发</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/Flash/" style="color: #ffa2c4">Flash</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="gd32实现bootloader引导app">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/5/19</div>
+                <a href="/2023/05/19/GD32%E5%AE%9E%E7%8E%B0BootLoader%E5%BC%95%E5%AF%BCAPP/">
+                    <h3>GD32实现BootLoader引导APP</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            嵌入式开发
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/GD32/" style="color: #03a9f4">GD32</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/BootLoader/" style="color: #00bcd4">BootLoader</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="qt实现mysql数据库操作">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/5/19</div>
+                <a href="/2023/05/19/Qt%E5%AE%9E%E7%8E%B0Mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/">
+                    <h3>Qt实现Mysql数据库操作</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/Qt%E4%B8%8A%E4%BD%8D%E6%9C%BA%E5%BC%80%E5%8F%91/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            Qt上位机开发
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/Qt/" style="color: #03a9f4">Qt</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/MySQL/" style="color: #03a9f4">MySQL</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="pyqt实现标签打印机控制-自动化标签打印">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/5/19</div>
+                <a href="/2023/05/19/PyQt%E5%AE%9E%E7%8E%B0%E6%A0%87%E7%AD%BE%E6%89%93%E5%8D%B0%E6%9C%BA%E6%8E%A7%E5%88%B6-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%A0%87%E7%AD%BE%E6%89%93%E5%8D%B0/">
+                    <h3>PyQt实现标签打印机控制-自动化标签打印</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/PyQt%E4%B8%8A%E4%BD%8D%E6%9C%BA%E5%BC%80%E5%8F%91/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            PyQt上位机开发
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/PyQt/" style="color: #00a596">PyQt</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E6%A0%87%E7%AD%BE%E6%89%93%E5%8D%B0/" style="color: #03a9f4">标签打印</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="qt实现音效播放">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/5/19</div>
+                <a href="/2023/05/19/Qt%E5%AE%9E%E7%8E%B0%E9%9F%B3%E6%95%88%E6%92%AD%E6%94%BE/">
+                    <h3>Qt实现音效播放</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/Qt%E4%B8%8A%E4%BD%8D%E6%9C%BA%E5%BC%80%E5%8F%91/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            Qt上位机开发
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/Qt/" style="color: #ffa2c4">Qt</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E9%9F%B3%E6%95%88/" style="color: #ff7d73">音效</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="qt实现自动升级功能">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/5/19</div>
+                <a href="/2023/05/19/Qt%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8D%87%E7%BA%A7%E5%8A%9F%E8%83%BD/">
+                    <h3>Qt实现自动升级功能</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/Qt%E4%B8%8A%E4%BD%8D%E6%9C%BA%E5%BC%80%E5%8F%91/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            Qt上位机开发
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/Qt/" style="color: #00a596">Qt</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/OTA/" style="color: #ff7d73">OTA</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="qt实现excel读写">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/5/19</div>
+                <a href="/2023/05/19/Qt%E5%AE%9E%E7%8E%B0Excel%E8%AF%BB%E5%86%99/">
+                    <h3>Qt实现Excel读写</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/Qt%E4%B8%8A%E4%BD%8D%E6%9C%BA%E5%BC%80%E5%8F%91/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            Qt上位机开发
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/Qt/" style="color: #03a9f4">Qt</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/Excel/" style="color: #00bcd4">Excel</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="python对其他软件进行ocr数字识别">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/5/19</div>
+                <a href="/2023/05/19/Python%E5%AF%B9%E5%85%B6%E4%BB%96%E8%BD%AF%E4%BB%B6%E8%BF%9B%E8%A1%8COCR%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB/">
+                    <h3>Python对其他软件进行OCR数字识别</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/Python/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            Python
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/Python/" style="color: #ff7d73">Python</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/OCR/" style="color: #00bcd4">OCR</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="gd32移植ucos">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/5/19</div>
+                <a href="/2023/05/19/GD32%E7%A7%BB%E6%A4%8DuCOS/">
+                    <h3>GD32移植uCOS</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            嵌入式开发
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/GD32/" style="color: #03a9f4">GD32</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/uCOS/" style="color: #ffa2c4">uCOS</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="gd32移植emwin">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/5/19</div>
+                <a href="/2023/05/19/GD32%E7%A7%BB%E6%A4%8DemWin/">
+                    <h3>GD32移植emWin</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            嵌入式开发
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/GD32/" style="color: #00a596">GD32</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/emWin/" style="color: #00a596">emWin</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="centos下搭建一个简单的c语言tcp多线程服务器">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/5/19</div>
+                <a href="/2023/05/19/CentOS%E4%B8%8B%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84C%E8%AF%AD%E8%A8%80TCP%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                    <h3>CentOS下搭建一个简单的C语言TCP多线程服务器</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/Linux/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            Linux
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/CentOS/" style="color: #03a9f4">CentOS</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/Linux/" style="color: #00bcd4">Linux</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/TCP/" style="color: #00a596">TCP</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" style="color: #ff7d73">多线程</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="centos下使用python搭建一个http服务器">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/5/19</div>
+                <a href="/2023/05/19/CentOS%E4%B8%8B%E4%BD%BF%E7%94%A8Python%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AAhttp%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                    <h3>CentOS下使用Python搭建一个http服务器</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/Linux/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            Linux
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/Python/" style="color: #00bcd4">Python</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/CentOS/" style="color: #ff7d73">CentOS</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/Linux/" style="color: #00bcd4">Linux</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/TCP/" style="color: #ff7d73">TCP</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" style="color: #ffa2c4">多线程</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/Flask/" style="color: #ffa2c4">Flask</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="gd32f303/103移植emwin（rgb屏打点方式）">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/5/20</div>
+                <a href="/2023/05/20/GD32F303-103%E7%A7%BB%E6%A4%8DemWin%EF%BC%88RGB%E5%B1%8F%E6%89%93%E7%82%B9%E6%96%B9%E5%BC%8F%EF%BC%89/">
+                    <h3>GD32F303/103移植emWin（RGB屏打点方式）</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            嵌入式开发
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/GD32/" style="color: #ffa2c4">GD32</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/emWin/" style="color: #03a9f4">emWin</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/RGB/" style="color: #ffa2c4">RGB</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E6%89%93%E7%82%B9/" style="color: #ff7d73">打点</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E7%A7%BB%E6%A4%8D/" style="color: #00bcd4">移植</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="centos8搭建blynk物联网平台">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/5/20</div>
+                <a href="/2023/05/20/CentOS8%E6%90%AD%E5%BB%BABlynk%E7%89%A9%E8%81%94%E7%BD%91%E5%B9%B3%E5%8F%B0/">
+                    <h3>CentOS8搭建Blynk物联网平台</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/%E7%89%A9%E8%81%94%E7%BD%91/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            物联网
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/CentOS8/" style="color: #00bcd4">CentOS8</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/Blynk/" style="color: #00a596">Blynk</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E7%89%A9%E8%81%94%E7%BD%91/" style="color: #ff7d73">物联网</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="gd32f470系列搭建开发环境/keil">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/5/20</div>
+                <a href="/2023/05/20/GD32F470%E7%B3%BB%E5%88%97%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83-Keil/">
+                    <h3>GD32F470系列搭建开发环境/Keil</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            嵌入式开发
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/GD32/" style="color: #ff7d73">GD32</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/Keil/" style="color: #00a596">Keil</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" style="color: #ffa2c4">环境搭建</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="keil编译后自动生成bin文件">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/5/20</div>
+                <a href="/2023/05/20/Keil%E7%BC%96%E8%AF%91%E5%90%8E%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90bin%E6%96%87%E4%BB%B6/">
+                    <h3>Keil编译后自动生成bin文件</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            嵌入式开发
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/Keil/" style="color: #00bcd4">Keil</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/tags/Bin%E6%96%87%E4%BB%B6/" style="color: #ffa2c4">Bin文件</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+                    <!--
+ * @Description: 
+ * @Version: 1.0
+ * @Autor: Wangxx
+ * @Date: 2023-05-19 12:17:59
+ * @LastEditors: Wangxx
+ * @LastEditTime: 2023-05-20 09:44:21
+-->
+<footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2019 - 2023 一个树洞
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;Suki
+        </div>
+        <div>
+            <!-- Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a> -->
+            <!-- Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a> -->
+        </div>
+        
+    </div>
+</footer>
+
+                </div>
+            </transition>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":true},"log":false});</script></body>
+</html>
+
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/fireworks.js"></script>

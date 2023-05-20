@@ -167,12 +167,17 @@
             
             <span class="tag">
                 
-                <a href="/tags/GD32/" style="color: #ff7d73">GD32</a>
+                <a href="/tags/GD32/" style="color: #00bcd4">GD32</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #ffa2c4">嵌入式开发</a>
+                <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #ff7d73">嵌入式开发</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Flash/" style="color: #ff7d73">Flash</a>
             </span>
             
         </span>
@@ -187,7 +192,7 @@
 
 <h3 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h3><p>GD32的Flash号称是比ST的读取速度要快，但实际上GD32的Flash分为两个高速区和低速区，以GD32F4系列为例，当我们进行芯片选型时，根据选型手册（如下图）中描述，例如GD32F470ZKT6的Memory分为Flash 3072K和SRAM 256K</p>
 <p><img src="/2023/05/19/GD32%E9%AB%98%E9%80%9FFlash%E4%B8%8E%E4%BD%8E%E9%80%9FFlash/2.png"></p>
-<p>此时如果你直接根据Flash的大小选择了某一款芯片，则之后有可能发现你的代码运行有些异常（代码量足够大时），例如使用软件SPI、软件I2C驱动的显示屏刷新变慢，温湿度传感器数据无法读取等，这很有可能是因为相应的SPI代码写在了低速区。这类问题通常出现在使用了Bootloader++APP的形式存储代码的项目中（占用空间较大）。</p>
+<p>此时如果你直接根据Flash的大小选择了某一款芯片，则之后有可能发现你的代码运行有些异常（代码量足够大时），例如使用软件SPI、软件I2C驱动的显示屏刷新变慢，温湿度传感器数据无法读取等，这很有可能是因为相应的SPI代码写在了低速区。这类问题通常出现在使用了Bootloader+APP的形式存储代码的项目中（占用空间较大）。</p>
 <h3 id="二、高速区与低速区的查看"><a href="#二、高速区与低速区的查看" class="headerlink" title="二、高速区与低速区的查看"></a>二、高速区与低速区的查看</h3><p>查阅技术手册可以看到（如下图），其中Code area就是所谓的高速区，而Data area则是低速区，分别写在两块区域上的代码读取速度可能会相差10倍以上（并非实际的运行速度，具体运行速度应该还要考虑各种变量、函数所定义在内存上的位置整体来看）</p>
 <p><img src="/2023/05/19/GD32%E9%AB%98%E9%80%9FFlash%E4%B8%8E%E4%BD%8E%E9%80%9FFlash/1.png"></p>
 <h3 id="三、如何查看程序是否超出高速区"><a href="#三、如何查看程序是否超出高速区" class="headerlink" title="三、如何查看程序是否超出高速区"></a>三、如何查看程序是否超出高速区</h3><p>如果你是用Keil进行编译，在编译结束后可以看到类似的提示</p>
@@ -209,7 +214,15 @@
     
 </div>
 
-                    <footer id="footer">
+                    <!--
+ * @Description: 
+ * @Version: 1.0
+ * @Autor: Wangxx
+ * @Date: 2023-05-19 12:17:59
+ * @LastEditors: Wangxx
+ * @LastEditTime: 2023-05-20 09:44:21
+-->
+<footer id="footer">
     <div id="footer-wrap">
         <div>
             &copy;
@@ -220,8 +233,10 @@
             &commat;Suki
         </div>
         <div>
-            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
-            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+            <!-- Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a> -->
+            <!-- Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a> -->
         </div>
         
     </div>

@@ -1,0 +1,311 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8" />
+        <title>GD32F303/103移植emWin（RGB屏打点方式） | 一个树洞</title>
+        <meta name="author" content="Suki" />
+        <meta name="description" content="一个 C++程序员 & 嵌入式软件工程师 の 主页" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/favicon.jpg" />
+        <script src="https://cdn.staticfile.org/vue/3.2.47/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.3.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>正在加载</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <nav id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <div id="desktop-menu">
+        <a class="title" href="/">
+            <span>一个树洞</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;主页</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;归档</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;分类</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;标签</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;关于作者</span>
+        </a>
+        
+    </div>
+    <div id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;一个树洞</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">主页</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">归档</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">分类</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">标签</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">关于作者</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </div>
+</nav>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <transition name="into">
+                <div id="main" v-show="!loading">
+                    <div class="article">
+    <div>
+        <h1>GD32F303/103移植emWin（RGB屏打点方式）</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/5/20
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                嵌入式开发
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/GD32/" style="color: #ffa2c4">GD32</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/emWin/" style="color: #ffa2c4">emWin</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/RGB/" style="color: #ff7d73">RGB</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E6%89%93%E7%82%B9/" style="color: #00a596">打点</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E7%A7%BB%E6%A4%8D/" style="color: #ffa2c4">移植</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p>本次基于GD32F303官方开发板上实现emWin移植，由于303没有图形加速器，故采用打点方式进行LCD驱动</p>
+<span id="more"></span>
+
+<h2 id="一、获取emWin库"><a href="#一、获取emWin库" class="headerlink" title="一、获取emWin库"></a>一、获取emWin库</h2><p>首先要得到一份emWin库，有很多方法可以获取</p>
+<ul>
+<li><p>方法1，使用MDK自带库</p>
+<p>如果是使用Keil进行开发，仍然是最推荐使用MDK的emWin库，本次使用的是6.18版本。点击这个图标，进入Keil自带的Pack Installer中</p>
+<p><img src="/2023/05/20/GD32F303-103%E7%A7%BB%E6%A4%8DemWin%EF%BC%88RGB%E5%B1%8F%E6%89%93%E7%82%B9%E6%96%B9%E5%BC%8F%EF%BC%89/1.png"></p>
+<p>左侧选择GD32F3x0 Series</p>
+<p><img src="/2023/05/20/GD32F303-103%E7%A7%BB%E6%A4%8DemWin%EF%BC%88RGB%E5%B1%8F%E6%89%93%E7%82%B9%E6%96%B9%E5%BC%8F%EF%BC%89/2.png"></p>
+<p>右侧下载MDK-Middleware的7.13.0版本。当然找如果之前使用过ST芯片，也可以从ST芯片的包中找到，同为Cortex-M3架构，都是一样的</p>
+<p><img src="/2023/05/20/GD32F303-103%E7%A7%BB%E6%A4%8DemWin%EF%BC%88RGB%E5%B1%8F%E6%89%93%E7%82%B9%E6%96%B9%E5%BC%8F%EF%BC%89/3.png"></p>
+<p>如果你的Keil是默认安装的，没有修改过MDK-Middleware的下载路径，那么不出意外你会在C盘这个路径找到emWin库</p>
+<p><img src="/2023/05/20/GD32F303-103%E7%A7%BB%E6%A4%8DemWin%EF%BC%88RGB%E5%B1%8F%E6%89%93%E7%82%B9%E6%96%B9%E5%BC%8F%EF%BC%89/4.png"></p>
+</li>
+<li><p>方法2，从emWin官网下载</p>
+<p><a target="_blank" rel="noopener" href="https://www.segger.com/products/user-interface/emwin/">emWin (segger.com)</a></p>
+<p>emWin官网不知道从什么时候开始下载库需要注册登录账号，比较麻烦，但是下载一次之后可以保存起来，日后可以用，毕竟emWin几乎不更新。下载的时候选择STM32F103类似的同为M3架构的就可以</p>
+</li>
+<li><p>方法3，从NXP官方下载</p>
+<p><a target="_blank" rel="noopener" href="https://www.nxp.com/design/software/embedded-software/nxp-emwin-libraries:EMWIN-GRAPHICS-LIBRARY">NXP emWin Libraries | NXP Semiconductors</a></p>
+<p>NXP的更新优化还是比较频繁的，其实是基于emWin的一个版本修改优化的，同样的只需要注意下载同为M3架构的包就可以</p>
+</li>
+<li><p>其他方法</p>
+<p>还可以从一些例程，例如正点原子、野火等例程里找到</p>
+</li>
+</ul>
+<h2 id="二、搭建工程"><a href="#二、搭建工程" class="headerlink" title="二、搭建工程"></a>二、搭建工程</h2><p>从GD32官方例程中找LCD驱动例程，将emWin包含进去，并确认可以实现画线、画框等LCD驱动操作，如果是自己画的PCB板子，这里还需要将自己所用的LCD驱动替换进去并确认可用。LCD驱动移植这里不做介绍，本次只记录emWin移植过程。注意如果你将lib文件添加到了Keil目录中，要注意右键lib文件，选择类型为library，否则可能会报错找不到内部emWin函数定义</p>
+<p><img src="/2023/05/20/GD32F303-103%E7%A7%BB%E6%A4%8DemWin%EF%BC%88RGB%E5%B1%8F%E6%89%93%E7%82%B9%E6%96%B9%E5%BC%8F%EF%BC%89/5.png"></p>
+<h2 id="三、修改emWin代码"><a href="#三、修改emWin代码" class="headerlink" title="三、修改emWin代码"></a>三、修改emWin代码</h2><ol>
+<li><p>在GUIConf.c中修改缓存的大小，根据自己的项目大小决定，一般的测试UI，默认的也够用，如果发现之后运行起来卡在GUI_Init()函数，可以尝试扩大此处的大小</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> GUI_NUMBYTES  0x200000</span></span><br></pre></td></tr></table></figure>
+
+<p>该宏定义决定了emWin初始化时生成的数组大小</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">GUI_X_Config</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">  <span class="comment">//</span></span><br><span class="line">  <span class="comment">// 32 bit aligned memory area</span></span><br><span class="line">  <span class="comment">//</span></span><br><span class="line">  <span class="type">static</span> U32 aMemory[GUI_NUMBYTES / <span class="number">4</span>];</span><br><span class="line">  <span class="comment">//</span></span><br><span class="line">  <span class="comment">// Assign memory to emWin</span></span><br><span class="line">  <span class="comment">//</span></span><br><span class="line">  GUI_ALLOC_AssignMemory(aMemory, GUI_NUMBYTES);</span><br><span class="line">  <span class="comment">//</span></span><br><span class="line">  <span class="comment">// Set default font</span></span><br><span class="line">  <span class="comment">//</span></span><br><span class="line">  GUI_SetDefaultFont(GUI_FONT_6X8);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果使用外部SDRAM，则需要将宏改为SDRAM起始地址</p>
+</li>
+<li><p>在GUIDRV_Template.c中添加LCD驱动的画点接口</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">void</span> _SetPixelIndex(GUI_DEVICE * pDevice, <span class="type">int</span> x, <span class="type">int</span> y, LCD_PIXELINDEX PixelIndex) &#123;</span><br><span class="line">  <span class="meta">#<span class="keyword">ifdef</span> WIN32</span></span><br><span class="line">    LCDSIM_SetPixelIndex(x, y, PixelIndex, pDevice-&gt;LayerIndex);</span><br><span class="line">  <span class="meta">#<span class="keyword">else</span></span></span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">    <span class="comment">// Convert logical into physical coordinates (Dep. on LCDConf.h)</span></span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">    <span class="meta">#<span class="keyword">if</span> (LCD_MIRROR_X == 1) || (LCD_MIRROR_Y == 1) || (LCD_SWAP_XY == 1)</span></span><br><span class="line">      <span class="type">int</span> xPhys, yPhys;</span><br><span class="line"></span><br><span class="line">      xPhys = LOG2PHYS_X(x, y);</span><br><span class="line">      yPhys = LOG2PHYS_Y(x, y);</span><br><span class="line">    <span class="meta">#<span class="keyword">else</span></span></span><br><span class="line">      <span class="meta">#<span class="keyword">define</span> xPhys x</span></span><br><span class="line">      <span class="meta">#<span class="keyword">define</span> yPhys y</span></span><br><span class="line">    <span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line">    GUI_USE_PARA(pDevice);</span><br><span class="line">    GUI_USE_PARA(x);</span><br><span class="line">    GUI_USE_PARA(y);</span><br><span class="line">    GUI_USE_PARA(PixelIndex);</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="comment">//</span></span><br><span class="line">      <span class="comment">// Write into hardware ... Adapt to your system</span></span><br><span class="line">      lcd_point_set(xPhys, yPhys, PixelIndex);</span><br><span class="line">      <span class="comment">// TBD by customer...</span></span><br><span class="line">      <span class="comment">//</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">#<span class="keyword">if</span> (LCD_MIRROR_X == 0) &amp;&amp; (LCD_MIRROR_Y == 0) &amp;&amp; (LCD_SWAP_XY == 0)</span></span><br><span class="line">      <span class="meta">#<span class="keyword">undef</span> xPhys</span></span><br><span class="line">      <span class="meta">#<span class="keyword">undef</span> yPhys</span></span><br><span class="line">    <span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line">  <span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">static</span> LCD_PIXELINDEX _GetPixelIndex(GUI_DEVICE * pDevice, <span class="type">int</span> x, <span class="type">int</span> y)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> lcd_point_get(x, y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在LCDConf.c中修改屏幕分辨率，使其适配</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> XSIZE_PHYS 240</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> YSIZE_PHYS 320</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在SysTickHandler添加以下代码，为emWin提供心跳，如果使用uCOS等操作系统，需要在OS_CPU_SysTickHandler等函数中添加</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="keyword">volatile</span> <span class="type">unsigned</span> <span class="type">int</span> OS_TimeMS;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span>  <span class="title function_">OS_CPU_SysTickHandler</span> <span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    CPU_SR_ALLOC();</span><br><span class="line">    CPU_CRITICAL_ENTER();</span><br><span class="line">    OSIntNestingCtr++;                                      <span class="comment">/* Tell uC/OS-III that we are starting an ISR             */</span></span><br><span class="line">    CPU_CRITICAL_EXIT();</span><br><span class="line"></span><br><span class="line">    OSTimeTick();                                           <span class="comment">/* Call uC/OS-III&#x27;s OSTimeTick()                          */</span></span><br><span class="line">    OS_TimeMS++;</span><br><span class="line">    OSIntExit();                                            <span class="comment">/* Tell uC/OS-III that we are leaving the ISR             */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在主函数中依次确认添加了GPIO初始化、LCD驱动初始化、emWin的初始化函数GUI_Init，并尝试显示UI画面</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">LCD_Init();</span><br><span class="line">GUI_Init();</span><br><span class="line">WM_HWIN hWin = CreateWindow();</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">&#123;</span><br><span class="line">    GUI_Delay(<span class="number">10</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>至此不出意外应该就可以使用emWin了，但由于是使用的原始打点方法，绘图可能会比较慢，每次切换界面都会有慢慢刷屏的感觉，做做测试和小制作是够了，但是如果做产品，需要尽量使用SDRAM来提速</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+                    <!--
+ * @Description: 
+ * @Version: 1.0
+ * @Autor: Wangxx
+ * @Date: 2023-05-19 12:17:59
+ * @LastEditors: Wangxx
+ * @LastEditTime: 2023-05-20 09:44:21
+-->
+<footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2019 - 2023 一个树洞
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;Suki
+        </div>
+        <div>
+            <!-- Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a> -->
+            <!-- Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a> -->
+        </div>
+        
+    </div>
+</footer>
+
+                </div>
+            </transition>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+
+
+
+
+        
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":true},"log":false});</script></body>
+</html>
+
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/fireworks.js"></script>

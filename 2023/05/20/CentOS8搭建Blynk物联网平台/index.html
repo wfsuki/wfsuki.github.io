@@ -1,0 +1,267 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8" />
+        <title>CentOS8搭建Blynk物联网平台 | 一个树洞</title>
+        <meta name="author" content="Suki" />
+        <meta name="description" content="一个 C++程序员 & 嵌入式软件工程师 の 主页" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/favicon.jpg" />
+        <script src="https://cdn.staticfile.org/vue/3.2.47/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.3.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>正在加载</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <nav id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <div id="desktop-menu">
+        <a class="title" href="/">
+            <span>一个树洞</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;主页</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;归档</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;分类</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;标签</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;关于作者</span>
+        </a>
+        
+    </div>
+    <div id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;一个树洞</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">主页</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">归档</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">分类</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">标签</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">关于作者</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </div>
+</nav>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <transition name="into">
+                <div id="main" v-show="!loading">
+                    <div class="article">
+    <div>
+        <h1>CentOS8搭建Blynk物联网平台</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/5/20
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E7%89%A9%E8%81%94%E7%BD%91/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                物联网
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/CentOS8/" style="color: #00a596">CentOS8</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Blynk/" style="color: #ffa2c4">Blynk</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E7%89%A9%E8%81%94%E7%BD%91/" style="color: #03a9f4">物联网</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p>CentOS8搭建Blynk物联网平台</p>
+<span id="more"></span>
+
+<h2 id="一、获取Blynk-JDK包"><a href="#一、获取Blynk-JDK包" class="headerlink" title="一、获取Blynk JDK包"></a>一、获取Blynk JDK包</h2><p>比较尴尬的是，Blynk的Git项目作者删除了，网上还有一些人克隆了分支，但是Release不全，目前我是用的是server-0.41.17.jar这个版本，大家可以从Git克隆的仓库或其他途径下载，也可以叫我发给你们</p>
+<h2 id="二、安装java支持"><a href="#二、安装java支持" class="headerlink" title="二、安装java支持"></a>二、安装java支持</h2><p>从官网下载jdk-8u341-linux-x64.rpm，并安装</p>
+<p><a target="_blank" rel="noopener" href="https://www.oracle.com/java/technologies/downloads/">Java Downloads | Oracle</a></p>
+<h2 id="三、开启Blynk服务"><a href="#三、开启Blynk服务" class="headerlink" title="三、开启Blynk服务"></a>三、开启Blynk服务</h2><p>具体的路径需要自行修改哈</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar server-0.41.17.jar -dataFolder /root/workspace/blynk</span><br></pre></td></tr></table></figure>
+
+<p>开启后会显示默认的管理员账号和密码，类似这样</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Admin password not specified. Random password generated.</span><br><span class="line">Your Admin url is https://172.16.11.141:9443/admin</span><br><span class="line">Your Admin login email is admin@blynk.cc</span><br><span class="line">Your Admin password is IQJncCDgpk26D5TU3XFYe7yZ</span><br></pre></td></tr></table></figure>
+
+<p>默认网页后台端口为9443，注意关闭防火墙以及修改云服务器的安全组配置，使用默认账号密码登录后台如下图</p>
+<p><img src="/2023/05/20/CentOS8%E6%90%AD%E5%BB%BABlynk%E7%89%A9%E8%81%94%E7%BD%91%E5%B9%B3%E5%8F%B0/1.png"></p>
+<p>密码可以在后台此处修改</p>
+<p><img src="/2023/05/20/CentOS8%E6%90%AD%E5%BB%BABlynk%E7%89%A9%E8%81%94%E7%BD%91%E5%B9%B3%E5%8F%B0/2.png"></p>
+<p>在APP中登录设置中填好服务器的IP和Port，就可以愉快的玩耍啦</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+                    <!--
+ * @Description: 
+ * @Version: 1.0
+ * @Autor: Wangxx
+ * @Date: 2023-05-19 12:17:59
+ * @LastEditors: Wangxx
+ * @LastEditTime: 2023-05-20 09:44:21
+-->
+<footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2019 - 2023 一个树洞
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;Suki
+        </div>
+        <div>
+            <!-- Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a> -->
+            <!-- Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a> -->
+        </div>
+        
+    </div>
+</footer>
+
+                </div>
+            </transition>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+
+
+
+
+        
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":true},"log":false});</script></body>
+</html>
+
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/fireworks.js"></script>
