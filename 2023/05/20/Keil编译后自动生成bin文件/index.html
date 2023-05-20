@@ -167,12 +167,12 @@
             
             <span class="tag">
                 
-                <a href="/tags/Keil/" style="color: #ffa2c4">Keil</a>
+                <a href="/tags/Keil/" style="color: #00a596">Keil</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/Bin%E6%96%87%E4%BB%B6/" style="color: #00a596">Bin文件</a>
+                <a href="/tags/Bin%E6%96%87%E4%BB%B6/" style="color: #ffa2c4">Bin文件</a>
             </span>
             
         </span>
@@ -184,13 +184,13 @@
 <span id="more"></span>
 
 <h2 id="一、Keil设置"><a href="#一、Keil设置" class="headerlink" title="一、Keil设置"></a>一、Keil设置</h2><p>点击Keil魔术棒</p>
-<p><img src="/2023/05/20/Keil%E7%BC%96%E8%AF%91%E5%90%8E%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90bin%E6%96%87%E4%BB%B6/Users\Safekang\hexo\source_posts\Keil编译后自动生成bin文件\1.png"></p>
+<p><img src="/2023/05/20/Keil%E7%BC%96%E8%AF%91%E5%90%8E%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90bin%E6%96%87%E4%BB%B6/1.png"></p>
 <p>勾选After Build&#x2F;Rebuild下的脚本，表示在每次编译后运行</p>
 <p><img src="/2023/05/20/Keil%E7%BC%96%E8%AF%91%E5%90%8E%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90bin%E6%96%87%E4%BB%B6/2.png"></p>
 <p>输入内容参考如下，请自行修改自己Keil安装的目录以及bin文件名称</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\Keil_v5\ARM\ARMCLANG\bin\fromelf.exe --bin --output ./Objects/APP.bin ./Objects/Project.axf</span><br></pre></td></tr></table></figure>
 
-<p>以上命令表示编译完成后，将工程目录下的&#x2F;Objects目录下的Project.axf转换成同目录下的APP.bin</p>
+<p>以上命令表示编译完成后，将工程目录下的&#x2F;Objects目录下的Project.axf转换成同目录下的APP.bin。再次编译就可以看到目标文件啦</p>
 
     </div>
     

@@ -3,7 +3,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="utf-8" />
-        <title>GD32移植emWin | 一个树洞</title>
+        <title>Arduino/ESP12F实现网页上传固件升级 | 一个树洞</title>
         <meta name="author" content="Suki" />
         <meta name="description" content="一个 C++程序员 & 嵌入式软件工程师 の 主页" />
         <meta name="keywords" content="" />
@@ -140,22 +140,22 @@
                 <div id="main" v-show="!loading">
                     <div class="article">
     <div>
-        <h1>GD32移植emWin</h1>
+        <h1>Arduino/ESP12F实现网页上传固件升级</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/5/19
+            2023/5/20
         </span>
         
         <span class="category">
-            <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/">
+            <a href="/categories/ESP32-ESP8266/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                嵌入式开发
+                ESP32/ESP8266
             </a>
         </span>
         
@@ -167,12 +167,12 @@
             
             <span class="tag">
                 
-                <a href="/tags/GD32/" style="color: #03a9f4">GD32</a>
+                <a href="/tags/Arduino/" style="color: #00bcd4">Arduino</a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/emWin/" style="color: #ffa2c4">emWin</a>
+                <a href="/tags/ESP12F/" style="color: #00bcd4">ESP12F</a>
             </span>
             
         </span>
@@ -180,7 +180,13 @@
     </div>
     
     <div class="content" v-pre>
-        <span id="more"></span>
+        <p>ESP8266在Arduino环境下实现连接wifi后，或者AP状态下进行固件上传升级，非常方便</p>
+<span id="more"></span>
+
+<p>使用的是ESP8266WebServer库，非常方便，除了固件升级，还有文件系统管理功能，大家可以自行研究，有了固件上传功能就可以不用频繁烧录了。代码比较简单，直接上代码</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  An OTA sample for ESP8266 by Victor.Cheung</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;ESP8266WiFi.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;WiFiClient.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;ESP8266WebServer.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;ESP8266HTTPUpdateServer.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">ifndef</span> STASSID</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> STASSID <span class="string">&quot;ssid&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> STAPSK  <span class="string">&quot;12345678&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">char</span>* ssid = STASSID;</span><br><span class="line"><span class="type">const</span> <span class="type">char</span>* password = STAPSK;</span><br><span class="line"></span><br><span class="line">ESP8266WebServer <span class="title function_">httpServer</span><span class="params">(<span class="number">80</span>)</span>;</span><br><span class="line">ESP8266HTTPUpdateServer httpUpdater;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">  Serial.begin(<span class="number">115200</span>);</span><br><span class="line">  Serial.println();</span><br><span class="line">  Serial.println(<span class="string">&quot;Booting Sketch...&quot;</span>);</span><br><span class="line"></span><br><span class="line">  WiFi.mode(WIFI_STA);</span><br><span class="line">  WiFi.begin(ssid, password);</span><br><span class="line"></span><br><span class="line">  Serial.print(<span class="string">&quot;Connecting...&quot;</span>);</span><br><span class="line">  <span class="keyword">while</span> (WiFi.status() != WL_CONNECTED) &#123;</span><br><span class="line">    Serial.print(<span class="string">&quot;.&quot;</span>);</span><br><span class="line">    delay(<span class="number">300</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  httpUpdater.setup(&amp;httpServer);</span><br><span class="line">  httpServer.begin();</span><br><span class="line"></span><br><span class="line">  Serial.print(<span class="string">&quot;HTTPUpdateServer ready! Open http://&quot;</span>);</span><br><span class="line">  Serial.print(WiFi.localIP());</span><br><span class="line">  Serial.println(<span class="string">&quot;/update in your browser&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">(<span class="type">void</span>)</span> </span><br><span class="line">&#123;</span><br><span class="line">  httpServer.handleClient();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在连接上wifi后，可以从串口中看到ESP8266的后台地址，进入后点击固件上传，选择固件就会自动更新重启了</p>
 
     </div>
     
