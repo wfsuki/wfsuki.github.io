@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>一个树洞</title>
+  
+  <subtitle>一个C/C++程序员的Blog主页 😊😊🌹</subtitle>
+  <link href="https://wfsuki.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://wfsuki.github.io/"/>
+  <updated>2023-05-21T03:47:49.481Z</updated>
+  <id>https://wfsuki.github.io/</id>
+  
+  <author>
+    <name>Suki</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ESP8266及ESP32/ArduinoIDE环境配置</title>
+    <link href="https://wfsuki.github.io/2023/05/20/ESP8266%E5%8F%8AESP32-ArduinoIDE%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    <id>https://wfsuki.github.io/2023/05/20/ESP8266%E5%8F%8AESP32-ArduinoIDE%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</id>
+    <published>2023-05-20T04:02:22.000Z</published>
+    <updated>2023-05-21T03:47:49.481Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>ESP8266及ESP32&#x2F;ArduinoIDE环境配置</p><span id="more"></span><p>在Arduino IDE中点击 文件——首选项</p><p>点击附加开发板管理网址右侧按钮</p><p><img src="/2023/05/20/ESP8266%E5%8F%8AESP32-ArduinoIDE%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/1.png"></p><p>输入以下网址</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json</span><br><span class="line">http://arduino.esp8266.com/stable/package_esp8266com_index.json</span><br></pre></td></tr></table></figure><p>在Arduino IDE中点击 工具——开发板——开发板管理器</p><p><img src="/2023/05/20/ESP8266%E5%8F%8AESP32-ArduinoIDE%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/3.png"></p><p>输入ESP32搜索，点击安装，等待安装完毕即可</p><p><img src="/2023/05/20/ESP8266%E5%8F%8AESP32-ArduinoIDE%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/4.png"></p><p>ESP8266也是一样，搜索ESP8266然后安装对应的开发板即可</p><p><img src="/2023/05/20/ESP8266%E5%8F%8AESP32-ArduinoIDE%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/5.png"></p><p>安装完开发板支持包后，就能够选择对应的开发板啦</p><p><img src="/2023/05/20/ESP8266%E5%8F%8AESP32-ArduinoIDE%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/6.png"></p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;ESP8266及ESP32&amp;#x2F;ArduinoIDE环境配置&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Arduino" scheme="https://wfsuki.github.io/categories/Arduino/"/>
+    
+    
+    <category term="Arduino" scheme="https://wfsuki.github.io/tags/Arduino/"/>
+    
+    <category term="ESP8266" scheme="https://wfsuki.github.io/tags/ESP8266/"/>
+    
+    <category term="ESP32" scheme="https://wfsuki.github.io/tags/ESP32/"/>
+    
+    <category term="环境配置" scheme="https://wfsuki.github.io/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Arduino/ESP12F实现网页上传固件升级</title>
+    <link href="https://wfsuki.github.io/2023/05/20/Arduino-ESP12F%E5%AE%9E%E7%8E%B0%E7%BD%91%E9%A1%B5%E4%B8%8A%E4%BC%A0%E5%9B%BA%E4%BB%B6%E5%8D%87%E7%BA%A7/"/>
+    <id>https://wfsuki.github.io/2023/05/20/Arduino-ESP12F%E5%AE%9E%E7%8E%B0%E7%BD%91%E9%A1%B5%E4%B8%8A%E4%BC%A0%E5%9B%BA%E4%BB%B6%E5%8D%87%E7%BA%A7/</id>
+    <published>2023-05-20T03:47:03.000Z</published>
+    <updated>2023-05-21T03:47:18.161Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>ESP8266在Arduino环境下实现连接wifi后，或者AP状态下进行固件上传升级，非常方便</p><span id="more"></span><p>使用的是ESP8266WebServer库，非常方便，除了固件升级，还有文件系统管理功能，大家可以自行研究，有了固件上传功能就可以不用频繁烧录了。代码比较简单，直接上代码</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  An OTA sample for ESP8266 by Victor.Cheung</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;ESP8266WiFi.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;WiFiClient.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;ESP8266WebServer.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;ESP8266HTTPUpdateServer.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">ifndef</span> STASSID</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> STASSID <span class="string">&quot;ssid&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> STAPSK  <span class="string">&quot;12345678&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">char</span>* ssid = STASSID;</span><br><span class="line"><span class="type">const</span> <span class="type">char</span>* password = STAPSK;</span><br><span class="line"></span><br><span class="line">ESP8266WebServer <span class="title function_">httpServer</span><span class="params">(<span class="number">80</span>)</span>;</span><br><span class="line">ESP8266HTTPUpdateServer httpUpdater;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">  Serial.begin(<span class="number">115200</span>);</span><br><span class="line">  Serial.println();</span><br><span class="line">  Serial.println(<span class="string">&quot;Booting Sketch...&quot;</span>);</span><br><span class="line"></span><br><span class="line">  WiFi.mode(WIFI_STA);</span><br><span class="line">  WiFi.begin(ssid, password);</span><br><span class="line"></span><br><span class="line">  Serial.print(<span class="string">&quot;Connecting...&quot;</span>);</span><br><span class="line">  <span class="keyword">while</span> (WiFi.status() != WL_CONNECTED) &#123;</span><br><span class="line">    Serial.print(<span class="string">&quot;.&quot;</span>);</span><br><span class="line">    delay(<span class="number">300</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  httpUpdater.setup(&amp;httpServer);</span><br><span class="line">  httpServer.begin();</span><br><span class="line"></span><br><span class="line">  Serial.print(<span class="string">&quot;HTTPUpdateServer ready! Open http://&quot;</span>);</span><br><span class="line">  Serial.print(WiFi.localIP());</span><br><span class="line">  Serial.println(<span class="string">&quot;/update in your browser&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">(<span class="type">void</span>)</span> </span><br><span class="line">&#123;</span><br><span class="line">  httpServer.handleClient();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>在连接上wifi后，可以从串口中看到ESP8266的后台地址，进入后点击固件上传，选择固件就会自动更新重启了</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;ESP8266在Arduino环境下实现连接wifi后，或者AP状态下进行固件上传升级，非常方便&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="ESP32/ESP8266" scheme="https://wfsuki.github.io/categories/ESP32-ESP8266/"/>
+    
+    
+    <category term="Arduino" scheme="https://wfsuki.github.io/tags/Arduino/"/>
+    
+    <category term="ESP8266" scheme="https://wfsuki.github.io/tags/ESP8266/"/>
+    
+    <category term="OTA" scheme="https://wfsuki.github.io/tags/OTA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Keil编译后自动生成bin文件</title>
+    <link href="https://wfsuki.github.io/2023/05/20/Keil%E7%BC%96%E8%AF%91%E5%90%8E%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90bin%E6%96%87%E4%BB%B6/"/>
+    <id>https://wfsuki.github.io/2023/05/20/Keil%E7%BC%96%E8%AF%91%E5%90%8E%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90bin%E6%96%87%E4%BB%B6/</id>
+    <published>2023-05-20T03:23:19.000Z</published>
+    <updated>2023-05-21T03:48:25.278Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>有时候我们需要的并不是hex文件，而是需要一个bin文件用于固件升级、软件备份还原等操作，或者是通过Bootloader升级APP，此时可以使用Keil自带的脚本进行bin文件转换</p><span id="more"></span><h2 id="一、Keil设置"><a href="#一、Keil设置" class="headerlink" title="一、Keil设置"></a>一、Keil设置</h2><p>点击Keil魔术棒</p><p><img src="/2023/05/20/Keil%E7%BC%96%E8%AF%91%E5%90%8E%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90bin%E6%96%87%E4%BB%B6/1.png"></p><p>勾选After Build&#x2F;Rebuild下的脚本，表示在每次编译后运行</p><p><img src="/2023/05/20/Keil%E7%BC%96%E8%AF%91%E5%90%8E%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90bin%E6%96%87%E4%BB%B6/2.png"></p><p>输入内容参考如下，请自行修改自己Keil安装的目录以及bin文件名称</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\Keil_v5\ARM\ARMCLANG\bin\fromelf.exe --bin --output ./Objects/APP.bin ./Objects/Project.axf</span><br></pre></td></tr></table></figure><p>以上命令表示编译完成后，将工程目录下的&#x2F;Objects目录下的Project.axf转换成同目录下的APP.bin。再次编译就可以看到目标文件啦</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;有时候我们需要的并不是hex文件，而是需要一个bin文件用于固件升级、软件备份还原等操作，或者是通过Bootloader升级APP，此时可以使用Keil自带的脚本进行bin文件转换&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="嵌入式开发" scheme="https://wfsuki.github.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="Keil" scheme="https://wfsuki.github.io/tags/Keil/"/>
+    
+    <category term="Bin文件" scheme="https://wfsuki.github.io/tags/Bin%E6%96%87%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GD32F470系列搭建开发环境/Keil</title>
+    <link href="https://wfsuki.github.io/2023/05/20/GD32F470%E7%B3%BB%E5%88%97%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83-Keil/"/>
+    <id>https://wfsuki.github.io/2023/05/20/GD32F470%E7%B3%BB%E5%88%97%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83-Keil/</id>
+    <published>2023-05-20T02:58:38.000Z</published>
+    <updated>2023-05-21T03:45:46.040Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>GD32F470使用Keil搭建开发环境</p><span id="more"></span><h2 id="一、为Keil安装GD32支持扩展包"><a href="#一、为Keil安装GD32支持扩展包" class="headerlink" title="一、为Keil安装GD32支持扩展包"></a>一、为Keil安装GD32支持扩展包</h2><p>在GD32官网下载AddOn选型插件包，例如搜索GD32F4xx AddOn，如果是F1或F3等其他系列同理</p><p><a href="https://www.gd32mcu.com/cn/download">兆易创新 (gd32mcu.com)</a></p><p><img src="/2023/05/20/GD32F470%E7%B3%BB%E5%88%97%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83-Keil/1.png"></p><p>点击文档图标下载</p><p><img src="/2023/05/20/GD32F470%E7%B3%BB%E5%88%97%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83-Keil/2.png"></p><p>下载解压完成后，会得到两个扩展包，分别是Keil的和IAR的，Keil的直接双击即可完成安装</p><p><img src="/2023/05/20/GD32F470%E7%B3%BB%E5%88%97%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83-Keil/6.png"></p><h2 id="二、为工程设置芯片选型"><a href="#二、为工程设置芯片选型" class="headerlink" title="二、为工程设置芯片选型"></a>二、为工程设置芯片选型</h2><p>点击Keil的魔术棒</p><p><img src="/2023/05/20/GD32F470%E7%B3%BB%E5%88%97%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83-Keil/7.png"></p><p>在Device中选择对应的芯片型号，点击OK</p><p><img src="/2023/05/20/GD32F470%E7%B3%BB%E5%88%97%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83-Keil/8.png"></p><h2 id="三、在Keil中下载更新组件包"><a href="#三、在Keil中下载更新组件包" class="headerlink" title="三、在Keil中下载更新组件包"></a>三、在Keil中下载更新组件包</h2><p>如果你是直接打开一个GD32的工程，那么Keil可能会自动弹出该页面，并自动下载所需的包文件。如果你是从0开始搭建项目，那么就需要用到这一步</p><p>点击Pack Installer按钮，进入包管理界面，左侧选择GigaDevice，并选择自己需要下载的系列</p><p><img src="/2023/05/20/GD32F470%E7%B3%BB%E5%88%97%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83-Keil/4.png"></p><p>双击芯片型号，在右侧的Device Specific点击Install</p><p><img src="/2023/05/20/GD32F470%E7%B3%BB%E5%88%97%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83-Keil/5.png"></p><p>等下下方状态栏下载进度条跑完，就下载完成啦，此时点击编译按钮尝试编译项目，如果没有工程，可以使用GD32官方的例程尝试编译，GD32的例程在这里</p><p><img src="/2023/05/20/GD32F470%E7%B3%BB%E5%88%97%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83-Keil/9.png"></p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;GD32F470使用Keil搭建开发环境&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="嵌入式开发" scheme="https://wfsuki.github.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="GD32" scheme="https://wfsuki.github.io/tags/GD32/"/>
+    
+    <category term="环境搭建" scheme="https://wfsuki.github.io/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+    
+    <category term="Keil" scheme="https://wfsuki.github.io/tags/Keil/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CentOS8搭建Blynk物联网平台</title>
+    <link href="https://wfsuki.github.io/2023/05/20/CentOS8%E6%90%AD%E5%BB%BABlynk%E7%89%A9%E8%81%94%E7%BD%91%E5%B9%B3%E5%8F%B0/"/>
+    <id>https://wfsuki.github.io/2023/05/20/CentOS8%E6%90%AD%E5%BB%BABlynk%E7%89%A9%E8%81%94%E7%BD%91%E5%B9%B3%E5%8F%B0/</id>
+    <published>2023-05-20T01:51:27.000Z</published>
+    <updated>2023-05-21T03:47:23.194Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>CentOS8搭建Blynk物联网平台</p><span id="more"></span><h2 id="一、获取Blynk-JDK包"><a href="#一、获取Blynk-JDK包" class="headerlink" title="一、获取Blynk JDK包"></a>一、获取Blynk JDK包</h2><p>比较尴尬的是，Blynk的Git项目作者删除了，网上还有一些人克隆了分支，但是Release不全，目前我是用的是server-0.41.17.jar这个版本，大家可以从Git克隆的仓库或其他途径下载，也可以叫我发给你们</p><h2 id="二、安装java支持"><a href="#二、安装java支持" class="headerlink" title="二、安装java支持"></a>二、安装java支持</h2><p>从官网下载jdk-8u341-linux-x64.rpm，并安装</p><p><a href="https://www.oracle.com/java/technologies/downloads/">Java Downloads | Oracle</a></p><h2 id="三、开启Blynk服务"><a href="#三、开启Blynk服务" class="headerlink" title="三、开启Blynk服务"></a>三、开启Blynk服务</h2><p>具体的路径需要自行修改哈</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar server-0.41.17.jar -dataFolder /root/workspace/blynk</span><br></pre></td></tr></table></figure><p>开启后会显示默认的管理员账号和密码，类似这样</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Admin password not specified. Random password generated.</span><br><span class="line">Your Admin url is https://172.16.11.141:9443/admin</span><br><span class="line">Your Admin login email is admin@blynk.cc</span><br><span class="line">Your Admin password is IQJncCDgpk26D5TU3XFYe7yZ</span><br></pre></td></tr></table></figure><p>默认网页后台端口为9443，注意关闭防火墙以及修改云服务器的安全组配置，使用默认账号密码登录后台如下图</p><p><img src="/2023/05/20/CentOS8%E6%90%AD%E5%BB%BABlynk%E7%89%A9%E8%81%94%E7%BD%91%E5%B9%B3%E5%8F%B0/1.png"></p><p>密码可以在后台此处修改</p><p><img src="/2023/05/20/CentOS8%E6%90%AD%E5%BB%BABlynk%E7%89%A9%E8%81%94%E7%BD%91%E5%B9%B3%E5%8F%B0/2.png"></p><p>在APP中登录设置中填好服务器的IP和Port，就可以愉快的玩耍啦</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;CentOS8搭建Blynk物联网平台&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="物联网" scheme="https://wfsuki.github.io/categories/%E7%89%A9%E8%81%94%E7%BD%91/"/>
+    
+    
+    <category term="CentOS8" scheme="https://wfsuki.github.io/tags/CentOS8/"/>
+    
+    <category term="Blynk" scheme="https://wfsuki.github.io/tags/Blynk/"/>
+    
+    <category term="物联网" scheme="https://wfsuki.github.io/tags/%E7%89%A9%E8%81%94%E7%BD%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GD32F303/103移植emWin（RGB屏打点方式）</title>
+    <link href="https://wfsuki.github.io/2023/05/20/GD32F303-103%E7%A7%BB%E6%A4%8DemWin%EF%BC%88RGB%E5%B1%8F%E6%89%93%E7%82%B9%E6%96%B9%E5%BC%8F%EF%BC%89/"/>
+    <id>https://wfsuki.github.io/2023/05/20/GD32F303-103%E7%A7%BB%E6%A4%8DemWin%EF%BC%88RGB%E5%B1%8F%E6%89%93%E7%82%B9%E6%96%B9%E5%BC%8F%EF%BC%89/</id>
+    <published>2023-05-20T00:31:18.000Z</published>
+    <updated>2023-05-21T03:47:54.936Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>本次基于GD32F303官方开发板上实现emWin移植，由于303没有图形加速器，故采用打点方式进行LCD驱动</p><span id="more"></span><h2 id="一、获取emWin库"><a href="#一、获取emWin库" class="headerlink" title="一、获取emWin库"></a>一、获取emWin库</h2><p>首先要得到一份emWin库，有很多方法可以获取</p><ul><li><p>方法1，使用MDK自带库</p><p>如果是使用Keil进行开发，仍然是最推荐使用MDK的emWin库，本次使用的是6.18版本。点击这个图标，进入Keil自带的Pack Installer中</p><p><img src="/2023/05/20/GD32F303-103%E7%A7%BB%E6%A4%8DemWin%EF%BC%88RGB%E5%B1%8F%E6%89%93%E7%82%B9%E6%96%B9%E5%BC%8F%EF%BC%89/1.png"></p><p>左侧选择GD32F3x0 Series</p><p><img src="/2023/05/20/GD32F303-103%E7%A7%BB%E6%A4%8DemWin%EF%BC%88RGB%E5%B1%8F%E6%89%93%E7%82%B9%E6%96%B9%E5%BC%8F%EF%BC%89/2.png"></p><p>右侧下载MDK-Middleware的7.13.0版本。当然找如果之前使用过ST芯片，也可以从ST芯片的包中找到，同为Cortex-M3架构，都是一样的</p><p><img src="/2023/05/20/GD32F303-103%E7%A7%BB%E6%A4%8DemWin%EF%BC%88RGB%E5%B1%8F%E6%89%93%E7%82%B9%E6%96%B9%E5%BC%8F%EF%BC%89/3.png"></p><p>如果你的Keil是默认安装的，没有修改过MDK-Middleware的下载路径，那么不出意外你会在C盘这个路径找到emWin库</p><p><img src="/2023/05/20/GD32F303-103%E7%A7%BB%E6%A4%8DemWin%EF%BC%88RGB%E5%B1%8F%E6%89%93%E7%82%B9%E6%96%B9%E5%BC%8F%EF%BC%89/4.png"></p></li><li><p>方法2，从emWin官网下载</p><p><a href="https://www.segger.com/products/user-interface/emwin/">emWin (segger.com)</a></p><p>emWin官网不知道从什么时候开始下载库需要注册登录账号，比较麻烦，但是下载一次之后可以保存起来，日后可以用，毕竟emWin几乎不更新。下载的时候选择STM32F103类似的同为M3架构的就可以</p></li><li><p>方法3，从NXP官方下载</p><p><a href="https://www.nxp.com/design/software/embedded-software/nxp-emwin-libraries:EMWIN-GRAPHICS-LIBRARY">NXP emWin Libraries | NXP Semiconductors</a></p><p>NXP的更新优化还是比较频繁的，其实是基于emWin的一个版本修改优化的，同样的只需要注意下载同为M3架构的包就可以</p></li><li><p>其他方法</p><p>还可以从一些例程，例如正点原子、野火等例程里找到</p></li></ul><h2 id="二、搭建工程"><a href="#二、搭建工程" class="headerlink" title="二、搭建工程"></a>二、搭建工程</h2><p>从GD32官方例程中找LCD驱动例程，将emWin包含进去，并确认可以实现画线、画框等LCD驱动操作，如果是自己画的PCB板子，这里还需要将自己所用的LCD驱动替换进去并确认可用。LCD驱动移植这里不做介绍，本次只记录emWin移植过程。注意如果你将lib文件添加到了Keil目录中，要注意右键lib文件，选择类型为library，否则可能会报错找不到内部emWin函数定义</p><p><img src="/2023/05/20/GD32F303-103%E7%A7%BB%E6%A4%8DemWin%EF%BC%88RGB%E5%B1%8F%E6%89%93%E7%82%B9%E6%96%B9%E5%BC%8F%EF%BC%89/5.png"></p><h2 id="三、修改emWin代码"><a href="#三、修改emWin代码" class="headerlink" title="三、修改emWin代码"></a>三、修改emWin代码</h2><ol><li><p>在GUIConf.c中修改缓存的大小，根据自己的项目大小决定，一般的测试UI，默认的也够用，如果发现之后运行起来卡在GUI_Init()函数，可以尝试扩大此处的大小</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> GUI_NUMBYTES  0x200000</span></span><br></pre></td></tr></table></figure><p>该宏定义决定了emWin初始化时生成的数组大小</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">GUI_X_Config</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">  <span class="comment">//</span></span><br><span class="line">  <span class="comment">// 32 bit aligned memory area</span></span><br><span class="line">  <span class="comment">//</span></span><br><span class="line">  <span class="type">static</span> U32 aMemory[GUI_NUMBYTES / <span class="number">4</span>];</span><br><span class="line">  <span class="comment">//</span></span><br><span class="line">  <span class="comment">// Assign memory to emWin</span></span><br><span class="line">  <span class="comment">//</span></span><br><span class="line">  GUI_ALLOC_AssignMemory(aMemory, GUI_NUMBYTES);</span><br><span class="line">  <span class="comment">//</span></span><br><span class="line">  <span class="comment">// Set default font</span></span><br><span class="line">  <span class="comment">//</span></span><br><span class="line">  GUI_SetDefaultFont(GUI_FONT_6X8);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>如果使用外部SDRAM，则需要将宏改为SDRAM起始地址</p></li><li><p>在GUIDRV_Template.c中添加LCD驱动的画点接口</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">void</span> _SetPixelIndex(GUI_DEVICE * pDevice, <span class="type">int</span> x, <span class="type">int</span> y, LCD_PIXELINDEX PixelIndex) &#123;</span><br><span class="line">  <span class="meta">#<span class="keyword">ifdef</span> WIN32</span></span><br><span class="line">    LCDSIM_SetPixelIndex(x, y, PixelIndex, pDevice-&gt;LayerIndex);</span><br><span class="line">  <span class="meta">#<span class="keyword">else</span></span></span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">    <span class="comment">// Convert logical into physical coordinates (Dep. on LCDConf.h)</span></span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">    <span class="meta">#<span class="keyword">if</span> (LCD_MIRROR_X == 1) || (LCD_MIRROR_Y == 1) || (LCD_SWAP_XY == 1)</span></span><br><span class="line">      <span class="type">int</span> xPhys, yPhys;</span><br><span class="line"></span><br><span class="line">      xPhys = LOG2PHYS_X(x, y);</span><br><span class="line">      yPhys = LOG2PHYS_Y(x, y);</span><br><span class="line">    <span class="meta">#<span class="keyword">else</span></span></span><br><span class="line">      <span class="meta">#<span class="keyword">define</span> xPhys x</span></span><br><span class="line">      <span class="meta">#<span class="keyword">define</span> yPhys y</span></span><br><span class="line">    <span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line">    GUI_USE_PARA(pDevice);</span><br><span class="line">    GUI_USE_PARA(x);</span><br><span class="line">    GUI_USE_PARA(y);</span><br><span class="line">    GUI_USE_PARA(PixelIndex);</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="comment">//</span></span><br><span class="line">      <span class="comment">// Write into hardware ... Adapt to your system</span></span><br><span class="line">      lcd_point_set(xPhys, yPhys, PixelIndex);</span><br><span class="line">      <span class="comment">// TBD by customer...</span></span><br><span class="line">      <span class="comment">//</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">#<span class="keyword">if</span> (LCD_MIRROR_X == 0) &amp;&amp; (LCD_MIRROR_Y == 0) &amp;&amp; (LCD_SWAP_XY == 0)</span></span><br><span class="line">      <span class="meta">#<span class="keyword">undef</span> xPhys</span></span><br><span class="line">      <span class="meta">#<span class="keyword">undef</span> yPhys</span></span><br><span class="line">    <span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line">  <span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">static</span> LCD_PIXELINDEX _GetPixelIndex(GUI_DEVICE * pDevice, <span class="type">int</span> x, <span class="type">int</span> y)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> lcd_point_get(x, y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>在LCDConf.c中修改屏幕分辨率，使其适配</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> XSIZE_PHYS 240</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> YSIZE_PHYS 320</span></span><br></pre></td></tr></table></figure></li><li><p>在SysTickHandler添加以下代码，为emWin提供心跳，如果使用uCOS等操作系统，需要在OS_CPU_SysTickHandler等函数中添加</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="keyword">volatile</span> <span class="type">unsigned</span> <span class="type">int</span> OS_TimeMS;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span>  <span class="title function_">OS_CPU_SysTickHandler</span> <span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    CPU_SR_ALLOC();</span><br><span class="line">    CPU_CRITICAL_ENTER();</span><br><span class="line">    OSIntNestingCtr++;                                      <span class="comment">/* Tell uC/OS-III that we are starting an ISR             */</span></span><br><span class="line">    CPU_CRITICAL_EXIT();</span><br><span class="line"></span><br><span class="line">    OSTimeTick();                                           <span class="comment">/* Call uC/OS-III&#x27;s OSTimeTick()                          */</span></span><br><span class="line">    OS_TimeMS++;</span><br><span class="line">    OSIntExit();                                            <span class="comment">/* Tell uC/OS-III that we are leaving the ISR             */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>在主函数中依次确认添加了GPIO初始化、LCD驱动初始化、emWin的初始化函数GUI_Init，并尝试显示UI画面</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">LCD_Init();</span><br><span class="line">GUI_Init();</span><br><span class="line">WM_HWIN hWin = CreateWindow();</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">&#123;</span><br><span class="line">    GUI_Delay(<span class="number">10</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ol><p>至此不出意外应该就可以使用emWin了，但由于是使用的原始打点方法，绘图可能会比较慢，每次切换界面都会有慢慢刷屏的感觉，做做测试和小制作是够了，但是如果做产品，需要尽量使用SDRAM来提速</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;本次基于GD32F303官方开发板上实现emWin移植，由于303没有图形加速器，故采用打点方式进行LCD驱动&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="嵌入式开发" scheme="https://wfsuki.github.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="GD32" scheme="https://wfsuki.github.io/tags/GD32/"/>
+    
+    <category term="emWin" scheme="https://wfsuki.github.io/tags/emWin/"/>
+    
+    <category term="RGB" scheme="https://wfsuki.github.io/tags/RGB/"/>
+    
+    <category term="打点" scheme="https://wfsuki.github.io/tags/%E6%89%93%E7%82%B9/"/>
+    
+    <category term="移植" scheme="https://wfsuki.github.io/tags/%E7%A7%BB%E6%A4%8D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CentOS下使用Python搭建一个http服务器</title>
+    <link href="https://wfsuki.github.io/2023/05/19/CentOS%E4%B8%8B%E4%BD%BF%E7%94%A8Python%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AAhttp%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    <id>https://wfsuki.github.io/2023/05/19/CentOS%E4%B8%8B%E4%BD%BF%E7%94%A8Python%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AAhttp%E6%9C%8D%E5%8A%A1%E5%99%A8/</id>
+    <published>2023-05-19T10:07:19.000Z</published>
+    <updated>2023-05-21T03:47:38.886Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>目标是搭建一个小小的http服务器，方便处理Get&#x2F;Post请求，并在服务器做一些操作，这样自己的APP就可以与服务器交互了</p><span id="more"></span><p>以下代码仅供参考</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, request, jsonify</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> shutil</span><br><span class="line"> </span><br><span class="line">app = Flask(__name__)</span><br><span class="line">app.debug = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/api/addData/&#x27;</span>,methods=[<span class="string">&#x27;post&#x27;</span>]</span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add_data</span>():</span><br><span class="line">    <span class="keyword">if</span>  <span class="keyword">not</span> request.data:</span><br><span class="line">        <span class="keyword">return</span> (<span class="string">&#x27;fail&#x27;</span>)</span><br><span class="line">    jsonData = request.data.decode(<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    jsonObj = json.loads(jsonData)</span><br><span class="line">    <span class="keyword">return</span> (<span class="string">&quot;&#123;result:ok&#125;&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/api/getData/&#x27;</span>,methods=[<span class="string">&#x27;GET&#x27;</span>]</span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_data</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">str</span>(<span class="string">&quot;data&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app.run(host=<span class="string">&#x27;0.0.0.0&#x27;</span>,port=<span class="number">6000</span>)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;目标是搭建一个小小的http服务器，方便处理Get&amp;#x2F;Post请求，并在服务器做一些操作，这样自己的APP就可以与服务器交互了&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Linux" scheme="https://wfsuki.github.io/categories/Linux/"/>
+    
+    
+    <category term="CentOS" scheme="https://wfsuki.github.io/tags/CentOS/"/>
+    
+    <category term="Linux" scheme="https://wfsuki.github.io/tags/Linux/"/>
+    
+    <category term="TCP" scheme="https://wfsuki.github.io/tags/TCP/"/>
+    
+    <category term="多线程" scheme="https://wfsuki.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+    <category term="Python" scheme="https://wfsuki.github.io/tags/Python/"/>
+    
+    <category term="Flask" scheme="https://wfsuki.github.io/tags/Flask/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CentOS下搭建一个简单的C语言TCP多线程服务器</title>
+    <link href="https://wfsuki.github.io/2023/05/19/CentOS%E4%B8%8B%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84C%E8%AF%AD%E8%A8%80TCP%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    <id>https://wfsuki.github.io/2023/05/19/CentOS%E4%B8%8B%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84C%E8%AF%AD%E8%A8%80TCP%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8/</id>
+    <published>2023-05-19T10:06:53.000Z</published>
+    <updated>2023-05-21T03:47:32.640Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><span id="more"></span>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="Linux" scheme="https://wfsuki.github.io/categories/Linux/"/>
+    
+    
+    <category term="CentOS" scheme="https://wfsuki.github.io/tags/CentOS/"/>
+    
+    <category term="Linux" scheme="https://wfsuki.github.io/tags/Linux/"/>
+    
+    <category term="TCP" scheme="https://wfsuki.github.io/tags/TCP/"/>
+    
+    <category term="多线程" scheme="https://wfsuki.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python对其他软件进行OCR数字识别</title>
+    <link href="https://wfsuki.github.io/2023/05/19/Python%E5%AF%B9%E5%85%B6%E4%BB%96%E8%BD%AF%E4%BB%B6%E8%BF%9B%E8%A1%8COCR%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB/"/>
+    <id>https://wfsuki.github.io/2023/05/19/Python%E5%AF%B9%E5%85%B6%E4%BB%96%E8%BD%AF%E4%BB%B6%E8%BF%9B%E8%A1%8COCR%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB/</id>
+    <published>2023-05-19T09:52:30.000Z</published>
+    <updated>2023-05-21T03:48:36.074Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>公司里用到了一台设备，能够测量高精度的传感器数据，但是功能有限，有些事情需要人力去反复操作，所以想到了通过Python的pytesseract库对图片进行识别，转换成数字，然后再进行一些设备控制等操作，本次记录Python识别数字的过程</p><span id="more"></span><h2 id="一、安装Tesseract-OCR"><a href="#一、安装Tesseract-OCR" class="headerlink" title="一、安装Tesseract-OCR"></a>一、安装Tesseract-OCR</h2><p><a href="https://github.com/tesseract-ocr/tesseract.git">https://github.com/tesseract-ocr/tesseract.git</a></p><h2 id="二、编写测试代码"><a href="#二、编写测试代码" class="headerlink" title="二、编写测试代码"></a>二、编写测试代码</h2><p>简单写一个测试识别数字</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pytesseract</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="built_in">print</span>(pytesseract.image_to_string(Image.<span class="built_in">open</span>(<span class="string">&#x27;test.png&#x27;</span>), lang=<span class="string">&#x27;chi_sim+eng&#x27;</span>))</span><br><span class="line">        time.sleep(<span class="number">1</span>)</span><br></pre></td></tr></table></figure><p>截一张图，命名为test.png，丢到项目路径下，截图如下</p><p><img src="/2023/05/19/Python%E5%AF%B9%E5%85%B6%E4%BB%96%E8%BD%AF%E4%BB%B6%E8%BF%9B%E8%A1%8COCR%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB/1.png"></p><p>运行代码，查看output</p><p><img src="/2023/05/19/Python%E5%AF%B9%E5%85%B6%E4%BB%96%E8%BD%AF%E4%BB%B6%E8%BF%9B%E8%A1%8COCR%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB/2.png"></p><p>看起来不错，下一步就是通过不断截图+图片识别的形式来获取数据，这样我们就可以通过Python来识别其他软件上的一些数据，做更加复杂的项目测试了</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;公司里用到了一台设备，能够测量高精度的传感器数据，但是功能有限，有些事情需要人力去反复操作，所以想到了通过Python的pytesseract库对图片进行识别，转换成数字，然后再进行一些设备控制等操作，本次记录Python识别数字的过程&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Python" scheme="https://wfsuki.github.io/categories/Python/"/>
+    
+    
+    <category term="Python" scheme="https://wfsuki.github.io/tags/Python/"/>
+    
+    <category term="OCR" scheme="https://wfsuki.github.io/tags/OCR/"/>
+    
+    <category term="pytesseract" scheme="https://wfsuki.github.io/tags/pytesseract/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Qt实现Excel读写</title>
+    <link href="https://wfsuki.github.io/2023/05/19/Qt%E5%AE%9E%E7%8E%B0Excel%E8%AF%BB%E5%86%99/"/>
+    <id>https://wfsuki.github.io/2023/05/19/Qt%E5%AE%9E%E7%8E%B0Excel%E8%AF%BB%E5%86%99/</id>
+    <published>2023-05-19T09:51:29.000Z</published>
+    <updated>2023-05-21T03:48:41.072Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><span id="more"></span>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="Qt上位机开发" scheme="https://wfsuki.github.io/categories/Qt%E4%B8%8A%E4%BD%8D%E6%9C%BA%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="Qt" scheme="https://wfsuki.github.io/tags/Qt/"/>
+    
+    <category term="Excel" scheme="https://wfsuki.github.io/tags/Excel/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Qt实现自动升级功能</title>
+    <link href="https://wfsuki.github.io/2023/05/19/Qt%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8D%87%E7%BA%A7%E5%8A%9F%E8%83%BD/"/>
+    <id>https://wfsuki.github.io/2023/05/19/Qt%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8D%87%E7%BA%A7%E5%8A%9F%E8%83%BD/</id>
+    <published>2023-05-19T09:50:38.000Z</published>
+    <updated>2023-05-21T03:48:57.028Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><span id="more"></span>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="Qt上位机开发" scheme="https://wfsuki.github.io/categories/Qt%E4%B8%8A%E4%BD%8D%E6%9C%BA%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="OTA" scheme="https://wfsuki.github.io/tags/OTA/"/>
+    
+    <category term="Qt" scheme="https://wfsuki.github.io/tags/Qt/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Qt实现音效播放</title>
+    <link href="https://wfsuki.github.io/2023/05/19/Qt%E5%AE%9E%E7%8E%B0%E9%9F%B3%E6%95%88%E6%92%AD%E6%94%BE/"/>
+    <id>https://wfsuki.github.io/2023/05/19/Qt%E5%AE%9E%E7%8E%B0%E9%9F%B3%E6%95%88%E6%92%AD%E6%94%BE/</id>
+    <published>2023-05-19T09:50:14.000Z</published>
+    <updated>2023-05-21T03:49:29.515Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><span id="more"></span>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="Qt上位机开发" scheme="https://wfsuki.github.io/categories/Qt%E4%B8%8A%E4%BD%8D%E6%9C%BA%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="Qt" scheme="https://wfsuki.github.io/tags/Qt/"/>
+    
+    <category term="音效" scheme="https://wfsuki.github.io/tags/%E9%9F%B3%E6%95%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PyQt实现标签打印机控制-自动化标签打印</title>
+    <link href="https://wfsuki.github.io/2023/05/19/PyQt%E5%AE%9E%E7%8E%B0%E6%A0%87%E7%AD%BE%E6%89%93%E5%8D%B0%E6%9C%BA%E6%8E%A7%E5%88%B6-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%A0%87%E7%AD%BE%E6%89%93%E5%8D%B0/"/>
+    <id>https://wfsuki.github.io/2023/05/19/PyQt%E5%AE%9E%E7%8E%B0%E6%A0%87%E7%AD%BE%E6%89%93%E5%8D%B0%E6%9C%BA%E6%8E%A7%E5%88%B6-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%A0%87%E7%AD%BE%E6%89%93%E5%8D%B0/</id>
+    <published>2023-05-19T09:49:24.000Z</published>
+    <updated>2023-05-21T03:48:30.749Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><span id="more"></span>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="PyQt上位机开发" scheme="https://wfsuki.github.io/categories/PyQt%E4%B8%8A%E4%BD%8D%E6%9C%BA%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="PyQt" scheme="https://wfsuki.github.io/tags/PyQt/"/>
+    
+    <category term="标签打印" scheme="https://wfsuki.github.io/tags/%E6%A0%87%E7%AD%BE%E6%89%93%E5%8D%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Qt实现Mysql数据库操作</title>
+    <link href="https://wfsuki.github.io/2023/05/19/Qt%E5%AE%9E%E7%8E%B0Mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/"/>
+    <id>https://wfsuki.github.io/2023/05/19/Qt%E5%AE%9E%E7%8E%B0Mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/</id>
+    <published>2023-05-19T09:48:13.000Z</published>
+    <updated>2023-05-21T03:48:45.940Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><span id="more"></span>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="Qt上位机开发" scheme="https://wfsuki.github.io/categories/Qt%E4%B8%8A%E4%BD%8D%E6%9C%BA%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="Qt" scheme="https://wfsuki.github.io/tags/Qt/"/>
+    
+    <category term="MySQL" scheme="https://wfsuki.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GD32实现BootLoader引导APP</title>
+    <link href="https://wfsuki.github.io/2023/05/19/GD32%E5%AE%9E%E7%8E%B0BootLoader%E5%BC%95%E5%AF%BCAPP/"/>
+    <id>https://wfsuki.github.io/2023/05/19/GD32%E5%AE%9E%E7%8E%B0BootLoader%E5%BC%95%E5%AF%BCAPP/</id>
+    <published>2023-05-19T09:47:24.000Z</published>
+    <updated>2023-05-21T03:48:10.550Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>在STM32中，Bootloader+APP的形式比较熟悉，在GD32中几乎也一样，只是一些跳转函数名不一样，另外也要注意GD32有高速区和低速区Flash（详情见之前的文章）</p><span id="more"></span><h2 id="一、Bootloader部分"><a href="#一、Bootloader部分" class="headerlink" title="一、Bootloader部分"></a>一、Bootloader部分</h2><p>Bootloader的主要作用是做版本检测、APP升级等，通常Bootloader比较小，当然你也可以加上显示屏驱动、Wifi驱动，达到进入产品自检页面、设置页面的效果（类似于电脑中的BIOS）。一般是通过一些特定的按键进入Bootloader或者短接某个引脚</p><p>核心代码</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//系统初始化</span></span><br><span class="line">    bsp_init();</span><br><span class="line">    <span class="comment">//关闭所有中断</span></span><br><span class="line">    __disable_irq();</span><br><span class="line">    JumpAddress = *( __IO <span class="type">uint32_t</span>* )( ApplicationAddress + <span class="number">4</span> );</span><br><span class="line">    Jump_To_Application = (FunType)JumpAddress;</span><br><span class="line">    <span class="comment">//初始化APP堆栈指针</span></span><br><span class="line">    __set_MSP( *( __IO <span class="type">uint32_t</span>* ) ApplicationAddress );</span><br><span class="line">    <span class="comment">//跳转至APP区</span></span><br><span class="line">    Jump_To_Application();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="二、APP部分"><a href="#二、APP部分" class="headerlink" title="二、APP部分"></a>二、APP部分</h2><p>APP部分需要做中断向量表的偏移，然后就可以开始执行主程序了，其他与正常编程无异</p><p>核心代码</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SCB-&gt;VTOR = FLASH_BASE | MAIN_ADDRESS;</span><br><span class="line">nvic_vector_table_set(FLASH_BASE, MAIN_ADDRESS);</span><br></pre></td></tr></table></figure><p>如果使用Keil开发，需要在Keil编译设置中设置如下，填入APP的起始位置</p><p><img src="/2023/05/19/GD32%E5%AE%9E%E7%8E%B0BootLoader%E5%BC%95%E5%AF%BCAPP/1.png"></p><p>在Debug中也要设置下载地址以及擦除区域，注意选择Erase Sectos，如果选择Erase Full Chip，那每次下载bootloader区域都会被擦除- - </p><p><img src="/2023/05/19/GD32%E5%AE%9E%E7%8E%B0BootLoader%E5%BC%95%E5%AF%BCAPP/2.png"></p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;在STM32中，Bootloader+APP的形式比较熟悉，在GD32中几乎也一样，只是一些跳转函数名不一样，另外也要注意GD32有高速区和低速区Flash（详情见之前的文章）&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="嵌入式开发" scheme="https://wfsuki.github.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="GD32" scheme="https://wfsuki.github.io/tags/GD32/"/>
+    
+    <category term="BootLoader" scheme="https://wfsuki.github.io/tags/BootLoader/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GD32高速Flash与低速Flash</title>
+    <link href="https://wfsuki.github.io/2023/05/19/GD32%E9%AB%98%E9%80%9FFlash%E4%B8%8E%E4%BD%8E%E9%80%9FFlash/"/>
+    <id>https://wfsuki.github.io/2023/05/19/GD32%E9%AB%98%E9%80%9FFlash%E4%B8%8E%E4%BD%8E%E9%80%9FFlash/</id>
+    <published>2023-05-19T06:05:21.000Z</published>
+    <updated>2023-05-21T03:48:04.800Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><ul><li>GD32高速Flash与低速Flash，以及与STM32 Flash的区别</li></ul><span id="more"></span><h3 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h3><p>GD32的Flash号称是比ST的读取速度要快，但实际上GD32的Flash分为两个高速区和低速区，以GD32F4系列为例，当我们进行芯片选型时，根据选型手册（如下图）中描述，例如GD32F470ZKT6的Memory分为Flash 3072K和SRAM 256K</p><p><img src="/2023/05/19/GD32%E9%AB%98%E9%80%9FFlash%E4%B8%8E%E4%BD%8E%E9%80%9FFlash/2.png"></p><p>此时如果你直接根据Flash的大小选择了某一款芯片，则之后有可能发现你的代码运行有些异常（代码量足够大时），例如使用软件SPI、软件I2C驱动的显示屏刷新变慢，温湿度传感器数据无法读取等，这很有可能是因为相应的SPI代码写在了低速区。这类问题通常出现在使用了Bootloader+APP的形式存储代码的项目中（占用空间较大）。</p><h3 id="二、高速区与低速区的查看"><a href="#二、高速区与低速区的查看" class="headerlink" title="二、高速区与低速区的查看"></a>二、高速区与低速区的查看</h3><p>查阅技术手册可以看到（如下图），其中Code area就是所谓的高速区，而Data area则是低速区，分别写在两块区域上的代码读取速度可能会相差10倍以上（并非实际的运行速度，具体运行速度应该还要考虑各种变量、函数所定义在内存上的位置整体来看）</p><p><img src="/2023/05/19/GD32%E9%AB%98%E9%80%9FFlash%E4%B8%8E%E4%BD%8E%E9%80%9FFlash/1.png"></p><h3 id="三、如何查看程序是否超出高速区"><a href="#三、如何查看程序是否超出高速区" class="headerlink" title="三、如何查看程序是否超出高速区"></a>三、如何查看程序是否超出高速区</h3><p>如果你是用Keil进行编译，在编译结束后可以看到类似的提示</p><p><img src="/2023/05/19/GD32%E9%AB%98%E9%80%9FFlash%E4%B8%8E%E4%BD%8E%E9%80%9FFlash/3.png"></p><p>其中所需ROM&#x3D;RO+RW，所需SRAM&#x3D;RW+ZI。所以当ROM的总大小超出了高速区，剩余的代码则在低速区存储，就可能造成一些未知的问题</p><h3 id="四、如何避免这个问题"><a href="#四、如何避免这个问题" class="headerlink" title="四、如何避免这个问题"></a>四、如何避免这个问题</h3><ul><li>如果对程序整体运行要求都比较高，根据实际需求选择对应的芯片新号</li><li>将一些静态数组等定义到Data区域，为Code区域节省空间</li><li>如果有外接显示屏等设备，尽量使用SDRAM，同理一些较大的数据，也应该考虑存储到flash中，通过这样的办法曲线救国</li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;GD32高速Flash与低速Flash，以及与STM32 Flash的区别&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="嵌入式开发" scheme="https://wfsuki.github.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="GD32" scheme="https://wfsuki.github.io/tags/GD32/"/>
+    
+    <category term="嵌入式开发" scheme="https://wfsuki.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/"/>
+    
+    <category term="Flash" scheme="https://wfsuki.github.io/tags/Flash/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>emWin切换界面时闪烁</title>
+    <link href="https://wfsuki.github.io/2023/05/19/emWin%E5%88%87%E6%8D%A2%E7%95%8C%E9%9D%A2%E6%97%B6%E9%97%AA%E7%83%81/"/>
+    <id>https://wfsuki.github.io/2023/05/19/emWin%E5%88%87%E6%8D%A2%E7%95%8C%E9%9D%A2%E6%97%B6%E9%97%AA%E7%83%81/</id>
+    <published>2023-05-19T05:35:19.000Z</published>
+    <updated>2023-05-21T03:47:44.136Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><ul><li>emwin界面切换时出现白色闪烁，切换至目标界面后闪烁消失</li></ul><span id="more"></span><h3 id="一、问题现象"><a href="#一、问题现象" class="headerlink" title="一、问题现象"></a>一、问题现象</h3><p>emwin界面切换时出现白色闪烁，切换至目标界面后闪烁消失，只出现一瞬间</p><h3 id="二、解决办法"><a href="#二、解决办法" class="headerlink" title="二、解决办法"></a>二、解决办法</h3><p>尝试在GUI_Init()初始化完成后调用以下代码</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WM_SetCreateFlags(WM_CF_MEMDEV);</span><br></pre></td></tr></table></figure><h3 id="三、原因"><a href="#三、原因" class="headerlink" title="三、原因"></a>三、原因</h3><p>可能是在切换界面过程中，屏幕的驱动显示速度较快，但DMA还未完全准备好数据，尤其是当emwin开启了软件旋转效果后，速度大打折扣，就会出现切换界面是屏幕撕裂，使用上述代码后，可以提高绘图速度，并在图像准备好时再显示，以下是emwin官方的注释原文</p><p>Automatically use a Memory Device for drawing. This will avoid flickering and also improve the output speed in most cases, as clipping is simplified. The Window Manager creates a Memory Device for the current window according to the configured color depth and window size. The Memory Device is deleted immediately after the drawing process was finished.  In order to draw images into a remaining Memory Device the IMAGE widget can be used with the creation flag IMAGE_CF_MEMDEV. Details can be found in the section \ref{IMAGE: Image widget}. Note that the Memory Device package is required (and needs to be enabled in the configuration) in order to be able to use this flag. If Memory Devices are not enabled, this flag is ignored.</p>]]></content>
+    
+    
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;emwin界面切换时出现白色闪烁，切换至目标界面后闪烁消失&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="嵌入式开发" scheme="https://wfsuki.github.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="emWin" scheme="https://wfsuki.github.io/tags/emWin/"/>
+    
+    <category term="界面闪烁" scheme="https://wfsuki.github.io/tags/%E7%95%8C%E9%9D%A2%E9%97%AA%E7%83%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo添加鼠标点击特效</title>
+    <link href="https://wfsuki.github.io/2023/05/19/hexo%E6%B7%BB%E5%8A%A0%E9%BC%A0%E6%A0%87%E7%82%B9%E5%87%BB%E7%89%B9%E6%95%88/"/>
+    <id>https://wfsuki.github.io/2023/05/19/hexo%E6%B7%BB%E5%8A%A0%E9%BC%A0%E6%A0%87%E7%82%B9%E5%87%BB%E7%89%B9%E6%95%88/</id>
+    <published>2023-05-19T05:17:49.000Z</published>
+    <updated>2023-05-21T03:48:17.851Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><ul><li>通过添加js来给鼠标增加点击特效</li></ul><span id="more"></span><h3 id="一、添加烟花特效"><a href="#一、添加烟花特效" class="headerlink" title="一、添加烟花特效"></a>一、添加烟花特效</h3><ol><li><p>在\themes\material-x\source\js目录下新建fireworks.js，写入以下代码 </p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;use strict&quot;;function updateCoords(e)&#123;pointerX=(e.clientX||e.touches[0].clientX)-canvasEl.getBoundingClientRect().left,pointerY=e.clientY||e.touches[0].clientY-canvasEl.getBoundingClientRect().top&#125;function setParticuleDirection(e)&#123;var t=anime.random(0,360)*Math.PI/180,a=anime.random(50,180),n=[-1,1][anime.random(0,1)]*a;return&#123;x:e.x+n*Math.cos(t),y:e.y+n*Math.sin(t)&#125;&#125;function createParticule(e,t)&#123;var a=&#123;&#125;;return a.x=e,a.y=t,a.color=colors[anime.random(0,colors.length-1)],a.radius=anime.random(16,32),a.endPos=setParticuleDirection(a),a.draw=function()&#123;ctx.beginPath(),ctx.arc(a.x,a.y,a.radius,0,2*Math.PI,!0),ctx.fillStyle=a.color,ctx.fill()&#125;,a&#125;function createCircle(e,t)&#123;var a=&#123;&#125;;return a.x=e,a.y=t,a.color=&quot;#F00&quot;,a.radius=0.1,a.alpha=0.5,a.lineWidth=6,a.draw=function()&#123;ctx.globalAlpha=a.alpha,ctx.beginPath(),ctx.arc(a.x,a.y,a.radius,0,2*Math.PI,!0),ctx.lineWidth=a.lineWidth,ctx.strokeStyle=a.color,ctx.stroke(),ctx.globalAlpha=1&#125;,a&#125;function renderParticule(e)&#123;for(var t=0;t&lt;e.animatables.length;t++)&#123;e.animatables[t].target.draw()&#125;&#125;function animateParticules(e,t)&#123;for(var a=createCircle(e,t),n=[],i=0;i&lt;numberOfParticules;i++)&#123;n.push(createParticule(e,t))&#125;anime.timeline().add(&#123;targets:n,x:function(e)&#123;return e.endPos.x&#125;,y:function(e)&#123;return e.endPos.y&#125;,radius:0.1,duration:anime.random(1200,1800),easing:&quot;easeOutExpo&quot;,update:renderParticule&#125;).add(&#123;targets:a,radius:anime.random(80,160),lineWidth:0,alpha:&#123;value:0,easing:&quot;linear&quot;,duration:anime.random(600,800)&#125;,duration:anime.random(1200,1800),easing:&quot;easeOutExpo&quot;,update:renderParticule,offset:0&#125;)&#125;function debounce(e,t)&#123;var a;return function()&#123;var n=this,i=arguments;clearTimeout(a),a=setTimeout(function()&#123;e.apply(n,i)&#125;,t)&#125;&#125;var canvasEl=document.querySelector(&quot;.fireworks&quot;);if(canvasEl)&#123;var ctx=canvasEl.getContext(&quot;2d&quot;),numberOfParticules=30,pointerX=0,pointerY=0,tap=&quot;mousedown&quot;,colors=[&quot;#FF1461&quot;,&quot;#18FF92&quot;,&quot;#5A87FF&quot;,&quot;#FBF38C&quot;],setCanvasSize=debounce(function()&#123;canvasEl.width=2*window.innerWidth,canvasEl.height=2*window.innerHeight,canvasEl.style.width=window.innerWidth+&quot;px&quot;,canvasEl.style.height=window.innerHeight+&quot;px&quot;,canvasEl.getContext(&quot;2d&quot;).scale(2,2)&#125;,500),render=anime(&#123;duration:1/0,update:function()&#123;ctx.clearRect(0,0,canvasEl.width,canvasEl.height)&#125;&#125;);document.addEventListener(tap,function(e)&#123;&quot;sidebar&quot;!==e.target.id&amp;&amp;&quot;toggle-sidebar&quot;!==e.target.id&amp;&amp;&quot;A&quot;!==e.target.nodeName&amp;&amp;&quot;IMG&quot;!==e.target.nodeName&amp;&amp;(render.play(),updateCoords(e),animateParticules(pointerX,pointerY))&#125;,!1),setCanvasSize(),window.addEventListener(&quot;resize&quot;,setCanvasSize,!1)&#125;&quot;use strict&quot;;function updateCoords(e)&#123;pointerX=(e.clientX||e.touches[0].clientX)-canvasEl.getBoundingClientRect().left,pointerY=e.clientY||e.touches[0].clientY-canvasEl.getBoundingClientRect().top&#125;function setParticuleDirection(e)&#123;var t=anime.random(0,360)*Math.PI/180,a=anime.random(50,180),n=[-1,1][anime.random(0,1)]*a;return&#123;x:e.x+n*Math.cos(t),y:e.y+n*Math.sin(t)&#125;&#125;function createParticule(e,t)&#123;var a=&#123;&#125;;return a.x=e,a.y=t,a.color=colors[anime.random(0,colors.length-1)],a.radius=anime.random(16,32),a.endPos=setParticuleDirection(a),a.draw=function()&#123;ctx.beginPath(),ctx.arc(a.x,a.y,a.radius,0,2*Math.PI,!0),ctx.fillStyle=a.color,ctx.fill()&#125;,a&#125;function createCircle(e,t)&#123;var a=&#123;&#125;;return a.x=e,a.y=t,a.color=&quot;#F00&quot;,a.radius=0.1,a.alpha=0.5,a.lineWidth=6,a.draw=function()&#123;ctx.globalAlpha=a.alpha,ctx.beginPath(),ctx.arc(a.x,a.y,a.radius,0,2*Math.PI,!0),ctx.lineWidth=a.lineWidth,ctx.strokeStyle=a.color,ctx.stroke(),ctx.globalAlpha=1&#125;,a&#125;function renderParticule(e)&#123;for(var t=0;t&lt;e.animatables.length;t++)&#123;e.animatables[t].target.draw()&#125;&#125;function animateParticules(e,t)&#123;for(var a=createCircle(e,t),n=[],i=0;i&lt;numberOfParticules;i++)&#123;n.push(createParticule(e,t))&#125;anime.timeline().add(&#123;targets:n,x:function(e)&#123;return e.endPos.x&#125;,y:function(e)&#123;return e.endPos.y&#125;,radius:0.1,duration:anime.random(1200,1800),easing:&quot;easeOutExpo&quot;,update:renderParticule&#125;).add(&#123;targets:a,radius:anime.random(80,160),lineWidth:0,alpha:&#123;value:0,easing:&quot;linear&quot;,duration:anime.random(600,800)&#125;,duration:anime.random(1200,1800),easing:&quot;easeOutExpo&quot;,update:renderParticule,offset:0&#125;)&#125;function debounce(e,t)&#123;var a;return function()&#123;var n=this,i=arguments;clearTimeout(a),a=setTimeout(function()&#123;e.apply(n,i)&#125;,t)&#125;&#125;var canvasEl=document.querySelector(&quot;.fireworks&quot;);if(canvasEl)&#123;var ctx=canvasEl.getContext(&quot;2d&quot;),numberOfParticules=30,pointerX=0,pointerY=0,tap=&quot;mousedown&quot;,colors=[&quot;#FF1461&quot;,&quot;#18FF92&quot;,&quot;#5A87FF&quot;,&quot;#FBF38C&quot;],setCanvasSize=debounce(function()&#123;canvasEl.width=2*window.innerWidth,canvasEl.height=2*window.innerHeight,canvasEl.style.width=window.innerWidth+&quot;px&quot;,canvasEl.style.height=window.innerHeight+&quot;px&quot;,canvasEl.getContext(&quot;2d&quot;).scale(2,2)&#125;,500),render=anime(&#123;duration:1/0,update:function()&#123;ctx.clearRect(0,0,canvasEl.width,canvasEl.height)&#125;&#125;);document.addEventListener(tap,function(e)&#123;&quot;sidebar&quot;!==e.target.id&amp;&amp;&quot;toggle-sidebar&quot;!==e.target.id&amp;&amp;&quot;A&quot;!==e.target.nodeName&amp;&amp;&quot;IMG&quot;!==e.target.nodeName&amp;&amp;(render.play(),updateCoords(e),animateParticules(pointerX,pointerY))&#125;,!1),setCanvasSize(),window.addEventListener(&quot;resize&quot;,setCanvasSize,!1)&#125;;</span><br></pre></td></tr></table></figure></li><li><p>在\themes\material-x\layout\layout.ejs文件末尾添加以下代码</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;canvas class=&quot;fireworks&quot; style=&quot;position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;&quot; &gt;&lt;/canvas&gt; </span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;//cdn.bootcss.com/animejs/2.2.0/anime.min.js&quot;&gt;&lt;/script&gt; </span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;/js/fireworks.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></li><li><p>重新开启Hexo</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;通过添加js来给鼠标增加点击特效&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="网站搭建" scheme="https://wfsuki.github.io/categories/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/"/>
+    
+    
+    <category term="Hexo" scheme="https://wfsuki.github.io/tags/Hexo/"/>
+    
+    <category term="建站" scheme="https://wfsuki.github.io/tags/%E5%BB%BA%E7%AB%99/"/>
+    
+    <category term="鼠标特效" scheme="https://wfsuki.github.io/tags/%E9%BC%A0%E6%A0%87%E7%89%B9%E6%95%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>搭建泰拉瑞亚个人服务器</title>
+    <link href="https://wfsuki.github.io/2023/05/19/%E6%90%AD%E5%BB%BA%E6%B3%B0%E6%8B%89%E7%91%9E%E4%BA%9A%E4%B8%AA%E4%BA%BA%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    <id>https://wfsuki.github.io/2023/05/19/%E6%90%AD%E5%BB%BA%E6%B3%B0%E6%8B%89%E7%91%9E%E4%BA%9A%E4%B8%AA%E4%BA%BA%E6%9C%8D%E5%8A%A1%E5%99%A8/</id>
+    <published>2023-05-19T01:00:05.000Z</published>
+    <updated>2023-05-21T03:49:07.869Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><ul><li>云服务器或局域网搭建泰拉瑞亚私服</li></ul><span id="more"></span><ul><li><p>参考Github项目就好啦</p><p><a href="https://github.com/Pryaxis/TShock">Pryaxis&#x2F;TShock: ☕️⚡️TShock provides Terraria servers with server-side characters, anti-cheat, and community management tools. (github.com)</a></p></li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;云服务器或局域网搭建泰拉瑞亚私服&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="游戏" scheme="https://wfsuki.github.io/categories/%E6%B8%B8%E6%88%8F/"/>
+    
+    
+    <category term="泰拉瑞亚" scheme="https://wfsuki.github.io/tags/%E6%B3%B0%E6%8B%89%E7%91%9E%E4%BA%9A/"/>
+    
+    <category term="游戏" scheme="https://wfsuki.github.io/tags/%E6%B8%B8%E6%88%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用PyCharm和QtCreator搭建Pyqt开发环境</title>
+    <link href="https://wfsuki.github.io/2023/05/18/%E4%BD%BF%E7%94%A8PyCharm%E5%92%8CQtCreator%E6%90%AD%E5%BB%BAPyqt%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
+    <id>https://wfsuki.github.io/2023/05/18/%E4%BD%BF%E7%94%A8PyCharm%E5%92%8CQtCreator%E6%90%AD%E5%BB%BAPyqt%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</id>
+    <published>2023-05-18T10:07:52.000Z</published>
+    <updated>2023-05-21T03:49:35.291Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><span id="more"></span>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="PyQt上位机开发" scheme="https://wfsuki.github.io/categories/PyQt%E4%B8%8A%E4%BD%8D%E6%9C%BA%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="环境搭建" scheme="https://wfsuki.github.io/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+    
+    <category term="PyQt" scheme="https://wfsuki.github.io/tags/PyQt/"/>
+    
+    <category term="PyCharm" scheme="https://wfsuki.github.io/tags/PyCharm/"/>
+    
+    <category term="QtCreator" scheme="https://wfsuki.github.io/tags/QtCreator/"/>
+    
+  </entry>
+  
+</feed>
