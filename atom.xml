@@ -6,7 +6,7 @@
   <link href="https://wfsuki.github.io/atom.xml" rel="self"/>
   
   <link href="https://wfsuki.github.io/"/>
-  <updated>2023-05-21T03:59:30.766Z</updated>
+  <updated>2023-05-22T08:26:56.274Z</updated>
   <id>https://wfsuki.github.io/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>友善Nanopi/R2S开发板烧录OpenWRT作软路由实现全局代理</title>
+    <link href="https://wfsuki.github.io/2023/05/22/%E5%8F%8B%E5%96%84Nanopi-R2S%E5%BC%80%E5%8F%91%E6%9D%BF%E7%83%A7%E5%BD%95OpenWRT%E4%BD%9C%E8%BD%AF%E8%B7%AF%E7%94%B1%E5%AE%9E%E7%8E%B0%E5%85%A8%E5%B1%80%E4%BB%A3%E7%90%86/"/>
+    <id>https://wfsuki.github.io/2023/05/22/%E5%8F%8B%E5%96%84Nanopi-R2S%E5%BC%80%E5%8F%91%E6%9D%BF%E7%83%A7%E5%BD%95OpenWRT%E4%BD%9C%E8%BD%AF%E8%B7%AF%E7%94%B1%E5%AE%9E%E7%8E%B0%E5%85%A8%E5%B1%80%E4%BB%A3%E7%90%86/</id>
+    <published>2023-05-22T03:21:56.000Z</published>
+    <updated>2023-05-22T08:26:56.274Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>OpenWRT软路由方案实现全局科学上网😉</p><span id="more"></span><h2 id="一、选择R2S的理由"><a href="#一、选择R2S的理由" class="headerlink" title="一、选择R2S的理由"></a>一、选择R2S的理由</h2><ul><li>优点<ol><li>1G DDR4 RAM，做软路由够用</li><li>主频默认120MHz，切换调度方式可以运行在150MHz（超频没研究测试）</li><li>两个USB3.0，作为软路由刚刚好</li><li>价格合适，我买的时候是160多元，这个配置已经算是合理了</li><li>生态支持尚可，目前已知的兼容固件已经有好几款，我使用的是ImmortalWRT</li></ol></li><li>缺点<ol><li>发热严重，如果不搭配官方金属外壳，温度直奔85℃温度墙，不过加了外壳之后温度一般维持在60℃左右，尚可接受，还有一些便宜的平替塑料外壳，带风扇的夏天也能够压到50℃附近</li><li>其中一个网口是USB转的，所以会限制出口速率，如果你家里需要千兆网，就无法使用该方案，我家的网只有300M</li></ol></li></ul><h2 id="二、烧录固件"><a href="#二、烧录固件" class="headerlink" title="二、烧录固件"></a>二、烧录固件</h2><ol><li><p>准备一张TF卡（尽量4G以上）以及读卡器，推荐Class10的响应较快（实测了Class4和Class10的TF卡，确实对网页打开速度等各方面有一些影响😂），下载安装BalenaEtcher烧录软件</p></li><li><p>下载最新版的ImmortalWRT固件包，r2s.img.gz，要确定是gz结尾的那个，不需要解压，直接使用BalenaEtcher进行烧录</p><p><img src="/2023/05/22/%E5%8F%8B%E5%96%84Nanopi-R2S%E5%BC%80%E5%8F%91%E6%9D%BF%E7%83%A7%E5%BD%95OpenWRT%E4%BD%9C%E8%BD%AF%E8%B7%AF%E7%94%B1%E5%AE%9E%E7%8E%B0%E5%85%A8%E5%B1%80%E4%BB%A3%E7%90%86/20230522120029.png"></p></li><li><p>烧录完成后将TF卡插入R2S中，插入网线及电源，此时红色指示灯会亮起，等待系统启动完成后网络指示灯会闪烁，此时将LAN口连接路由器，用手机等设备测试路由器网络，不出意外是有网络的了</p></li></ol><h2 id="三、设置全局代理"><a href="#三、设置全局代理" class="headerlink" title="三、设置全局代理"></a>三、设置全局代理</h2><p>在R2S确认网络环境正常后，就可以开始配置全局代理了</p><ol><li>浏览器输入192.168.2.1进入ImmortalWRT后台</li></ol><p>未完待续</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;OpenWRT软路由方案实现全局科学上网😉&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="OpenWRT" scheme="https://wfsuki.github.io/categories/OpenWRT/"/>
+    
+    
+    <category term="R2S" scheme="https://wfsuki.github.io/tags/R2S/"/>
+    
+    <category term="Nanopi" scheme="https://wfsuki.github.io/tags/Nanopi/"/>
+    
+    <category term="OpenWRT" scheme="https://wfsuki.github.io/tags/OpenWRT/"/>
+    
+    <category term="软路由" scheme="https://wfsuki.github.io/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Lierda/CAT1模块NT35E使用记录/1</title>
+    <link href="https://wfsuki.github.io/2023/05/22/Lierda-CAT1%E6%A8%A1%E5%9D%97NT35E%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95-1/"/>
+    <id>https://wfsuki.github.io/2023/05/22/Lierda-CAT1%E6%A8%A1%E5%9D%97NT35E%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95-1/</id>
+    <published>2023-05-22T02:26:53.000Z</published>
+    <updated>2023-05-22T03:25:23.568Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>Lierda CAT1模块 NT35E使用初体验</p><span id="more"></span> <h2 id="一、CAT1模块的简单了解"><a href="#一、CAT1模块的简单了解" class="headerlink" title="一、CAT1模块的简单了解"></a>一、CAT1模块的简单了解</h2><blockquote><p>Cat.1的全称是LTE UE-Category 1，其中UE是指User Equipment，是对于LTE网络下用户终端设备的无线性能的一种分类。根据3GPP的定义，将UE-Category划分为1-15共15个等级。</p><p>Cat.1是 4G LTE 网络的一个类别，可以称为“低配版”的 4G 终端，上行峰值速率5Mbit&#x2F;s，下行峰值速率10Mbit&#x2F;s，属于蜂窝物联网，是广域网</p><p>——来自网络搜索</p></blockquote><p>简单来说，CAT1模块可以使用SIM卡来连接互联网，并且还支持基站定位、GPRS定位等，相比传统的WiFi模块方案省去了用户配网操作，也不依赖于路由设备</p><h2 id="二、物联网卡的选择"><a href="#二、物联网卡的选择" class="headerlink" title="二、物联网卡的选择"></a>二、物联网卡的选择</h2><p>CAT1模块需要配合一张物联网卡才可以使用，当然在测试的时候是用过自己的电话卡也是可以的👍</p><p>以中国电信物联网卡为例，目前了解到有3种：</p><p><img src="/2023/05/22/Lierda-CAT1%E6%A8%A1%E5%9D%97NT35E%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95-1/20230522110544.png"></p><p>在产品PCB中通常使用的是贴片卡，方便集成</p><h2 id="三、CAT1模块的使用-MQTT方式"><a href="#三、CAT1模块的使用-MQTT方式" class="headerlink" title="三、CAT1模块的使用-MQTT方式"></a>三、CAT1模块的使用-MQTT方式</h2><p>在NT35E上使用MQTT非常方便，与其他例如ESP系列的WiFi相似，支持AT指令集方式与模块通信。</p><p>CAT1模块与云服务器的对接流程如下图</p><p><img src="/2023/05/22/Lierda-CAT1%E6%A8%A1%E5%9D%97NT35E%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95-1/20230522104628.png"></p><h3 id="3-1-连接MQTT服务器"><a href="#3-1-连接MQTT服务器" class="headerlink" title="3.1 连接MQTT服务器"></a>3.1 连接MQTT服务器</h3><ol><li><p>打开客户端连接</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">AT+LMQTTOPEN=0,&quot;test.mosquitto.org&quot;,1883</span><br><span class="line">OK</span><br><span class="line">+LMQTTOPEN: 0,0</span><br></pre></td></tr></table></figure></li><li><p>创建连接</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">AT+LMQTTCONN=0</span><br><span class="line">OK</span><br><span class="line">+LMQTTCONN: 0,0,0</span><br></pre></td></tr></table></figure></li><li><p>订阅MQTT主题</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">AT+LMQTTSUBUNSUB=0,0,9,&quot;/lierda/test&quot;,2</span><br><span class="line">OK</span><br><span class="line">+LMQTTSUBUNSUB: 0,9,0,1</span><br></pre></td></tr></table></figure></li><li><p>发送MQTT消息</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">AT+LMQTTPUB=0,9,2,0,&quot;/lierda/test&quot;,10,&quot;hello&quot;</span><br><span class="line">OK</span><br></pre></td></tr></table></figure></li><li><p>接收MQTT消息</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">+LMQTTURC: RECV,0,1,&quot;/lierda/test&quot;,11111</span><br><span class="line">+LMQTTPUB: 0,9,0</span><br></pre></td></tr></table></figure><p>收发过程可以使用MQTTX等软件进行配合测试</p><p><img src="/2023/05/22/Lierda-CAT1%E6%A8%A1%E5%9D%97NT35E%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95-1/20230522105527.png"></p><p>MQTTX的下载地址：<a href="https://mqttx.app/zh">MQTTX：跨平台 MQTT 5.0 桌面客户端工具</a></p></li></ol><p>​</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;Lierda CAT1模块 NT35E使用初体验&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="嵌入式开发" scheme="https://wfsuki.github.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="Lierda" scheme="https://wfsuki.github.io/tags/Lierda/"/>
+    
+    <category term="CAT1" scheme="https://wfsuki.github.io/tags/CAT1/"/>
+    
+    <category term="NT35E" scheme="https://wfsuki.github.io/tags/NT35E/"/>
+    
+  </entry>
   
   <entry>
     <title>ESP8266及ESP32/ArduinoIDE环境配置</title>
@@ -146,7 +198,7 @@
     <link href="https://wfsuki.github.io/2023/05/20/GD32F303-103%E7%A7%BB%E6%A4%8DemWin%EF%BC%88RGB%E5%B1%8F%E6%89%93%E7%82%B9%E6%96%B9%E5%BC%8F%EF%BC%89/"/>
     <id>https://wfsuki.github.io/2023/05/20/GD32F303-103%E7%A7%BB%E6%A4%8DemWin%EF%BC%88RGB%E5%B1%8F%E6%89%93%E7%82%B9%E6%96%B9%E5%BC%8F%EF%BC%89/</id>
     <published>2023-05-20T00:31:18.000Z</published>
-    <updated>2023-05-21T04:20:18.703Z</updated>
+    <updated>2023-05-22T02:13:53.185Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>本次基于GD32F303官方开发板上实现emWin移植，由于303没有图形加速器，故采用打点方式进行LCD驱动</p><span id="more"></span><h2 id="一、获取emWin库"><a href="#一、获取emWin库" class="headerlink" title="一、获取emWin库"></a>一、获取emWin库</h2><p>首先要得到一份emWin库，有很多方法可以获取</p><ul><li><p>方法1，使用MDK自带库</p><p>如果是使用Keil进行开发，仍然是最推荐使用MDK的emWin库，本次使用的是6.18版本。点击这个图标，进入Keil自带的Pack Installer中</p><p><img src="/2023/05/20/GD32F303-103%E7%A7%BB%E6%A4%8DemWin%EF%BC%88RGB%E5%B1%8F%E6%89%93%E7%82%B9%E6%96%B9%E5%BC%8F%EF%BC%89/1.png"></p><p>左侧选择GD32F3x0 Series</p><p><img src="/2023/05/20/GD32F303-103%E7%A7%BB%E6%A4%8DemWin%EF%BC%88RGB%E5%B1%8F%E6%89%93%E7%82%B9%E6%96%B9%E5%BC%8F%EF%BC%89/2.png"></p><p>右侧下载MDK-Middleware的7.13.0版本。当然找如果之前使用过ST芯片，也可以从ST芯片的包中找到，同为Cortex-M3架构，都是一样的</p><p><img src="/2023/05/20/GD32F303-103%E7%A7%BB%E6%A4%8DemWin%EF%BC%88RGB%E5%B1%8F%E6%89%93%E7%82%B9%E6%96%B9%E5%BC%8F%EF%BC%89/3.png"></p><p>如果你的Keil是默认安装的，没有修改过MDK-Middleware的下载路径，那么不出意外你会在C盘这个路径找到emWin库</p><p><img src="/2023/05/20/GD32F303-103%E7%A7%BB%E6%A4%8DemWin%EF%BC%88RGB%E5%B1%8F%E6%89%93%E7%82%B9%E6%96%B9%E5%BC%8F%EF%BC%89/4.png"></p></li><li><p>方法2，从emWin官网下载</p><p><a href="https://www.segger.com/products/user-interface/emwin/">emWin (segger.com)</a></p><p>emWin官网不知道从什么时候开始下载库需要注册登录账号，比较麻烦，但是下载一次之后可以保存起来，日后可以用，毕竟emWin几乎不更新。下载的时候选择STM32F103类似的同为M3架构的就可以</p></li><li><p>方法3，从NXP官方下载</p><p><a href="https://www.nxp.com/design/software/embedded-software/nxp-emwin-libraries:EMWIN-GRAPHICS-LIBRARY">NXP emWin Libraries | NXP Semiconductors</a></p><p>NXP的更新优化还是比较频繁的，其实是基于emWin的一个版本修改优化的，同样的只需要注意下载同为M3架构的包就可以</p></li><li><p>其他方法</p><p>还可以从一些例程，例如正点原子、野火等例程里找到</p></li></ul><h2 id="二、搭建工程"><a href="#二、搭建工程" class="headerlink" title="二、搭建工程"></a>二、搭建工程</h2><p>从GD32官方例程中找LCD驱动例程，将emWin包含进去，并确认可以实现画线、画框等LCD驱动操作，如果是自己画的PCB板子，这里还需要将自己所用的LCD驱动替换进去并确认可用。LCD驱动移植这里不做介绍，本次只记录emWin移植过程。注意如果你将lib文件添加到了Keil目录中，要注意右键lib文件，选择类型为library，否则可能会报错找不到内部emWin函数定义</p><p><img src="/2023/05/20/GD32F303-103%E7%A7%BB%E6%A4%8DemWin%EF%BC%88RGB%E5%B1%8F%E6%89%93%E7%82%B9%E6%96%B9%E5%BC%8F%EF%BC%89/5.png"></p><h2 id="三、修改emWin代码"><a href="#三、修改emWin代码" class="headerlink" title="三、修改emWin代码"></a>三、修改emWin代码</h2><ol><li><p>在GUIConf.c中修改缓存的大小，根据自己的项目大小决定，一般的测试UI，默认的也够用，如果发现之后运行起来卡在GUI_Init()函数，可以尝试扩大此处的大小</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> GUI_NUMBYTES  0x200000</span></span><br></pre></td></tr></table></figure><p>该宏定义决定了emWin初始化时生成的数组大小</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">GUI_X_Config</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">  <span class="comment">//</span></span><br><span class="line">  <span class="comment">// 32 bit aligned memory area</span></span><br><span class="line">  <span class="comment">//</span></span><br><span class="line">  <span class="type">static</span> U32 aMemory[GUI_NUMBYTES / <span class="number">4</span>];</span><br><span class="line">  <span class="comment">//</span></span><br><span class="line">  <span class="comment">// Assign memory to emWin</span></span><br><span class="line">  <span class="comment">//</span></span><br><span class="line">  GUI_ALLOC_AssignMemory(aMemory, GUI_NUMBYTES);</span><br><span class="line">  <span class="comment">//</span></span><br><span class="line">  <span class="comment">// Set default font</span></span><br><span class="line">  <span class="comment">//</span></span><br><span class="line">  GUI_SetDefaultFont(GUI_FONT_6X8);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>如果使用外部SDRAM，则需要将宏改为SDRAM起始地址</p></li><li><p>在GUIDRV_Template.c中添加LCD驱动的画点接口</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">void</span> _SetPixelIndex(GUI_DEVICE * pDevice, <span class="type">int</span> x, <span class="type">int</span> y, LCD_PIXELINDEX PixelIndex) &#123;</span><br><span class="line">  <span class="meta">#<span class="keyword">ifdef</span> WIN32</span></span><br><span class="line">    LCDSIM_SetPixelIndex(x, y, PixelIndex, pDevice-&gt;LayerIndex);</span><br><span class="line">  <span class="meta">#<span class="keyword">else</span></span></span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">    <span class="comment">// Convert logical into physical coordinates (Dep. on LCDConf.h)</span></span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">    <span class="meta">#<span class="keyword">if</span> (LCD_MIRROR_X == 1) || (LCD_MIRROR_Y == 1) || (LCD_SWAP_XY == 1)</span></span><br><span class="line">      <span class="type">int</span> xPhys, yPhys;</span><br><span class="line"></span><br><span class="line">      xPhys = LOG2PHYS_X(x, y);</span><br><span class="line">      yPhys = LOG2PHYS_Y(x, y);</span><br><span class="line">    <span class="meta">#<span class="keyword">else</span></span></span><br><span class="line">      <span class="meta">#<span class="keyword">define</span> xPhys x</span></span><br><span class="line">      <span class="meta">#<span class="keyword">define</span> yPhys y</span></span><br><span class="line">    <span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line">    GUI_USE_PARA(pDevice);</span><br><span class="line">    GUI_USE_PARA(x);</span><br><span class="line">    GUI_USE_PARA(y);</span><br><span class="line">    GUI_USE_PARA(PixelIndex);</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="comment">//</span></span><br><span class="line">      <span class="comment">// Write into hardware ... Adapt to your system</span></span><br><span class="line">      lcd_point_set(xPhys, yPhys, PixelIndex);</span><br><span class="line">      <span class="comment">// TBD by customer...</span></span><br><span class="line">      <span class="comment">//</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">#<span class="keyword">if</span> (LCD_MIRROR_X == 0) &amp;&amp; (LCD_MIRROR_Y == 0) &amp;&amp; (LCD_SWAP_XY == 0)</span></span><br><span class="line">      <span class="meta">#<span class="keyword">undef</span> xPhys</span></span><br><span class="line">      <span class="meta">#<span class="keyword">undef</span> yPhys</span></span><br><span class="line">    <span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line">  <span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">static</span> LCD_PIXELINDEX _GetPixelIndex(GUI_DEVICE * pDevice, <span class="type">int</span> x, <span class="type">int</span> y)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> lcd_point_get(x, y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>在LCDConf.c中修改屏幕分辨率，使其适配</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> XSIZE_PHYS 240</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> YSIZE_PHYS 320</span></span><br></pre></td></tr></table></figure></li><li><p>在SysTickHandler添加以下代码，为emWin提供心跳，如果使用uCOS等操作系统，需要在OS_CPU_SysTickHandler等函数中添加</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="keyword">volatile</span> <span class="type">unsigned</span> <span class="type">int</span> OS_TimeMS;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span>  <span class="title function_">OS_CPU_SysTickHandler</span> <span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    CPU_SR_ALLOC();</span><br><span class="line">    CPU_CRITICAL_ENTER();</span><br><span class="line">    OSIntNestingCtr++;                                      <span class="comment">/* Tell uC/OS-III that we are starting an ISR             */</span></span><br><span class="line">    CPU_CRITICAL_EXIT();</span><br><span class="line"></span><br><span class="line">    OSTimeTick();                                           <span class="comment">/* Call uC/OS-III&#x27;s OSTimeTick()                          */</span></span><br><span class="line">    OS_TimeMS++;</span><br><span class="line">    OSIntExit();                                            <span class="comment">/* Tell uC/OS-III that we are leaving the ISR             */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>在主函数中依次确认添加了GPIO初始化、LCD驱动初始化、emWin的初始化函数GUI_Init，并尝试显示UI画面</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">LCD_Init();</span><br><span class="line">GUI_Init();</span><br><span class="line">WM_HWIN hWin = CreateWindow();</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">&#123;</span><br><span class="line">    GUI_Delay(<span class="number">10</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ol><p>至此不出意外应该就可以使用emWin了，但由于是使用的原始打点方法，绘图可能会比较慢，每次切换界面都会有慢慢刷屏的感觉，做做测试和小制作是够了，但是如果做产品，需要尽量使用SDRAM来提速</p>]]></content>
     
@@ -485,61 +537,6 @@
     <category term="建站" scheme="https://wfsuki.github.io/tags/%E5%BB%BA%E7%AB%99/"/>
     
     <category term="鼠标特效" scheme="https://wfsuki.github.io/tags/%E9%BC%A0%E6%A0%87%E7%89%B9%E6%95%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>搭建泰拉瑞亚个人服务器</title>
-    <link href="https://wfsuki.github.io/2023/05/19/%E6%90%AD%E5%BB%BA%E6%B3%B0%E6%8B%89%E7%91%9E%E4%BA%9A%E4%B8%AA%E4%BA%BA%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    <id>https://wfsuki.github.io/2023/05/19/%E6%90%AD%E5%BB%BA%E6%B3%B0%E6%8B%89%E7%91%9E%E4%BA%9A%E4%B8%AA%E4%BA%BA%E6%9C%8D%E5%8A%A1%E5%99%A8/</id>
-    <published>2023-05-19T01:00:05.000Z</published>
-    <updated>2023-05-21T04:28:43.369Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><ul><li>云服务器或局域网搭建泰拉瑞亚私服</li></ul><span id="more"></span><ul><li><p>参考Github项目就好啦</p><p><a href="https://github.com/Pryaxis/TShock">Pryaxis&#x2F;TShock: ☕️⚡️TShock provides Terraria servers with server-side characters, anti-cheat, and community management tools. (github.com)</a></p></li></ul>]]></content>
-    
-    
-    <summary type="html">&lt;ul&gt;
-&lt;li&gt;云服务器或局域网搭建泰拉瑞亚私服&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="游戏" scheme="https://wfsuki.github.io/categories/%E6%B8%B8%E6%88%8F/"/>
-    
-    
-    <category term="泰拉瑞亚" scheme="https://wfsuki.github.io/tags/%E6%B3%B0%E6%8B%89%E7%91%9E%E4%BA%9A/"/>
-    
-    <category term="游戏" scheme="https://wfsuki.github.io/tags/%E6%B8%B8%E6%88%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用PyCharm和QtCreator搭建Pyqt开发环境</title>
-    <link href="https://wfsuki.github.io/2023/05/18/%E4%BD%BF%E7%94%A8PyCharm%E5%92%8CQtCreator%E6%90%AD%E5%BB%BAPyqt%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
-    <id>https://wfsuki.github.io/2023/05/18/%E4%BD%BF%E7%94%A8PyCharm%E5%92%8CQtCreator%E6%90%AD%E5%BB%BAPyqt%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</id>
-    <published>2023-05-18T10:07:52.000Z</published>
-    <updated>2023-05-21T04:24:58.195Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><span id="more"></span>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot; cla</summary>
-      
-    
-    
-    
-    <category term="PyQt上位机开发" scheme="https://wfsuki.github.io/categories/PyQt%E4%B8%8A%E4%BD%8D%E6%9C%BA%E5%BC%80%E5%8F%91/"/>
-    
-    
-    <category term="环境搭建" scheme="https://wfsuki.github.io/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
-    
-    <category term="PyQt" scheme="https://wfsuki.github.io/tags/PyQt/"/>
-    
-    <category term="PyCharm" scheme="https://wfsuki.github.io/tags/PyCharm/"/>
-    
-    <category term="QtCreator" scheme="https://wfsuki.github.io/tags/QtCreator/"/>
     
   </entry>
   
