@@ -85,9 +85,9 @@
     <category term="Arduino" scheme="https://wfsuki.github.io/categories/Arduino/"/>
     
     
-    <category term="ESP8266" scheme="https://wfsuki.github.io/tags/ESP8266/"/>
-    
     <category term="Arduino" scheme="https://wfsuki.github.io/tags/Arduino/"/>
+    
+    <category term="ESP8266" scheme="https://wfsuki.github.io/tags/ESP8266/"/>
     
     <category term="ESP32" scheme="https://wfsuki.github.io/tags/ESP32/"/>
     
@@ -112,9 +112,9 @@
     <category term="ESP32/ESP8266" scheme="https://wfsuki.github.io/categories/ESP32-ESP8266/"/>
     
     
-    <category term="ESP8266" scheme="https://wfsuki.github.io/tags/ESP8266/"/>
-    
     <category term="Arduino" scheme="https://wfsuki.github.io/tags/Arduino/"/>
+    
+    <category term="ESP8266" scheme="https://wfsuki.github.io/tags/ESP8266/"/>
     
     <category term="OTA" scheme="https://wfsuki.github.io/tags/OTA/"/>
     
