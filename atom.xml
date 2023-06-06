@@ -6,7 +6,7 @@
   <link href="https://wfsuki.github.io/atom.xml" rel="self"/>
   
   <link href="https://wfsuki.github.io/"/>
-  <updated>2023-06-06T09:57:02.753Z</updated>
+  <updated>2023-06-06T09:58:36.262Z</updated>
   <id>https://wfsuki.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://wfsuki.github.io/2023/06/06/%E6%96%B0%E8%AE%AF%E9%9A%8F%E8%BA%ABwifi%E5%88%87%E5%8D%A1%E5%8E%BB%E8%BF%9C%E6%8E%A7/"/>
     <id>https://wfsuki.github.io/2023/06/06/%E6%96%B0%E8%AE%AF%E9%9A%8F%E8%BA%ABwifi%E5%88%87%E5%8D%A1%E5%8E%BB%E8%BF%9C%E6%8E%A7/</id>
     <published>2023-06-06T09:42:42.000Z</published>
-    <updated>2023-06-06T09:57:02.753Z</updated>
+    <updated>2023-06-06T09:58:36.262Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>淘工厂买的新讯随身wifi，切卡+去远控，变身随身小路由</p><span id="more"></span><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>随身wifi的折腾很早就开始火了，网上教程也非常多，有一些是可以刷centos做小服务器使的，新讯这款无法刷机，但因为PCB上自带一个SIM卡槽，所以可以切换成自己的流量卡当随身wifi用，不用被商家的资费套餐限制住</p><h2 id="过程记录"><a href="#过程记录" class="headerlink" title="过程记录"></a>过程记录</h2><ol><li><p>开启adb</p><p>打开随身wifi助手，输入02回车（开启adb），再输入01回车（选择中芯微开ADB），浏览器显示successful就表示成功。然后重新插拔设备，重新打开随身wifi助手，就可以看到左上角显示ADB已连接</p></li><li><p>去远控、切卡</p><p>输入F回车去远控，再输入2选择传统去远控</p></li><li><p>改串号</p><ul><li><p>先安装AT驱动，使用以下指令修改串号</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">AT+DMOODE=1</span><br><span class="line">AT+MODIMEI=(12位串号)</span><br></pre></td></tr></table></figure></li><li><p>重启设备，进管理页面查看是否修改成功</p></li></ul></li><li><p>切卡</p><p>进入管理页面192.168.100.1，在高级设置——其他设置中选择SIM卡，管理员密码为IMEI号+999，点击保存即可</p></li><li><p>最后测试WIFI是否可用即可</p></li></ol>]]></content>
     
