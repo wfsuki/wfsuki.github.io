@@ -2,6 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://wfsuki.github.io/2023/06/06/%E6%96%B0%E8%AE%AF%E9%9A%8F%E8%BA%ABwifi%E5%88%87%E5%8D%A1%E5%8E%BB%E8%BF%9C%E6%8E%A7/</loc>
+    
+    <lastmod>2023-06-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfsuki.github.io/2023/06/03/PyQt%E4%BD%BF%E7%94%A8Qt-Material%E4%B8%BB%E9%A2%98/</loc>
+    
+    <lastmod>2023-06-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfsuki.github.io/2023/06/03/pyqt%E4%BD%BF%E7%94%A8pyinstaller%E6%89%93%E5%8C%85/</loc>
+    
+    <lastmod>2023-06-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfsuki.github.io/2023/05/24/%E9%80%9A%E8%BF%87%E9%AA%8C%E8%AF%81%E7%A0%81%E5%B9%B3%E5%8F%B0%E6%B3%A8%E5%86%8C%E5%AE%98%E6%96%B9ChatGPT%E8%B4%A6%E5%8F%B7/</loc>
+    
+    <lastmod>2023-05-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://wfsuki.github.io/2023/05/19/Qt%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8D%87%E7%BA%A7%E5%8A%9F%E8%83%BD/</loc>
     
     <lastmod>2023-05-23</lastmod>
@@ -283,7 +319,7 @@
 
   <url>
     <loc>https://wfsuki.github.io/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -291,399 +327,427 @@
   
   <url>
     <loc>https://wfsuki.github.io/tags/CentOS8/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/Blynk/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/%E7%89%A9%E8%81%94%E7%BD%91/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/Arduino/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/ESP8266/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/OTA/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/CentOS/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/Linux/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/TCP/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/Python/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/Flask/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/ESP32/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/GD32/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/emWin/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/RGB/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/%E6%89%93%E7%82%B9/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/%E7%A7%BB%E6%A4%8D/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/Keil/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/BootLoader/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/Flash/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/Bin%E6%96%87%E4%BB%B6/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/Lierda/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/CAT1/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/NT35E/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/PyQt/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/%E6%A0%87%E7%AD%BE%E6%89%93%E5%8D%B0/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/OCR/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/pytesseract/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/Qt/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/Excel/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/MySQL/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/%E9%9F%B3%E6%95%88/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/%E7%95%8C%E9%9D%A2%E9%97%AA%E7%83%81/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/Hexo/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/%E5%BB%BA%E7%AB%99/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/%E9%BC%A0%E6%A0%87%E7%89%B9%E6%95%88/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/PyCharm/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/QtCreator/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/R2S/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/Nanopi/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/OpenWRT/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/%E6%B3%B0%E6%8B%89%E7%91%9E%E4%BA%9A/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/%E6%B8%B8%E6%88%8F/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/hexo/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/github/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/serverles/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/%E6%B5%8B%E8%AF%95/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/WiFi%E6%A8%A1%E5%9D%97/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/STM32/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/HLW8032/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/tags/%E7%94%B5%E8%83%BD%E6%B6%88%E8%80%97/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfsuki.github.io/tags/ChatGPT/</loc>
+    <lastmod>2023-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfsuki.github.io/tags/Qt-Material/</loc>
+    <lastmod>2023-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfsuki.github.io/tags/Pyinstaller/</loc>
+    <lastmod>2023-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfsuki.github.io/tags/%E9%9A%8F%E8%BA%ABwifi/</loc>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -692,84 +756,98 @@
   
   <url>
     <loc>https://wfsuki.github.io/categories/%E7%89%A9%E8%81%94%E7%BD%91/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/categories/Linux/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/categories/Arduino/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/categories/Python/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/categories/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/categories/OpenWRT/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/categories/%E6%B8%B8%E6%88%8F/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/categories/STM32/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/categories/GD32/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/categories/PyQt/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://wfsuki.github.io/categories/Qt/</loc>
-    <lastmod>2023-05-23</lastmod>
+    <lastmod>2023-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfsuki.github.io/categories/AI/</loc>
+    <lastmod>2023-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfsuki.github.io/categories/%E5%85%B6%E4%BB%96/</loc>
+    <lastmod>2023-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
