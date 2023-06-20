@@ -6,7 +6,7 @@
   <link href="https://wfsuki.github.io/atom.xml" rel="self"/>
   
   <link href="https://wfsuki.github.io/"/>
-  <updated>2023-06-06T09:58:36.262Z</updated>
+  <updated>2023-06-20T03:59:05.203Z</updated>
   <id>https://wfsuki.github.io/</id>
   
   <author>
@@ -15,6 +15,67 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>笔记本Ubuntu22.04关闭合盖休眠</title>
+    <link href="https://wfsuki.github.io/2023/06/20/%E7%AC%94%E8%AE%B0%E6%9C%ACUbuntu22-04%E5%85%B3%E9%97%AD%E5%90%88%E7%9B%96%E4%BC%91%E7%9C%A0/"/>
+    <id>https://wfsuki.github.io/2023/06/20/%E7%AC%94%E8%AE%B0%E6%9C%ACUbuntu22-04%E5%85%B3%E9%97%AD%E5%90%88%E7%9B%96%E4%BC%91%E7%9C%A0/</id>
+    <published>2023-06-20T03:34:30.000Z</published>
+    <updated>2023-06-20T03:59:05.203Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>在笔记本上装完Ubuntu后，设置合盖后继续运行系统而不会退出到登录页面，不影响远程ssh</p><span id="more"></span><h3 id="编辑设置文件"><a href="#编辑设置文件" class="headerlink" title="编辑设置文件"></a>编辑设置文件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/systemd/logind.conf</span><br></pre></td></tr></table></figure><p>找到如下行</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#HandleLidSwitch=suspend</span><br></pre></td></tr></table></figure><p>改成这样</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HandleLidSwitch=ignore</span><br></pre></td></tr></table></figure><p>最后重启电脑即可</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;在笔记本上装完Ubuntu后，设置合盖后继续运行系统而不会退出到登录页面，不影响远程ssh&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Ubuntu" scheme="https://wfsuki.github.io/categories/Ubuntu/"/>
+    
+    
+    <category term="Ubuntu" scheme="https://wfsuki.github.io/tags/Ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>笔记本重装Ubuntu22.04</title>
+    <link href="https://wfsuki.github.io/2023/06/20/%E7%AC%94%E8%AE%B0%E6%9C%AC%E9%87%8D%E8%A3%85Ubuntu22-04/"/>
+    <id>https://wfsuki.github.io/2023/06/20/%E7%AC%94%E8%AE%B0%E6%9C%AC%E9%87%8D%E8%A3%85Ubuntu22-04/</id>
+    <published>2023-06-20T03:31:35.000Z</published>
+    <updated>2023-06-20T04:08:57.722Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>给闲置的旧笔记本安装一个Ubuntu，当做个人服务器，进行一波废物利用😉</p><span id="more"></span><h3 id="制作启动U盘"><a href="#制作启动U盘" class="headerlink" title="制作启动U盘"></a>制作启动U盘</h3><ol><li><p>先看Ubuntu官方教程，总结就是使用Rufus制作一个启动盘，当然也可以用别的气动工具</p><p><a href="https://ubuntu.com/tutorials/create-a-usb-stick-on-windows#1-overview">Create a bootable USB stick with Rufus on Windows | Ubuntu</a></p></li><li><p>下载镜像在这里</p><p><a href="https://ubuntu.com/download/desktop">Download Ubuntu Desktop | Download | Ubuntu</a></p></li></ol><h3 id="进入系统BIOS界面"><a href="#进入系统BIOS界面" class="headerlink" title="进入系统BIOS界面"></a>进入系统BIOS界面</h3><p>接下来就是重启电脑，一直按Delete或者F9之类的，和一般安装windows一样，从U盘启动并安装系统即可</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;给闲置的旧笔记本安装一个Ubuntu，当做个人服务器，进行一波废物利用😉&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="Ubuntu" scheme="https://wfsuki.github.io/tags/Ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu22.04开启ssh</title>
+    <link href="https://wfsuki.github.io/2023/06/20/Ubuntu%E5%BC%80%E5%90%AFssh/"/>
+    <id>https://wfsuki.github.io/2023/06/20/Ubuntu%E5%BC%80%E5%90%AFssh/</id>
+    <published>2023-06-20T03:30:51.000Z</published>
+    <updated>2023-06-20T03:55:41.188Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>Ubuntu22.04开启远程ssh功能</p><span id="more"></span><h3 id="安装ssh服务"><a href="#安装ssh服务" class="headerlink" title="安装ssh服务"></a>安装ssh服务</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install openssh-server</span><br></pre></td></tr></table></figure><h3 id="检查ssh服务是否自启动"><a href="#检查ssh服务是否自启动" class="headerlink" title="检查ssh服务是否自启动"></a>检查ssh服务是否自启动</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl status ssh</span><br></pre></td></tr></table></figure><p>按q返回命令行</p><h3 id="开启防火墙通行"><a href="#开启防火墙通行" class="headerlink" title="开启防火墙通行"></a>开启防火墙通行</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw allow ssh</span><br></pre></td></tr></table></figure><h3 id="在另一台电脑尝试连接"><a href="#在另一台电脑尝试连接" class="headerlink" title="在另一台电脑尝试连接"></a>在另一台电脑尝试连接</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh root@192.168.1.77</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;Ubuntu22.04开启远程ssh功能&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Ubuntu" scheme="https://wfsuki.github.io/categories/Ubuntu/"/>
+    
+    
+    <category term="Ubuntu" scheme="https://wfsuki.github.io/tags/Ubuntu/"/>
+    
+  </entry>
   
   <entry>
     <title>新讯随身wifi切卡去远控</title>
@@ -42,7 +103,7 @@
     <link href="https://wfsuki.github.io/2023/06/03/PyQt%E4%BD%BF%E7%94%A8Qt-Material%E4%B8%BB%E9%A2%98/"/>
     <id>https://wfsuki.github.io/2023/06/03/PyQt%E4%BD%BF%E7%94%A8Qt-Material%E4%B8%BB%E9%A2%98/</id>
     <published>2023-06-03T03:25:19.000Z</published>
-    <updated>2023-06-03T03:31:39.917Z</updated>
+    <updated>2023-06-20T04:10:13.245Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>使用第三方主题美化PyQt</p><span id="more"></span><h2 id="Qt-Material介绍"><a href="#Qt-Material介绍" class="headerlink" title="Qt-Material介绍"></a>Qt-Material介绍</h2><p><a href="https://qt-material.readthedocs.io/en/latest/index.html#qt-material">Qt-Material — Qt Material documentation</a></p><p><img src="/2023/06/03/PyQt%E4%BD%BF%E7%94%A8Qt-Material%E4%B8%BB%E9%A2%98/dark.gif"></p><p><img src="/2023/06/03/PyQt%E4%BD%BF%E7%94%A8Qt-Material%E4%B8%BB%E9%A2%98/light.gif"></p><h2 id="简单的使用"><a href="#简单的使用" class="headerlink" title="简单的使用"></a>简单的使用</h2><ol><li><p>安装主题包</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install qt_material</span><br></pre></td></tr></table></figure></li><li><p>添加必要的代码</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">from qt_material import list_themes</span><br><span class="line">from qt_material import apply_stylesheet</span><br><span class="line"></span><br><span class="line">print(list_themes())</span><br><span class="line"></span><br><span class="line">if __name__ == &quot;__main__&quot;:</span><br><span class="line">    app = QtWidgets.QApplication([])</span><br><span class="line"></span><br><span class="line">    # setup stylesheet</span><br><span class="line">    apply_stylesheet(app, theme=&#x27;light_blue.xml&#x27;)</span><br><span class="line"></span><br><span class="line">    mainWindow = MainWindow()</span><br><span class="line">    mainWindow.show()</span><br><span class="line"></span><br><span class="line">    app.exec()</span><br></pre></td></tr></table></figure></li></ol>]]></content>
     
@@ -441,83 +502,6 @@
     <category term="TCP" scheme="https://wfsuki.github.io/tags/TCP/"/>
     
     <category term="多线程" scheme="https://wfsuki.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python对其他软件进行OCR数字识别</title>
-    <link href="https://wfsuki.github.io/2023/05/19/Python%E5%AF%B9%E5%85%B6%E4%BB%96%E8%BD%AF%E4%BB%B6%E8%BF%9B%E8%A1%8COCR%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB/"/>
-    <id>https://wfsuki.github.io/2023/05/19/Python%E5%AF%B9%E5%85%B6%E4%BB%96%E8%BD%AF%E4%BB%B6%E8%BF%9B%E8%A1%8COCR%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB/</id>
-    <published>2023-05-19T09:52:30.000Z</published>
-    <updated>2023-05-22T09:25:13.263Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>公司里用到了一台设备，能够测量高精度的传感器数据，但是功能有限，有些事情需要人力去反复操作，所以想到了通过Python的pytesseract库对图片进行识别，转换成数字，然后再进行一些设备控制等操作，本次记录Python识别数字的过程</p><span id="more"></span><h2 id="安装Tesseract-OCR"><a href="#安装Tesseract-OCR" class="headerlink" title="安装Tesseract-OCR"></a>安装Tesseract-OCR</h2><p><a href="https://github.com/tesseract-ocr/tesseract.git">https://github.com/tesseract-ocr/tesseract.git</a></p><h2 id="编写测试代码"><a href="#编写测试代码" class="headerlink" title="编写测试代码"></a>编写测试代码</h2><p>简单写一个测试识别数字</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pytesseract</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="built_in">print</span>(pytesseract.image_to_string(Image.<span class="built_in">open</span>(<span class="string">&#x27;test.png&#x27;</span>), lang=<span class="string">&#x27;chi_sim+eng&#x27;</span>))</span><br><span class="line">        time.sleep(<span class="number">1</span>)</span><br></pre></td></tr></table></figure><p>截一张图，命名为test.png，丢到项目路径下，截图如下</p><p><img src="/2023/05/19/Python%E5%AF%B9%E5%85%B6%E4%BB%96%E8%BD%AF%E4%BB%B6%E8%BF%9B%E8%A1%8COCR%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB/1.png"></p><p>运行代码，查看output</p><p><img src="/2023/05/19/Python%E5%AF%B9%E5%85%B6%E4%BB%96%E8%BD%AF%E4%BB%B6%E8%BF%9B%E8%A1%8COCR%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB/2.png"></p><p>看起来不错，下一步就是通过不断截图+图片识别的形式来获取数据，这样我们就可以通过Python来识别其他软件上的一些数据，做更加复杂的项目测试了</p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;公司里用到了一台设备，能够测量高精度的传感器数据，但是功能有限，有些事情需要人力去反复操作，所以想到了通过Python的pytesseract库对图片进行识别，转换成数字，然后再进行一些设备控制等操作，本次记录Python识别数字的过程&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Python" scheme="https://wfsuki.github.io/categories/Python/"/>
-    
-    
-    <category term="Python" scheme="https://wfsuki.github.io/tags/Python/"/>
-    
-    <category term="OCR" scheme="https://wfsuki.github.io/tags/OCR/"/>
-    
-    <category term="pytesseract" scheme="https://wfsuki.github.io/tags/pytesseract/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Qt实现Excel读写</title>
-    <link href="https://wfsuki.github.io/2023/05/19/Qt%E5%AE%9E%E7%8E%B0Excel%E8%AF%BB%E5%86%99/"/>
-    <id>https://wfsuki.github.io/2023/05/19/Qt%E5%AE%9E%E7%8E%B0Excel%E8%AF%BB%E5%86%99/</id>
-    <published>2023-05-19T09:51:29.000Z</published>
-    <updated>2023-05-23T09:00:35.253Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><span id="more"></span>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot; cla</summary>
-      
-    
-    
-    
-    <category term="Qt" scheme="https://wfsuki.github.io/categories/Qt/"/>
-    
-    
-    <category term="Qt" scheme="https://wfsuki.github.io/tags/Qt/"/>
-    
-    <category term="Excel" scheme="https://wfsuki.github.io/tags/Excel/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Qt实现自动升级功能</title>
-    <link href="https://wfsuki.github.io/2023/05/19/Qt%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8D%87%E7%BA%A7%E5%8A%9F%E8%83%BD/"/>
-    <id>https://wfsuki.github.io/2023/05/19/Qt%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8D%87%E7%BA%A7%E5%8A%9F%E8%83%BD/</id>
-    <published>2023-05-19T09:50:38.000Z</published>
-    <updated>2023-05-23T09:00:52.944Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><span id="more"></span>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot; cla</summary>
-      
-    
-    
-    
-    <category term="Qt" scheme="https://wfsuki.github.io/categories/Qt/"/>
-    
-    
-    <category term="OTA" scheme="https://wfsuki.github.io/tags/OTA/"/>
-    
-    <category term="Qt" scheme="https://wfsuki.github.io/tags/Qt/"/>
     
   </entry>
   
