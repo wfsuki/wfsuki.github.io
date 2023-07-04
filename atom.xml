@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>一个树洞</title>
   
-  <subtitle>一个嵌入式工程师的Blog 😊🌹</subtitle>
+  <subtitle>一个嵌入式工程师的日常记录与分享 😊🌹</subtitle>
   <link href="https://wfsuki.github.io/atom.xml" rel="self"/>
   
   <link href="https://wfsuki.github.io/"/>
-  <updated>2023-06-20T03:59:05.203Z</updated>
+  <updated>2023-06-27T01:34:28.521Z</updated>
   <id>https://wfsuki.github.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>努比亚z11刷MIUI10</title>
+    <link href="https://wfsuki.github.io/2023/06/27/%E5%8A%AA%E6%AF%94%E4%BA%9Az11%E5%88%B7MIUI10/"/>
+    <id>https://wfsuki.github.io/2023/06/27/%E5%8A%AA%E6%AF%94%E4%BA%9Az11%E5%88%B7MIUI10/</id>
+    <published>2023-06-27T00:54:45.000Z</published>
+    <updated>2023-06-27T01:34:28.521Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>翻旧物时找到了大学时买的努比亚z11，充上电能开机，但是尝试了恢复出厂设置等一顿操作后，光运行系统就卡的离谱，更不用提app使用和玩游戏了。当年也是因为网上很多人出现的电量到了50%左右就黑屏（其实是电池容量不够了）以及系统卡顿，出去经常支付宝打开要等30秒~1分钟才换的新手机。时隔五六年后尝试刷了一波鸡，没想到运行十分流畅（MIUI牛皮）</p><span id="more"></span><h2 id="刷入TWRP-recovery"><a href="#刷入TWRP-recovery" class="headerlink" title="刷入TWRP-recovery"></a>刷入TWRP-recovery</h2><p>刷机这项技术在以前还是非常火的，主要是因为国内厂商对安卓的优化程度不高，不同的厂家对CPU、内核的调教也千差万别。</p><p>刷机有很多方式，线刷、卡刷等，这次使用卡刷，最关键的一步就是刷入第三方recovery</p><ol><li><p>下载支持努比亚z11的TWRP-recovery</p></li><li><p>连接USB线至电脑，连续点击版本号，打开开发者模式，打开USB调试</p></li><li><p>运行脚本文件recovery-twrp一键刷入工具.bat</p></li><li><p>选择1（如果后续刷错了ROM，已经无法进入系统，可以尝试长按音量下键+锁屏键进入fastboot，然后选3）</p><p><img src="/2023/06/27/%E5%8A%AA%E6%AF%94%E4%BA%9Az11%E5%88%B7MIUI10/20230627090654.png"></p></li></ol><p>正常情况下，就会进入TWRP-recovery了</p><h2 id="刷入ROM"><a href="#刷入ROM" class="headerlink" title="刷入ROM"></a>刷入ROM</h2><ol><li><p>点击清除，滑动确认进行双清</p></li><li><p>返回后点击安装，选择手机目录或者SD卡目录下的ROM文件，刷入ROM（ROM可以直接在电脑上放到手机的文件系统中）</p></li><li><p>不出意外即可正常进入MIUI</p><p>我刷的ROM是XY的MIUI10，进入系统简单设置后非常流畅，完全碾压努比亚官方系统，当年的旗舰CPU骁龙820在不同官方UI下差距还是相当大的🤣🤣</p><img src="/2023/06/27/%E5%8A%AA%E6%AF%94%E4%BA%9Az11%E5%88%B7MIUI10/20230627091908.jpg" style="zoom: 33%;"></li></ol><h2 id="后续折腾"><a href="#后续折腾" class="headerlink" title="后续折腾"></a>后续折腾</h2><ol><li>由于流畅度提升巨大，又得益于这款手机非常轻薄，淘宝20多块钱买了个电池，甚至感觉又可以当副机再战3年</li><li>下载了近30款目前常用的app以及王者荣耀也能流畅运行。。</li><li>为了干掉这个版本的MIUI自带且无法卸载的豌豆荚等古董app，下载了系统软件卸载大师（还是蛮好用的，但是第一次获取root权限的时候会卡主一会儿，需要等一下，确认一次后就没事了）</li><li>另外有一款软件Qboost可以修改CPU的性能模式，可以让4核拉满运行，但是实际上由于MIUI的调教已经很好，日常使用中体现不出太大差距，反而会耗电</li><li>本次折腾用到的所有文件仅需下方图中这几个，现在各家安卓厂商的优化越来越好了，比如MIUI、Flyme等都有一些特色，刷机的时代已经渐行渐远了。这次的折腾就当做告别吧🤣🤣🤣。顺便说一下，魔趣OS广告巨多，网上搜索很容易搜到，还是不要刷了，虽然也流畅，但可用性几乎为0，一堆广告和自带应用，而且是安卓原生的抽屉是app管理界面，有点麻烦。。。</li></ol><p>over</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;翻旧物时找到了大学时买的努比亚z11，充上电能开机，但是尝试了恢复出厂设置等一顿操作后，光运行系统就卡的离谱，更不用提app使用和玩游戏了。当年也是因为网上很多人出现的电量到了50%左右就黑屏（其实是电池容量不够了）以及系统卡顿，出去经常支付宝打开要等30秒~1分钟才换的新手机。时隔五六年后尝试刷了一波鸡，没想到运行十分流畅（MIUI牛皮）&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="刷机" scheme="https://wfsuki.github.io/tags/%E5%88%B7%E6%9C%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>笔记本Ubuntu22.04关闭合盖休眠</title>
@@ -472,36 +491,6 @@
     <category term="Python" scheme="https://wfsuki.github.io/tags/Python/"/>
     
     <category term="Flask" scheme="https://wfsuki.github.io/tags/Flask/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CentOS下搭建一个简单的C语言TCP多线程服务器</title>
-    <link href="https://wfsuki.github.io/2023/05/19/CentOS%E4%B8%8B%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84C%E8%AF%AD%E8%A8%80TCP%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    <id>https://wfsuki.github.io/2023/05/19/CentOS%E4%B8%8B%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84C%E8%AF%AD%E8%A8%80TCP%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8/</id>
-    <published>2023-05-19T10:06:53.000Z</published>
-    <updated>2023-05-21T04:21:52.760Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><span id="more"></span>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot; cla</summary>
-      
-    
-    
-    
-    <category term="Linux" scheme="https://wfsuki.github.io/categories/Linux/"/>
-    
-    
-    <category term="CentOS" scheme="https://wfsuki.github.io/tags/CentOS/"/>
-    
-    <category term="Linux" scheme="https://wfsuki.github.io/tags/Linux/"/>
-    
-    <category term="TCP" scheme="https://wfsuki.github.io/tags/TCP/"/>
-    
-    <category term="多线程" scheme="https://wfsuki.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     
   </entry>
   

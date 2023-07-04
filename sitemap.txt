@@ -1,3 +1,4 @@
+https://wfsuki.github.io/2023/06/27/%E5%8A%AA%E6%AF%94%E4%BA%9Az11%E5%88%B7MIUI10/
 https://wfsuki.github.io/album/index.html
 https://wfsuki.github.io/2023/06/03/PyQt%E4%BD%BF%E7%94%A8Qt-Material%E4%B8%BB%E9%A2%98/
 https://wfsuki.github.io/2023/06/20/%E7%AC%94%E8%AE%B0%E6%9C%AC%E9%87%8D%E8%A3%85Ubuntu22-04/
@@ -100,6 +101,7 @@ https://wfsuki.github.io/tags/Qt-Material/
 https://wfsuki.github.io/tags/Pyinstaller/
 https://wfsuki.github.io/tags/%E9%9A%8F%E8%BA%ABwifi/
 https://wfsuki.github.io/tags/Ubuntu/
+https://wfsuki.github.io/tags/%E5%88%B7%E6%9C%BA/
 https://wfsuki.github.io/categories/%E7%89%A9%E8%81%94%E7%BD%91/
 https://wfsuki.github.io/categories/Linux/
 https://wfsuki.github.io/categories/Arduino/
