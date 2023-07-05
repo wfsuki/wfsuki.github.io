@@ -6,7 +6,7 @@
   <link href="https://wfsuki.github.io/atom.xml" rel="self"/>
   
   <link href="https://wfsuki.github.io/"/>
-  <updated>2023-06-27T01:34:28.521Z</updated>
+  <updated>2023-07-05T02:49:06.761Z</updated>
   <id>https://wfsuki.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>windows搭建Git服务器</title>
+    <link href="https://wfsuki.github.io/2023/07/05/windows%E6%90%AD%E5%BB%BAGit%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    <id>https://wfsuki.github.io/2023/07/05/windows%E6%90%AD%E5%BB%BAGit%E6%9C%8D%E5%8A%A1%E5%99%A8/</id>
+    <published>2023-07-05T01:52:45.000Z</published>
+    <updated>2023-07-05T02:49:06.761Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>在windows下搭建Git服务器，适用于公司内部局域网进行代码管理</p><span id="more"></span><h2 id="必备软件安装"><a href="#必备软件安装" class="headerlink" title="必备软件安装"></a>必备软件安装</h2><ol><li>下载安装Git（必备），下载地址<a href="https://gitforwindows.org/">Git for Windows</a></li><li>下载安装gogs（必备），下载地址<a href="https://gogs.io/docs/">简介 - Gogs</a></li><li>下载安装TortoiseGit（可选），下载地址<a href="https://tortoisegit.org/">TortoiseGit – Windows Shell Interface to Git</a></li><li>下载安装TortoiseGit中文语言包（可选）</li></ol><h2 id="启动Git服务器"><a href="#启动Git服务器" class="headerlink" title="启动Git服务器"></a>启动Git服务器</h2><p>在gogs目录下运行cmd或者git bash，输入以下指令启动git服务器</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./gogs.exe web</span><br></pre></td></tr></table></figure><p><img src="/2023/07/05/windows%E6%90%AD%E5%BB%BAGit%E6%9C%8D%E5%8A%A1%E5%99%A8/20230705103810.png"></p><h2 id="配置gogs服务器"><a href="#配置gogs服务器" class="headerlink" title="配置gogs服务器"></a>配置gogs服务器</h2><p>在浏览器输入上图中的IP：192.168.1.34:3000（每个人不一样，按实际情况来）</p><p>首次配置界面忘了截图了，推荐数据库选择sqlite，其他的默认不变即可</p><h2 id="注册管理员账号"><a href="#注册管理员账号" class="headerlink" title="注册管理员账号"></a>注册管理员账号</h2><p>点右上角注册，第一个注册的账号即为管理员</p><p><img src="/2023/07/05/windows%E6%90%AD%E5%BB%BAGit%E6%9C%8D%E5%8A%A1%E5%99%A8/20230705104226.png"></p><p>注册完成之后进行登录即可</p><h2 id="简单测试git仓库功能"><a href="#简单测试git仓库功能" class="headerlink" title="简单测试git仓库功能"></a>简单测试git仓库功能</h2><p>点击右侧+号创建第一个仓库</p><p><img src="/2023/07/05/windows%E6%90%AD%E5%BB%BAGit%E6%9C%8D%E5%8A%A1%E5%99%A8/20230705104332.png"></p><p>创建完成后如图所示</p><p><img src="/2023/07/05/windows%E6%90%AD%E5%BB%BAGit%E6%9C%8D%E5%8A%A1%E5%99%A8/20230705104531.png"></p><p>接下来测试git clone，最好在同局域网的另一台电脑注册一个用户试试</p><p><img src="/2023/07/05/windows%E6%90%AD%E5%BB%BAGit%E6%9C%8D%E5%8A%A1%E5%99%A8/20230705104724.png"></p><p>因为仓库是空的，会报一个警告，但是问题不大。到这里Git服务器基本就搭建完成了，后面的使用方法就不再赘述了</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;在windows下搭建Git服务器，适用于公司内部局域网进行代码管理&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Git" scheme="https://wfsuki.github.io/categories/Git/"/>
+    
+    
+    <category term="Git" scheme="https://wfsuki.github.io/tags/Git/"/>
+    
+  </entry>
   
   <entry>
     <title>努比亚z11刷MIUI10</title>
@@ -460,37 +481,6 @@
     <category term="打点" scheme="https://wfsuki.github.io/tags/%E6%89%93%E7%82%B9/"/>
     
     <category term="移植" scheme="https://wfsuki.github.io/tags/%E7%A7%BB%E6%A4%8D/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CentOS下使用Python搭建一个http服务器</title>
-    <link href="https://wfsuki.github.io/2023/05/19/CentOS%E4%B8%8B%E4%BD%BF%E7%94%A8Python%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AAhttp%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    <id>https://wfsuki.github.io/2023/05/19/CentOS%E4%B8%8B%E4%BD%BF%E7%94%A8Python%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AAhttp%E6%9C%8D%E5%8A%A1%E5%99%A8/</id>
-    <published>2023-05-19T10:07:19.000Z</published>
-    <updated>2023-05-21T03:47:38.886Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>目标是搭建一个小小的http服务器，方便处理Get&#x2F;Post请求，并在服务器做一些操作，这样自己的APP就可以与服务器交互了</p><span id="more"></span><p>以下代码仅供参考</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, request, jsonify</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> shutil</span><br><span class="line"> </span><br><span class="line">app = Flask(__name__)</span><br><span class="line">app.debug = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/api/addData/&#x27;</span>,methods=[<span class="string">&#x27;post&#x27;</span>]</span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add_data</span>():</span><br><span class="line">    <span class="keyword">if</span>  <span class="keyword">not</span> request.data:</span><br><span class="line">        <span class="keyword">return</span> (<span class="string">&#x27;fail&#x27;</span>)</span><br><span class="line">    jsonData = request.data.decode(<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    jsonObj = json.loads(jsonData)</span><br><span class="line">    <span class="keyword">return</span> (<span class="string">&quot;&#123;result:ok&#125;&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/api/getData/&#x27;</span>,methods=[<span class="string">&#x27;GET&#x27;</span>]</span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_data</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">str</span>(<span class="string">&quot;data&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app.run(host=<span class="string">&#x27;0.0.0.0&#x27;</span>,port=<span class="number">6000</span>)</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;目标是搭建一个小小的http服务器，方便处理Get&amp;#x2F;Post请求，并在服务器做一些操作，这样自己的APP就可以与服务器交互了&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Linux" scheme="https://wfsuki.github.io/categories/Linux/"/>
-    
-    
-    <category term="CentOS" scheme="https://wfsuki.github.io/tags/CentOS/"/>
-    
-    <category term="Linux" scheme="https://wfsuki.github.io/tags/Linux/"/>
-    
-    <category term="TCP" scheme="https://wfsuki.github.io/tags/TCP/"/>
-    
-    <category term="多线程" scheme="https://wfsuki.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
-    
-    <category term="Python" scheme="https://wfsuki.github.io/tags/Python/"/>
-    
-    <category term="Flask" scheme="https://wfsuki.github.io/tags/Flask/"/>
     
   </entry>
   
