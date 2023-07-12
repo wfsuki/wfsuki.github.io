@@ -6,7 +6,7 @@
   <link href="https://wfsuki.github.io/atom.xml" rel="self"/>
   
   <link href="https://wfsuki.github.io/"/>
-  <updated>2023-07-12T06:22:43.229Z</updated>
+  <updated>2023-07-12T07:17:51.454Z</updated>
   <id>https://wfsuki.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Qt使用OpenSSL/aes加密</title>
+    <link href="https://wfsuki.github.io/2023/07/12/Qt%E4%BD%BF%E7%94%A8OpenSSL-aes%E5%8A%A0%E5%AF%86/"/>
+    <id>https://wfsuki.github.io/2023/07/12/Qt%E4%BD%BF%E7%94%A8OpenSSL-aes%E5%8A%A0%E5%AF%86/</id>
+    <published>2023-07-12T07:09:05.000Z</published>
+    <updated>2023-07-12T07:17:51.454Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>项目中需要对文件进行AES加密，故作此及记录，在Qt windows环境下安装OpenSSL，使用AES加密</p><span id="more"></span><h2 id="安装OpenSSL"><a href="#安装OpenSSL" class="headerlink" title="安装OpenSSL"></a>安装OpenSSL</h2><p>下载地址</p><p><a href="https://slproweb.com/products/Win32OpenSSL.html">Win32&#x2F;Win64 OpenSSL Installer for Windows - Shining Light Productions (slproweb.com)</a></p><p>选择最新版本，不要选择Light版</p><p><img src="/2023/07/12/Qt%E4%BD%BF%E7%94%A8OpenSSL-aes%E5%8A%A0%E5%AF%86/20230712151323.png"></p><h2 id="编译测试"><a href="#编译测试" class="headerlink" title="编译测试"></a>编译测试</h2><ol><li><p>在QT pro文件中增加以下代码</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">LIBS += -L&quot;C:/Program Files/OpenSSL-Win64/lib&quot; -llibcrypto</span><br><span class="line">INCLUDEPATH += $$quote(C:/Program Files/OpenSSL-Win64/include/)</span><br></pre></td></tr></table></figure></li><li><p>添加头文件</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;openssl/aes.h&gt;</span><br></pre></td></tr></table></figure></li><li><p>随便写一个测试函数，用来对data进行aes加密</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">QByteArray MainWindow::aesEncrypt(const QByteArray &amp;data)</span><br><span class="line">&#123;</span><br><span class="line">    QByteArray result;</span><br><span class="line">    result.resize(data.size());</span><br><span class="line">    AES_KEY aes_key;</span><br><span class="line">    AES_set_encrypt_key((const unsigned char*)key.constData(), 128, &amp;aes_key);</span><br><span class="line">    AES_cbc_encrypt((const unsigned char*)data.constData(), (unsigned char*)result.data(),</span><br><span class="line">                    data.size(), &amp;aes_key, (unsigned char*)iv.constData(), AES_ENCRYPT);</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ol><p>大体思路就这么多，其他的自行发挥吧</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;项目中需要对文件进行AES加密，故作此及记录，在Qt windows环境下安装OpenSSL，使用AES加密&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Qt,OpenSSL,AES,加密" scheme="https://wfsuki.github.io/categories/Qt-OpenSSL-AES-%E5%8A%A0%E5%AF%86/"/>
+    
+    
+    <category term="Qt" scheme="https://wfsuki.github.io/tags/Qt/"/>
+    
+    <category term="OpenSSL" scheme="https://wfsuki.github.io/tags/OpenSSL/"/>
+    
+    <category term="AES" scheme="https://wfsuki.github.io/tags/AES/"/>
+    
+  </entry>
   
   <entry>
     <title>Ubuntu搭建SVN服务器</title>
@@ -448,31 +473,6 @@
     <category term="Keil" scheme="https://wfsuki.github.io/tags/Keil/"/>
     
     <category term="Bin文件" scheme="https://wfsuki.github.io/tags/Bin%E6%96%87%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>GD32F470系列搭建开发环境/Keil</title>
-    <link href="https://wfsuki.github.io/2023/05/20/GD32F470%E7%B3%BB%E5%88%97%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83-Keil/"/>
-    <id>https://wfsuki.github.io/2023/05/20/GD32F470%E7%B3%BB%E5%88%97%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83-Keil/</id>
-    <published>2023-05-20T02:58:38.000Z</published>
-    <updated>2023-05-23T08:56:25.245Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>GD32F470使用Keil搭建开发环境</p><span id="more"></span><h2 id="为Keil安装GD32支持扩展包"><a href="#为Keil安装GD32支持扩展包" class="headerlink" title="为Keil安装GD32支持扩展包"></a>为Keil安装GD32支持扩展包</h2><p>在GD32官网下载AddOn选型插件包，例如搜索GD32F4xx AddOn，如果是F1或F3等其他系列同理</p><p><a href="https://www.gd32mcu.com/cn/download">兆易创新 (gd32mcu.com)</a></p><p><img src="/2023/05/20/GD32F470%E7%B3%BB%E5%88%97%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83-Keil/1.png"></p><p>点击文档图标下载</p><p><img src="/2023/05/20/GD32F470%E7%B3%BB%E5%88%97%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83-Keil/2.png"></p><p>下载解压完成后，会得到两个扩展包，分别是Keil的和IAR的，Keil的直接双击即可完成安装</p><p><img src="/2023/05/20/GD32F470%E7%B3%BB%E5%88%97%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83-Keil/6.png"></p><h2 id="为工程设置芯片选型"><a href="#为工程设置芯片选型" class="headerlink" title="为工程设置芯片选型"></a>为工程设置芯片选型</h2><p>点击Keil的魔术棒</p><p><img src="/2023/05/20/GD32F470%E7%B3%BB%E5%88%97%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83-Keil/7.png"></p><p>在Device中选择对应的芯片型号，点击OK</p><p><img src="/2023/05/20/GD32F470%E7%B3%BB%E5%88%97%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83-Keil/8.png"></p><h2 id="在Keil中下载更新组件包"><a href="#在Keil中下载更新组件包" class="headerlink" title="在Keil中下载更新组件包"></a>在Keil中下载更新组件包</h2><p>如果你是直接打开一个GD32的工程，那么Keil可能会自动弹出该页面，并自动下载所需的包文件。如果你是从0开始搭建项目，那么就需要用到这一步</p><p>点击Pack Installer按钮，进入包管理界面，左侧选择GigaDevice，并选择自己需要下载的系列</p><p><img src="/2023/05/20/GD32F470%E7%B3%BB%E5%88%97%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83-Keil/4.png"></p><p>双击芯片型号，在右侧的Device Specific点击Install</p><p><img src="/2023/05/20/GD32F470%E7%B3%BB%E5%88%97%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83-Keil/5.png"></p><p>等下下方状态栏下载进度条跑完，就下载完成啦，此时点击编译按钮尝试编译项目，如果没有工程，可以使用GD32官方的例程尝试编译，GD32的例程在这里</p><p><img src="/2023/05/20/GD32F470%E7%B3%BB%E5%88%97%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83-Keil/9.png"></p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;GD32F470使用Keil搭建开发环境&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="GD32" scheme="https://wfsuki.github.io/categories/GD32/"/>
-    
-    
-    <category term="GD32" scheme="https://wfsuki.github.io/tags/GD32/"/>
-    
-    <category term="环境搭建" scheme="https://wfsuki.github.io/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
-    
-    <category term="Keil" scheme="https://wfsuki.github.io/tags/Keil/"/>
     
   </entry>
   

@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://wfsuki.github.io/2023/07/12/Qt%E4%BD%BF%E7%94%A8OpenSSL-aes%E5%8A%A0%E5%AF%86/</loc>
+    
+    <lastmod>2023-07-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://wfsuki.github.io/2023/07/12/Ubuntu%E6%90%AD%E5%BB%BASVN%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
     
     <lastmod>2023-07-12</lastmod>
@@ -866,6 +875,20 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://wfsuki.github.io/tags/OpenSSL/</loc>
+    <lastmod>2023-07-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfsuki.github.io/tags/AES/</loc>
+    <lastmod>2023-07-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -982,6 +1005,13 @@
   
   <url>
     <loc>https://wfsuki.github.io/categories/AI/</loc>
+    <lastmod>2023-07-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfsuki.github.io/categories/Qt-OpenSSL-AES-%E5%8A%A0%E5%AF%86/</loc>
     <lastmod>2023-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
