@@ -6,7 +6,7 @@
   <link href="https://wfsuki.github.io/atom.xml" rel="self"/>
   
   <link href="https://wfsuki.github.io/"/>
-  <updated>2023-07-05T05:40:51.915Z</updated>
+  <updated>2023-07-12T06:22:43.229Z</updated>
   <id>https://wfsuki.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ubuntu搭建SVN服务器</title>
+    <link href="https://wfsuki.github.io/2023/07/12/Ubuntu%E6%90%AD%E5%BB%BASVN%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    <id>https://wfsuki.github.io/2023/07/12/Ubuntu%E6%90%AD%E5%BB%BASVN%E6%9C%8D%E5%8A%A1%E5%99%A8/</id>
+    <published>2023-07-12T05:55:23.000Z</published>
+    <updated>2023-07-12T06:22:43.229Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>在Ubuntu下安装svn服务器，svn相比git来说可能比较古董了，但是对于一些word等其他文件我觉得还是比较好用的</p><span id="more"></span><h2 id="安装svn"><a href="#安装svn" class="headerlink" title="安装svn"></a>安装svn</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br><span class="line">apt-get install subversion</span><br></pre></td></tr></table></figure><h2 id="检查是否安装成功"><a href="#检查是否安装成功" class="headerlink" title="检查是否安装成功"></a>检查是否安装成功</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">suki@suki-N56VM:~$ svnserve --version</span><br><span class="line">svnserve, version 1.14.1 (r1886195)</span><br><span class="line">   compiled May 21 2022, 10:52:35 on x86_64-pc-linux-gnu</span><br><span class="line"></span><br><span class="line">Copyright (C) 2021 The Apache Software Foundation.</span><br><span class="line">This software consists of contributions made by many people;</span><br><span class="line">see the NOTICE file for more information.</span><br><span class="line">Subversion is open source software, see http://subversion.apache.org/</span><br><span class="line"></span><br><span class="line">The following repository back-end (FS) modules are available:</span><br><span class="line"></span><br><span class="line">* fs_fs : Module for working with a plain file (FSFS) repository.</span><br><span class="line">* fs_x : Module for working with an experimental (FSX) repository.</span><br><span class="line">* fs_base : Module for working with a Berkeley DB repository.</span><br><span class="line"></span><br><span class="line">Cyrus SASL authentication is available.</span><br><span class="line"></span><br><span class="line">suki@suki-N56VM:~$ </span><br></pre></td></tr></table></figure><p>这样就算安装成功了</p><h2 id="配置svn"><a href="#配置svn" class="headerlink" title="配置svn"></a>配置svn</h2><ol><li><p>新建一个用于存放仓库的文件夹</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir svn</span><br><span class="line">cd svn</span><br><span class="line">mkdir repository</span><br></pre></td></tr></table></figure></li><li><p>创建仓库</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">svnadmin create /home/suki/svn/repository</span><br></pre></td></tr></table></figure></li><li><p>赋予权限</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd repository</span><br><span class="line">chmod +x db</span><br></pre></td></tr></table></figure></li><li><p>修改配置</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /conf</span><br><span class="line">vi svnserve.conf</span><br></pre></td></tr></table></figure><p>具体修改如下：</p><p><img src="/2023/07/12/Ubuntu%E6%90%AD%E5%BB%BASVN%E6%9C%8D%E5%8A%A1%E5%99%A8/20230712140634.png"></p></li><li><p>添加用户</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi passwd</span><br></pre></td></tr></table></figure><p>具体修改如下：</p><p><img src="/2023/07/12/Ubuntu%E6%90%AD%E5%BB%BASVN%E6%9C%8D%E5%8A%A1%E5%99%A8/20230712140924.png"></p></li><li><p>设置管理员</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi authz</span><br></pre></td></tr></table></figure><p>具体修改如下：</p><p><img src="/2023/07/12/Ubuntu%E6%90%AD%E5%BB%BASVN%E6%9C%8D%E5%8A%A1%E5%99%A8/20230712141053.png"></p></li></ol><h2 id="启动svn服务"><a href="#启动svn服务" class="headerlink" title="启动svn服务"></a>启动svn服务</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">svnserve -d -r /home/suki/svn/</span><br></pre></td></tr></table></figure><h2 id="查看svn是否启动"><a href="#查看svn是否启动" class="headerlink" title="查看svn是否启动"></a>查看svn是否启动</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps aux | grep svnserve</span><br></pre></td></tr></table></figure><p>具体如下图：</p><p><img src="/2023/07/12/Ubuntu%E6%90%AD%E5%BB%BASVN%E6%9C%8D%E5%8A%A1%E5%99%A8/20230712141433.png"></p><h2 id="测试是否可用"><a href="#测试是否可用" class="headerlink" title="测试是否可用"></a>测试是否可用</h2><ol><li>在同局域网windows下安装TortoiseSVN1.14.5</li><li>新建一个文件夹，用于存放仓库</li><li>文件夹内右键，进行checkout或者尝试浏览远程仓库</li></ol><p><img src="/2023/07/12/Ubuntu%E6%90%AD%E5%BB%BASVN%E6%9C%8D%E5%8A%A1%E5%99%A8/20230712141719.png"></p><ol start="4"><li><p>设置ip为Ubuntu的ip</p><p><img src="/2023/07/12/Ubuntu%E6%90%AD%E5%BB%BASVN%E6%9C%8D%E5%8A%A1%E5%99%A8/20230712141852.png"></p><p>不出意外你就可以正常使用你的svn仓库啦，此方法也适合小公司内部文件管理，因为svn不仅仅局限于代码，所以某些情况下用起来还是要比git方便，有存在的意义的</p></li></ol>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;在Ubuntu下安装svn服务器，svn相比git来说可能比较古董了，但是对于一些word等其他文件我觉得还是比较好用的&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Ubuntu" scheme="https://wfsuki.github.io/categories/Ubuntu/"/>
+    
+    
+    <category term="Ubuntu" scheme="https://wfsuki.github.io/tags/Ubuntu/"/>
+    
+    <category term="svn" scheme="https://wfsuki.github.io/tags/svn/"/>
+    
+  </entry>
   
   <entry>
     <title>嵌入式实时操作系统可视化软件uC/Probe使用</title>
@@ -178,9 +201,9 @@
     <category term="PyQt" scheme="https://wfsuki.github.io/categories/PyQt/"/>
     
     
-    <category term="PyQt" scheme="https://wfsuki.github.io/tags/PyQt/"/>
-    
     <category term="Qt-Material" scheme="https://wfsuki.github.io/tags/Qt-Material/"/>
+    
+    <category term="PyQt" scheme="https://wfsuki.github.io/tags/PyQt/"/>
     
   </entry>
   
@@ -450,31 +473,6 @@
     <category term="环境搭建" scheme="https://wfsuki.github.io/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
     
     <category term="Keil" scheme="https://wfsuki.github.io/tags/Keil/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CentOS8搭建Blynk物联网平台</title>
-    <link href="https://wfsuki.github.io/2023/05/20/CentOS8%E6%90%AD%E5%BB%BABlynk%E7%89%A9%E8%81%94%E7%BD%91%E5%B9%B3%E5%8F%B0/"/>
-    <id>https://wfsuki.github.io/2023/05/20/CentOS8%E6%90%AD%E5%BB%BABlynk%E7%89%A9%E8%81%94%E7%BD%91%E5%B9%B3%E5%8F%B0/</id>
-    <published>2023-05-20T01:51:27.000Z</published>
-    <updated>2023-05-22T09:26:44.249Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>CentOS8搭建Blynk物联网平台</p><span id="more"></span><h2 id="获取Blynk-JDK包"><a href="#获取Blynk-JDK包" class="headerlink" title="获取Blynk JDK包"></a>获取Blynk JDK包</h2><p>比较尴尬的是，Blynk的Git项目作者删除了，网上还有一些人克隆了分支，但是Release不全，目前我是用的是server-0.41.17.jar这个版本，大家可以从Git克隆的仓库或其他途径下载，也可以叫我发给你们</p><h2 id="安装java支持"><a href="#安装java支持" class="headerlink" title="安装java支持"></a>安装java支持</h2><p>从官网下载jdk-8u341-linux-x64.rpm，并安装</p><p><a href="https://www.oracle.com/java/technologies/downloads/">Java Downloads | Oracle</a></p><h2 id="开启Blynk服务"><a href="#开启Blynk服务" class="headerlink" title="开启Blynk服务"></a>开启Blynk服务</h2><p>具体的路径需要自行修改哈</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar server-0.41.17.jar -dataFolder /root/workspace/blynk</span><br></pre></td></tr></table></figure><p>开启后会显示默认的管理员账号和密码，类似这样</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Admin password not specified. Random password generated.</span><br><span class="line">Your Admin url is https://172.16.11.141:9443/admin</span><br><span class="line">Your Admin login email is admin@blynk.cc</span><br><span class="line">Your Admin password is IQJncCDgpk26D5TU3XFYe7yZ</span><br></pre></td></tr></table></figure><p>默认网页后台端口为9443，注意关闭防火墙以及修改云服务器的安全组配置，使用默认账号密码登录后台如下图</p><p><img src="/2023/05/20/CentOS8%E6%90%AD%E5%BB%BABlynk%E7%89%A9%E8%81%94%E7%BD%91%E5%B9%B3%E5%8F%B0/1.png"></p><p>密码可以在后台此处修改</p><p><img src="/2023/05/20/CentOS8%E6%90%AD%E5%BB%BABlynk%E7%89%A9%E8%81%94%E7%BD%91%E5%B9%B3%E5%8F%B0/2.png"></p><p>在APP中登录设置中填好服务器的IP和Port，就可以愉快的玩耍啦</p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;CentOS8搭建Blynk物联网平台&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="物联网" scheme="https://wfsuki.github.io/categories/%E7%89%A9%E8%81%94%E7%BD%91/"/>
-    
-    
-    <category term="CentOS8" scheme="https://wfsuki.github.io/tags/CentOS8/"/>
-    
-    <category term="Blynk" scheme="https://wfsuki.github.io/tags/Blynk/"/>
-    
-    <category term="物联网" scheme="https://wfsuki.github.io/tags/%E7%89%A9%E8%81%94%E7%BD%91/"/>
     
   </entry>
   
