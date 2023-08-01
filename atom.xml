@@ -6,7 +6,7 @@
   <link href="https://wfsuki.github.io/atom.xml" rel="self"/>
   
   <link href="https://wfsuki.github.io/"/>
-  <updated>2023-08-01T08:19:40.942Z</updated>
+  <updated>2023-08-01T08:22:24.469Z</updated>
   <id>https://wfsuki.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://wfsuki.github.io/2023/08/01/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1U%E7%9B%98%E4%BF%AE%E5%A4%8D%E8%BF%87%E7%A8%8B/"/>
     <id>https://wfsuki.github.io/2023/08/01/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1U%E7%9B%98%E4%BF%AE%E5%A4%8D%E8%BF%87%E7%A8%8B/</id>
     <published>2023-08-01T07:56:02.000Z</published>
-    <updated>2023-08-01T08:19:40.942Z</updated>
+    <updated>2023-08-01T08:22:24.469Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>U盘插进去后可以识别，但没有容量，按照网上搜集的资料尝试了一次修复</p><span id="more"></span><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>从别人手里得到了一个U盘，使用不稳定，经常和连接丢失，到后面直接不显示磁盘了。打开Windows磁盘管理器，可以看到设备，但是没有容量</p><img src="/2023/08/01/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1U%E7%9B%98%E4%BF%AE%E5%A4%8D%E8%BF%87%E7%A8%8B/QQ截图20230801144307.png" style="zoom:80%;"><p>设备管理器里面显示设备运转正常</p><img src="/2023/08/01/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1U%E7%9B%98%E4%BF%AE%E5%A4%8D%E8%BF%87%E7%A8%8B/QQ截图20230801144328.png" style="zoom:80%;"><h2 id="修复过程"><a href="#修复过程" class="headerlink" title="修复过程"></a>修复过程</h2><ol><li><p>网上说的很多cmd命令台的命令都不好使，首先下载DiskGenius，打开后可以看到U盘的信息，其中包含了主控芯片型号和厂家，如下图：</p><p><img src="/2023/08/01/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1U%E7%9B%98%E4%BF%AE%E5%A4%8D%E8%BF%87%E7%A8%8B/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230801160117.png"></p><p>可以看到是一芯的主控</p></li><li><p>在网上下载了一芯原厂的U盘生产工具，尝试进行恢复，打开软件后自动识别了E盘，也就是U盘，然后全部默认，右键E选择开始量产</p><p><img src="/2023/08/01/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1U%E7%9B%98%E4%BF%AE%E5%A4%8D%E8%BF%87%E7%A8%8B/QQ%E6%88%AA%E5%9B%BE20230801150503.png"></p><p>整个过程大概持续了1个多小时- - ，中途会出现几次弹窗，不用理会</p><p><img src="/2023/08/01/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1U%E7%9B%98%E4%BF%AE%E5%A4%8D%E8%BF%87%E7%A8%8B/QQ%E6%88%AA%E5%9B%BE20230801150518.png"></p><p>经过漫长的等待，最终显示1S量产成功，并且此时在此电脑中已经可以正常显示U盘了</p><p><img src="/2023/08/01/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1U%E7%9B%98%E4%BF%AE%E5%A4%8D%E8%BF%87%E7%A8%8B/QQ%E6%88%AA%E5%9B%BE20230801161548.png"></p><p><img src="/2023/08/01/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1U%E7%9B%98%E4%BF%AE%E5%A4%8D%E8%BF%87%E7%A8%8B/QQ%E6%88%AA%E5%9B%BE20230801161603.png"></p></li><li><p>尝试往里面拷贝一些东西，速度正常</p><p><img src="/2023/08/01/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1U%E7%9B%98%E4%BF%AE%E5%A4%8D%E8%BF%87%E7%A8%8B/QQ%E6%88%AA%E5%9B%BE20230801161649.png"></p></li></ol>]]></content>
     
