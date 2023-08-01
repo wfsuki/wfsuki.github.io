@@ -1,3 +1,4 @@
+https://wfsuki.github.io/2023/08/01/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1U%E7%9B%98%E4%BF%AE%E5%A4%8D%E8%BF%87%E7%A8%8B/
 https://wfsuki.github.io/about/index.html
 https://wfsuki.github.io/2023/07/12/Qt%E4%BD%BF%E7%94%A8OpenSSL-aes%E5%8A%A0%E5%AF%86/
 https://wfsuki.github.io/2023/07/12/Ubuntu%E6%90%AD%E5%BB%BASVN%E6%9C%8D%E5%8A%A1%E5%99%A8/
@@ -112,6 +113,7 @@ https://wfsuki.github.io/tags/WiFi%E6%A8%A1%E5%9D%97/
 https://wfsuki.github.io/tags/ChatGPT/
 https://wfsuki.github.io/tags/OpenSSL/
 https://wfsuki.github.io/tags/AES/
+https://wfsuki.github.io/tags/U%E7%9B%98/
 https://wfsuki.github.io/categories/Arduino/
 https://wfsuki.github.io/categories/%E7%89%A9%E8%81%94%E7%BD%91/
 https://wfsuki.github.io/categories/Linux/
