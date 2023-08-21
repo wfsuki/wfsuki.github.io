@@ -6,7 +6,7 @@
   <link href="https://wfsuki.github.io/atom.xml" rel="self"/>
   
   <link href="https://wfsuki.github.io/"/>
-  <updated>2023-08-01T08:22:24.469Z</updated>
+  <updated>2023-08-21T08:03:35.684Z</updated>
   <id>https://wfsuki.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Qt6.5编译MySQL驱动并打包发布</title>
+    <link href="https://wfsuki.github.io/2023/08/21/Qt6-5%E7%BC%96%E8%AF%91MySQL%E9%A9%B1%E5%8A%A8%E5%B9%B6%E6%89%93%E5%8C%85%E5%8F%91%E5%B8%83/"/>
+    <id>https://wfsuki.github.io/2023/08/21/Qt6-5%E7%BC%96%E8%AF%91MySQL%E9%A9%B1%E5%8A%A8%E5%B9%B6%E6%89%93%E5%8C%85%E5%8F%91%E5%B8%83/</id>
+    <published>2023-08-21T07:29:16.000Z</published>
+    <updated>2023-08-21T08:03:35.684Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>Qt6.5.2版本下编译MySQL驱动，并最终打开发布的过程记录</p><span id="more"></span><p>Qt6.4、6.5、6.6版本的编译方法应该是通用的，6.3我记得有些不同，新的版本源码都是CMake，旧一些的版本是有Pro工程文件的</p><h3 id="下载Mysql组件源码"><a href="#下载Mysql组件源码" class="headerlink" title="下载Mysql组件源码"></a>下载Mysql组件源码</h3><p>如果已经下载了就跳过这步，下载源码需要在MaintenanceTool中勾选Sources，如下图所示：</p><p><img src="/2023/08/21/Qt6-5%E7%BC%96%E8%AF%91MySQL%E9%A9%B1%E5%8A%A8%E5%B9%B6%E6%89%93%E5%8C%85%E5%8F%91%E5%B8%83/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230821153559.png"></p><h3 id="编译Mysql驱动"><a href="#编译Mysql驱动" class="headerlink" title="编译Mysql驱动"></a>编译Mysql驱动</h3><ol><li><p>下载源码</p><p>第二步，根据自己Qt安装的位置，找到sqldrivers目录，例如我安装在D盘的Qt目录下，路径就是D:\Qt\Qt\6.5.2\Src\qtbase\src\plugins\sqldrivers</p><p><img src="/2023/08/21/Qt6-5%E7%BC%96%E8%AF%91MySQL%E9%A9%B1%E5%8A%A8%E5%B9%B6%E6%89%93%E5%8C%85%E5%8F%91%E5%B8%83/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230821153914.png"></p></li><li><p>编译工程</p><p>使用QCreator打开这个项目（选择打开文件或项目，然后选择CMakeLists.txt即可）</p><p>接下来在.cmake.conf文件中添加MySQL的include目录和lib文件路径，可以参考下图中我的写法：</p><p><img src="/2023/08/21/Qt6-5%E7%BC%96%E8%AF%91MySQL%E9%A9%B1%E5%8A%A8%E5%B9%B6%E6%89%93%E5%8C%85%E5%8F%91%E5%B8%83/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230821154110.png"></p><p>点击左下角的小锤子，build一下工程，如果一切正常，会看到这样的输出：</p><p><img src="/2023/08/21/Qt6-5%E7%BC%96%E8%AF%91MySQL%E9%A9%B1%E5%8A%A8%E5%B9%B6%E6%89%93%E5%8C%85%E5%8F%91%E5%B8%83/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230821154531.png"></p></li><li><p>复制驱动文件</p><p>编译完成后，确认build输出目录里是否存在这几个文件：</p><p><img src="/2023/08/21/Qt6-5%E7%BC%96%E8%AF%91MySQL%E9%A9%B1%E5%8A%A8%E5%B9%B6%E6%89%93%E5%8C%85%E5%8F%91%E5%B8%83/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230821154642.png"></p><p>将qsqlmysqld.dll放到D:\Qt\Qt\6.5.2\msvc2019_64\plugins\sqldrivers目录下，注意这里后缀有d的是debug模式编译出来的，为了方便以后使用可以在release和debug模式下都编译一下，并将dll都拷贝到sqldeivers驱动目录下</p><p>将C:\Program Files\MySQL\MySQL Server 8.0\lib目录下的libmysql.dll拷贝D:\Qt\Qt\6.5.2\msvc2019_64\bin目录下</p><p>此时运行项目就可以正常连接数据库了，如下图：</p><p><img src="/2023/08/21/Qt6-5%E7%BC%96%E8%AF%91MySQL%E9%A9%B1%E5%8A%A8%E5%B9%B6%E6%89%93%E5%8C%85%E5%8F%91%E5%B8%83/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230821155525.png"></p></li></ol><h3 id="软件打包发布"><a href="#软件打包发布" class="headerlink" title="软件打包发布"></a>软件打包发布</h3><p>打包时需要用Qt编译项目一致的工具链，比如我用的Qt 6.5.2 MSVC 2019 64-bit，那么需要打开这个对应的cmd工具，将Qt的bin目录下的windeployqt6.exe拖入cmd工具，然后空格，将需要打包的exe文件拖入，完整的命令如下图（根据自己的安装目录修改）：</p><p><img src="/2023/08/21/Qt6-5%E7%BC%96%E8%AF%91MySQL%E9%A9%B1%E5%8A%A8%E5%B9%B6%E6%89%93%E5%8C%85%E5%8F%91%E5%B8%83/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230821160054.png"></p><p><img src="/2023/08/21/Qt6-5%E7%BC%96%E8%AF%91MySQL%E9%A9%B1%E5%8A%A8%E5%B9%B6%E6%89%93%E5%8C%85%E5%8F%91%E5%B8%83/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230821160108.png"></p><p>这样还没玩，需要将刚才用到的libmysql.dll放到exe同目录下，这样就能正常连接数据库了，有些电脑无法连接的话，可以尝试把windows&#x2F;system32目录下的libssl-1_1-x64.dll、libcrypto-1_1-x64.dll加进来，就可以了</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;Qt6.5.2版本下编译MySQL驱动，并最终打开发布的过程记录&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Qt" scheme="https://wfsuki.github.io/categories/Qt/"/>
+    
+    
+    <category term="Qt" scheme="https://wfsuki.github.io/tags/Qt/"/>
+    
+  </entry>
   
   <entry>
     <title>记录一次U盘修复过程</title>
@@ -42,7 +63,7 @@
     <link href="https://wfsuki.github.io/2023/07/12/Qt%E4%BD%BF%E7%94%A8OpenSSL-aes%E5%8A%A0%E5%AF%86/"/>
     <id>https://wfsuki.github.io/2023/07/12/Qt%E4%BD%BF%E7%94%A8OpenSSL-aes%E5%8A%A0%E5%AF%86/</id>
     <published>2023-07-12T07:09:05.000Z</published>
-    <updated>2023-07-12T07:17:51.454Z</updated>
+    <updated>2023-08-21T07:30:39.190Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>项目中需要对文件进行AES加密，故作此及记录，在Qt windows环境下安装OpenSSL，使用AES加密</p><span id="more"></span><h2 id="安装OpenSSL"><a href="#安装OpenSSL" class="headerlink" title="安装OpenSSL"></a>安装OpenSSL</h2><p>下载地址</p><p><a href="https://slproweb.com/products/Win32OpenSSL.html">Win32&#x2F;Win64 OpenSSL Installer for Windows - Shining Light Productions (slproweb.com)</a></p><p>选择最新版本，不要选择Light版</p><p><img src="/2023/07/12/Qt%E4%BD%BF%E7%94%A8OpenSSL-aes%E5%8A%A0%E5%AF%86/20230712151323.png"></p><h2 id="编译测试"><a href="#编译测试" class="headerlink" title="编译测试"></a>编译测试</h2><ol><li><p>在QT pro文件中增加以下代码</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">LIBS += -L&quot;C:/Program Files/OpenSSL-Win64/lib&quot; -llibcrypto</span><br><span class="line">INCLUDEPATH += $$quote(C:/Program Files/OpenSSL-Win64/include/)</span><br></pre></td></tr></table></figure></li><li><p>添加头文件</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;openssl/aes.h&gt;</span><br></pre></td></tr></table></figure></li><li><p>随便写一个测试函数，用来对data进行aes加密</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">QByteArray MainWindow::aesEncrypt(const QByteArray &amp;data)</span><br><span class="line">&#123;</span><br><span class="line">    QByteArray result;</span><br><span class="line">    result.resize(data.size());</span><br><span class="line">    AES_KEY aes_key;</span><br><span class="line">    AES_set_encrypt_key((const unsigned char*)key.constData(), 128, &amp;aes_key);</span><br><span class="line">    AES_cbc_encrypt((const unsigned char*)data.constData(), (unsigned char*)result.data(),</span><br><span class="line">                    data.size(), &amp;aes_key, (unsigned char*)iv.constData(), AES_ENCRYPT);</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ol><p>大体思路就这么多，其他的自行发挥吧</p>]]></content>
     
@@ -51,7 +72,7 @@
     
     
     
-    <category term="Qt,OpenSSL,AES,加密" scheme="https://wfsuki.github.io/categories/Qt-OpenSSL-AES-%E5%8A%A0%E5%AF%86/"/>
+    <category term="Qt" scheme="https://wfsuki.github.io/categories/Qt/"/>
     
     
     <category term="Qt" scheme="https://wfsuki.github.io/tags/Qt/"/>
@@ -90,7 +111,7 @@
     <link href="https://wfsuki.github.io/2023/07/05/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%AE%9E%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8F%AF%E8%A7%86%E5%8C%96%E8%BD%AF%E4%BB%B6uC-Probe%E4%BD%BF%E7%94%A8/"/>
     <id>https://wfsuki.github.io/2023/07/05/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%AE%9E%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8F%AF%E8%A7%86%E5%8C%96%E8%BD%AF%E4%BB%B6uC-Probe%E4%BD%BF%E7%94%A8/</id>
     <published>2023-07-05T04:18:39.000Z</published>
-    <updated>2023-07-05T05:40:51.915Z</updated>
+    <updated>2023-08-21T07:31:27.833Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>使用uC&#x2F;Probe可视化软件进行实时操作系统任务调度分析</p><span id="more"></span><h2 id="安装uC-x2F-Probe"><a href="#安装uC-x2F-Probe" class="headerlink" title="安装uC&#x2F;Probe"></a>安装uC&#x2F;Probe</h2><p>双击安装包，全部默认安装即可，也可以修改磁盘，不影响后续使用</p><p><img src="/2023/07/05/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%AE%9E%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8F%AF%E8%A7%86%E5%8C%96%E8%BD%AF%E4%BB%B6uC-Probe%E4%BD%BF%E7%94%A8/20230705122220.png"></p><h2 id="uC-x2F-COSⅢ中的使用方法"><a href="#uC-x2F-COSⅢ中的使用方法" class="headerlink" title="uC&#x2F;COSⅢ中的使用方法"></a>uC&#x2F;COSⅢ中的使用方法</h2><ol><li><p>在uC&#x2F;COSⅢ初始化完成后，任务启动之前添加如下代码：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">if</span> OS_CFG_STAT_TASK_EN &gt; 0u</span></span><br><span class="line">    OSStatTaskCPUUsageInit(&amp;err);</span><br><span class="line">    OSStatReset(&amp;err);</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure></li><li><p>确保以下宏开关处于enable</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> OS_CFG_STAT_TASK_EN 1u</span></span><br><span class="line"><span class="comment">//或者是</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> OS_CFG_STAT_TASK_EN DEF_ENABLED</span></span><br></pre></td></tr></table></figure></li><li><p>编译代码，生成.out文件</p></li></ol><h2 id="uC-x2F-Probe软件配置"><a href="#uC-x2F-Probe软件配置" class="headerlink" title="uC&#x2F;Probe软件配置"></a>uC&#x2F;Probe软件配置</h2><p>以J-Link为例，通过如下步骤进行配置：</p><ol><li><p>点击左上角Setting，设置自己的芯片类型、调试器类型</p><p><img src="/2023/07/05/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%AE%9E%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8F%AF%E8%A7%86%E5%8C%96%E8%BD%AF%E4%BB%B6uC-Probe%E4%BD%BF%E7%94%A8/20230705123106.png"></p></li><li><p>点击下方ELF，选择一个.out文件</p><p><img src="/2023/07/05/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%AE%9E%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8F%AF%E8%A7%86%E5%8C%96%E8%BD%AF%E4%BB%B6uC-Probe%E4%BD%BF%E7%94%A8/20230705133930.png"></p></li><li><p>在默认工程Project1上右键，添加一个uC&#x2F;COSⅢ Awareness screen</p><p><img src="/2023/07/05/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%AE%9E%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8F%AF%E8%A7%86%E5%8C%96%E8%BD%AF%E4%BB%B6uC-Probe%E4%BD%BF%E7%94%A8/20230705122939.png"></p></li><li><p>点击ok后，点击主界面左上角的Run</p><p>正常情况下就能看到任务实时调度的画面了，运行图如下：</p><p><img src="/2023/07/05/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%AE%9E%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8F%AF%E8%A7%86%E5%8C%96%E8%BD%AF%E4%BB%B6uC-Probe%E4%BD%BF%E7%94%A8/20230705124159.png"></p></li></ol><h2 id="一些错误情况"><a href="#一些错误情况" class="headerlink" title="一些错误情况"></a>一些错误情况</h2><p>有些人可能会报以下错误，但点击确定后，仍然能看到任务的实时调度情况，这个也许是由于J-Link版本、IAR版本以及uC-Probe版本存在一些不兼容的情况，暂时不太清除如何修复，但是不影响后续使用，仍然能看到任务实时切换。后续有新发现再做补充</p><p><img src="/2023/07/05/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%AE%9E%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8F%AF%E8%A7%86%E5%8C%96%E8%BD%AF%E4%BB%B6uC-Probe%E4%BD%BF%E7%94%A8/20230705123349.png"></p>]]></content>
     
@@ -99,7 +120,7 @@
     
     
     
-    <category term="嵌入式" scheme="https://wfsuki.github.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
+    <category term="嵌入式开发" scheme="https://wfsuki.github.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/"/>
     
     
     <category term="嵌入式" scheme="https://wfsuki.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
@@ -446,31 +467,6 @@
     <category term="ESP32" scheme="https://wfsuki.github.io/tags/ESP32/"/>
     
     <category term="环境配置" scheme="https://wfsuki.github.io/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Arduino/ESP12F实现网页上传固件升级</title>
-    <link href="https://wfsuki.github.io/2023/05/20/Arduino-ESP12F%E5%AE%9E%E7%8E%B0%E7%BD%91%E9%A1%B5%E4%B8%8A%E4%BC%A0%E5%9B%BA%E4%BB%B6%E5%8D%87%E7%BA%A7/"/>
-    <id>https://wfsuki.github.io/2023/05/20/Arduino-ESP12F%E5%AE%9E%E7%8E%B0%E7%BD%91%E9%A1%B5%E4%B8%8A%E4%BC%A0%E5%9B%BA%E4%BB%B6%E5%8D%87%E7%BA%A7/</id>
-    <published>2023-05-20T03:47:03.000Z</published>
-    <updated>2023-05-23T08:58:40.316Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>ESP8266在Arduino环境下实现连接wifi后，或者AP状态下进行固件上传升级，非常方便</p><span id="more"></span><p>使用的是ESP8266WebServer库，非常方便，除了固件升级，还有文件系统管理功能，大家可以自行研究，有了固件上传功能就可以不用频繁烧录了。代码比较简单，直接上代码</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  An OTA sample for ESP8266 by Victor.Cheung</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;ESP8266WiFi.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;WiFiClient.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;ESP8266WebServer.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;ESP8266HTTPUpdateServer.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">ifndef</span> STASSID</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> STASSID <span class="string">&quot;ssid&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> STAPSK  <span class="string">&quot;12345678&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">char</span>* ssid = STASSID;</span><br><span class="line"><span class="type">const</span> <span class="type">char</span>* password = STAPSK;</span><br><span class="line"></span><br><span class="line">ESP8266WebServer <span class="title function_">httpServer</span><span class="params">(<span class="number">80</span>)</span>;</span><br><span class="line">ESP8266HTTPUpdateServer httpUpdater;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">  Serial.begin(<span class="number">115200</span>);</span><br><span class="line">  Serial.println();</span><br><span class="line">  Serial.println(<span class="string">&quot;Booting Sketch...&quot;</span>);</span><br><span class="line"></span><br><span class="line">  WiFi.mode(WIFI_STA);</span><br><span class="line">  WiFi.begin(ssid, password);</span><br><span class="line"></span><br><span class="line">  Serial.print(<span class="string">&quot;Connecting...&quot;</span>);</span><br><span class="line">  <span class="keyword">while</span> (WiFi.status() != WL_CONNECTED) &#123;</span><br><span class="line">    Serial.print(<span class="string">&quot;.&quot;</span>);</span><br><span class="line">    delay(<span class="number">300</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  httpUpdater.setup(&amp;httpServer);</span><br><span class="line">  httpServer.begin();</span><br><span class="line"></span><br><span class="line">  Serial.print(<span class="string">&quot;HTTPUpdateServer ready! Open http://&quot;</span>);</span><br><span class="line">  Serial.print(WiFi.localIP());</span><br><span class="line">  Serial.println(<span class="string">&quot;/update in your browser&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">(<span class="type">void</span>)</span> </span><br><span class="line">&#123;</span><br><span class="line">  httpServer.handleClient();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>在连接上wifi后，可以从串口中看到ESP8266的后台地址，进入后点击固件上传，选择固件就会自动更新重启了</p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;ESP8266在Arduino环境下实现连接wifi后，或者AP状态下进行固件上传升级，非常方便&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Arduino" scheme="https://wfsuki.github.io/categories/Arduino/"/>
-    
-    
-    <category term="Arduino" scheme="https://wfsuki.github.io/tags/Arduino/"/>
-    
-    <category term="ESP8266" scheme="https://wfsuki.github.io/tags/ESP8266/"/>
-    
-    <category term="OTA" scheme="https://wfsuki.github.io/tags/OTA/"/>
     
   </entry>
   
